@@ -1,5 +1,11 @@
 Changelog:
 
+14/09/22
+- ajustes ambiente quote e quotation (recuos e tamanho de fonte)
+
+06/07/22
+- definições de fontes agrupadas no arquivo packages.tex
+
 01/06/21
 - carrega o estilo apalike-ptbr nos textos em português e apalike nos
   textos em inglês

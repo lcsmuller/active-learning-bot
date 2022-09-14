@@ -38,7 +38,7 @@
 
 % definição da classe e versão
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ppginf}[2021/06/01 Manuscript LaTeX class for PPGInf/UFPR]
+\ProvidesClass{ppginf}[2022/09/14 Manuscript LaTeX class for PPGInf/UFPR]
 
 %------------------------------------------------------------------------------
 
@@ -302,24 +302,26 @@
 \setlist[1]{leftmargin=\parindent}
 \setlist[2]{leftmargin=0.5\parindent}
 
-% corrigir recuos nos ambientes quote e quotation
-\renewenvironment{quotation}{%
-  \list{}{%
-    \leftmargin=\parindent%
-    \rightmargin=\parindent%
-    \listparindent 0.5\parindent%
-    \itemindent    \listparindent
-    \rightmargin   \leftmargin
-    \parsep        \z@ \@plus\p@}%
-  \item\relax}
-{\endlist}
+% corrigir recuos no ambiente quote
 \renewenvironment{quote}{%
   \list{}{%
-    \leftmargin=\parindent%
-    \rightmargin=\parindent%
-    \rightmargin\leftmargin%
+    \leftmargin=40mm%
+    \rightmargin=0mm%
+    \small%
   }%
   \item\relax}%
+{\endlist}
+
+% idem, ambiente quotation
+\renewenvironment{quotation}{%
+  \list{}{%
+    \leftmargin=40mm%
+    \rightmargin=0mm%
+    \listparindent 0.5\parindent%
+    \itemindent    \listparindent
+    \parsep        \z@ \@plus\p@}%
+    \small%
+  \item\relax}
 {\endlist}
 
 % ajustes nas legendas de tabelas e figuras
