@@ -1,5 +1,8 @@
 Changelog:
 
+24/01/23
+- trocado \include{packages} por \input{packages} em main.tex
+
 17/10/22
 - trocada imagem de fundo da capa de JPG para PNG (bem menor)
 
@@ -7,7 +10,7 @@ Changelog:
 - ajustes ambiente quote e quotation (recuos e tamanho de fonte)
 
 06/07/22
-- definições de fontes agrupadas no arquivo packages.tex
+- agrupadas as definições de fontes no arquivo packages.tex
 
 01/06/21
 - carrega o estilo apalike-ptbr nos textos em português e apalike nos
