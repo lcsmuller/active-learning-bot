@@ -69,25 +69,29 @@
 
 % ------------------------------------------------------------------------------
 
-% formatação de bibliografia
+% formatação de bibliografia (escolher UM estilo e comentar os demais)
+
+% 1: estilo Apalike + Natbib (recomendo usar este!)
 \usepackage{natbib}			% bibliografia no estilo NatBib
 \IfLanguageName{brazilian}
 {\bibliographystyle{apalike-ptbr}}	% formato em português
 {\bibliographystyle{apalike}}		% formato em inglês
+\renewcommand{\cite}{\citep}		% \cite deve funcionar como \citep
 
-% Estilos de bibliografia recomendados (só descomentar um estilo!)
+% 2: estilo apacite (ATENÇÃO: ainda não tem suporte para português)
+%\usepackage[natbibapa]{apacite}
+%\bibliographystyle{apacite}
+
+% 3: outros estilos de bibliografia recomendados
 % Mais infos: https://pt.sharelatex.com/learn/Bibtex_bibliography_styles
 %
-%\bibliographystyle{apalike-ptbr}	% [Maziero et al., 2006]
 %\bibliographystyle{alpha}		% [Maz06]
 %\bibliographystyle{plainnat}		% vide Google "LaTeX Natbib"
 %\bibliographystyle{plain}		% [1] ordem alfabética
 %\bibliographystyle{unsrt}		% [1] ordem de uso no texto
-
 % no estilo "unsrt", evita que citações nos índices sejam consideradas
 %\usepackage{notoccite}
 
-\renewcommand{\cite}{\citep}	% \cite deve funcionar como \citep
 %\bibpunct{[}{]}{;}{a}{}{,}	% caracteres usados nas referências
 
 % ------------------------------------------------------------------------------

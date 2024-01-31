@@ -49,6 +49,7 @@ Pendências:
 - posicionar ficha catalográfica no verso da 2a capa
 - criar capítulos com conteúdo básico de uma dissertação ou tese
 - distribuir melhor os pacotes entre ppginf.cls e packages.tex
+- incluir uma 2a folha de rosto em inglês para documentos em inglês
 - analisar uso de \backmatter
 - separar apêndices de anexos?
 - diferenciar tabelas de quadros?
