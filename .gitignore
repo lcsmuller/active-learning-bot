@@ -1,0 +1,8 @@
+# Ignore all files
+*
+# But these
+!.gitignore
+!README.md
+!referencias.md
+!capitulos/
+!capitulos/cap[1-5]_*.md
