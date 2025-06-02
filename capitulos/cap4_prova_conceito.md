@@ -19,14 +19,14 @@ Estas características são fundamentais para aproximar o ambiente virtual das d
 
 ## 4.2 Implementação Técnica
 
-O bot foi desenvolvido utilizando a biblioteca Concord em C99, aproveitando seu modelo de event loop assíncrono para processar múltiplas interações simultaneamente. A implementação seguiu uma arquitetura modular:
+O bot foi desenvolvido utilizando a biblioteca Concord em C99 (desenvolvida pelo autor deste trabalho), aproveitando seu modelo de event loop assíncrono para processar múltiplas interações simultaneamente. A implementação seguiu uma arquitetura modular:
 
 - **Módulo de Publicação**: Processa comandos do professor para compartilhar conteúdo formatado
 - **Módulo de Interação**: Gerencia as reações e comandos dos alunos
 - **Módulo de Análise**: Coleta e organiza as interações para gerar relatórios
 - **Módulo de Persistência**: Armazena dados para análise posterior (opcional)
 
-A integração com o Discord foi realizada através das APIs fornecidas pela Concord, utilizando sistemas de geração de código (como o gencodecs) para facilitar o processamento de dados em formato JSON.
+A integração com o Discord foi realizada através das APIs fornecidas pela Concord, utilizando sistemas de geração de código (como o gencodecs, também desenvolvido pelo autor) para facilitar o processamento de dados em formato JSON.
 
 ## 4.3 Funcionalidades Implementadas
 
