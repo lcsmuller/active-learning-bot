@@ -31,17 +31,18 @@
 %\usepackage{amssymb}		% símbolos 
 
 % ------------------------------------------------------------------------------
-
 % inclusão de figuras em PDF, PNG, PS, EPS
+
 \usepackage{graphicx}
 
 % subfiguras (subfigure is deprecated, don't use it)
+
 \usepackage[labelformat=simple]{subcaption}
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
 % ------------------------------------------------------------------------------
-
 % inclusão/formatação de código-fonte (programas)
+
 \usepackage{listings}
 \lstset{language=c}
 \lstset{basicstyle=\ttfamily\footnotesize,commentstyle=\textit,stringstyle=\ttfamily}
@@ -60,43 +61,22 @@
                  {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 }
 
 % ------------------------------------------------------------------------------
-
 % formatação de algoritmos
+
 \usepackage{algorithm,algorithmic}
 \IfLanguageName{brazilian} {\floatname{algorithm}{Algoritmo}}{}
 \renewcommand{\algorithmiccomment}[1]{~~~// #1}
 %\algsetup{linenosize=\footnotesize,linenodelimiter=.}
 
 % ------------------------------------------------------------------------------
+% formatação de bibliografia
 
-% formatação de bibliografia (escolher UM estilo e comentar os demais)
-
-% 1: estilo Apalike + Natbib (recomendo usar este!)
-\usepackage{natbib}			% bibliografia no estilo NatBib
-\IfLanguageName{brazilian}
-{\bibliographystyle{apalike-ptbr}}	% formato em português
-{\bibliographystyle{apalike}}		% formato em inglês
-\renewcommand{\cite}{\citep}		% \cite deve funcionar como \citep
-
-% 2: estilo apacite (ATENÇÃO: ainda não tem suporte para português)
-%\usepackage[natbibapa]{apacite}
-%\bibliographystyle{apacite}
-
-% 3: outros estilos de bibliografia recomendados
-% Mais infos: https://pt.sharelatex.com/learn/Bibtex_bibliography_styles
-%
-%\bibliographystyle{alpha}		% [Maz06]
-%\bibliographystyle{plainnat}		% vide Google "LaTeX Natbib"
-%\bibliographystyle{plain}		% [1] ordem alfabética
-%\bibliographystyle{unsrt}		% [1] ordem de uso no texto
-% no estilo "unsrt", evita que citações nos índices sejam consideradas
-%\usepackage{notoccite}
-
-%\bibpunct{[}{]}{;}{a}{}{,}	% caracteres usados nas referências
+\usepackage[numbers,sort&compress]{natbib} % Carrega natbib com suporte a números e agrupamento (ex: [1-3] )
+\bibliographystyle{unsrtnat}
 
 % ------------------------------------------------------------------------------
-
 % pacotes diversos
+
 \usepackage{alltt,moreverb}	% mais comandos no modo verbatim
 \usepackage{lipsum}		% gera texto aleatório (para os exemplos)
 \usepackage{currfile}		% infos sobre o arquivo/diretório atual

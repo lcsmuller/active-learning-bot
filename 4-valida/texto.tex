@@ -1,0 +1,185 @@
+\chapter{Prova de Conceito: Bot para Interação Educacional}
+\label{cap:prova}
+
+% Usar o graphicspath para buscar figuras no subdiretório figuras
+\graphicspath{\currfiledir/figuras/}
+
+%=====================================================
+
+Este capítulo apresenta a prova de conceito do bot educacional desenvolvido para este trabalho, detalhando sua implementação técnica e a metodologia de avaliação experimental proposta. O dashboard contém elementos que são a representação gráfica do bot, permitindo ao professor gerenciar as interações conforme estabelecido no Capítulo \ref{cap:revisao}.
+
+%=====================================================
+
+\section{Contexto da Interação Professor-Aluno em Ambientes Remotos}
+\label{sec:contexto}
+
+Antes de detalhar os aspectos técnicos da implementação, é importante contextualizar como ocorre a interação entre professor e alunos em um ambiente de ensino remoto, particularmente quando se busca aplicar metodologias ativas.
+
+Em aulas remotas tradicionais, observa-se frequentemente um padrão de comunicação unidirecional, onde o professor transmite o conteúdo enquanto os alunos assumem postura predominantemente passiva. As interações tendem a ser limitadas a momentos específicos, como sessões de perguntas ao final da aula, ou através de canais assíncronos como e-mails e fóruns. Este modelo apresenta barreiras significativas à implementação de metodologias ativas, que dependem de ciclos rápidos de feedback e participação constante dos estudantes.
+
+O bot proposto busca transformar este paradigma ao introduzir um mediador digital que facilita:
+
+\begin{enumerate}
+\item \textbf{Trocas síncronas durante a exposição de conteúdo}: Permitindo reações e dúvidas sem interromper o fluxo da aula
+\item \textbf{Anonimato seletivo para alunos}: Reduzindo a inibição de participação
+\item \textbf{Coleta sistemática de dados de interação}: Possibilitando ajustes em tempo real na condução da aula
+\item \textbf{Automação de tarefas repetitivas}: Liberando o professor para focar em aspectos pedagógicos mais relevantes
+\end{enumerate}
+
+Estas características são fundamentais para aproximar o ambiente virtual das dinâmicas interativas observadas em salas de aula presenciais onde metodologias ativas são aplicadas com sucesso.
+
+%=====================================================
+
+\section{Implementação Técnica}
+\label{sec:implementacao}
+
+A implementação técnica do sistema educacional segue uma arquitetura dual composta pelo bot Discord e pelo dashboard do professor, conforme conceitualmente apresentado na Seção \ref{subsec:dashboards} do Capítulo \ref{cap:revisao}. Esta arquitetura garante a separação entre o canal de comando (exclusivo do professor) e o canal de interação (compartilhado entre todos os participantes).
+
+\subsection{Arquitetura do Bot}
+
+O bot foi desenvolvido utilizando a biblioteca Concord em C (desenvolvida pelo autor deste trabalho). A implementação seguiu uma arquitetura modular organizada em quatro componentes principais:
+
+\begin{itemize}
+\item \textbf{Módulo de Publicação}: Responsável por processar comandos do professor vindos do dashboard e transformá-los em conteúdo formatado nos canais apropriados do Discord. Este módulo implementa recursos de formatação para código, imagens e outros materiais didáticos.
+\item \textbf{Módulo de Interação}: Gerencia as reações e comandos dos alunos, incluindo o processamento de slash commands, reações com emojis e mensagens diretas. Este componente implementa o princípio de comunicação multidirecional discutido na Seção \ref{subsec:principios}.
+\item \textbf{Módulo de Análise}: Coleta e processa em tempo real as interações para gerar métricas de engajamento, barômetros de compreensão e outros indicadores pedagógicos relevantes. Os resultados são transmitidos ao dashboard do professor para visualização.
+\item \textbf{Módulo de Persistência}: Armazena dados estruturados sobre a sessão para análise posterior, possibilitando a geração de relatórios detalhados e o acompanhamento longitudinal do progresso dos alunos ao longo de múltiplas aulas.
+\end{itemize}
+
+\subsection{Implementação do Dashboard}
+
+O dashboard do professor foi implementado como uma aplicação web utilizando tecnologias modernas de frontend (React.js) e backend (Node.js), comunicando-se com o bot através de uma API REST segura. Esta separação arquitetural permite que o professor mantenha uma interface de controle independente e privada, sem necessidade de interagir diretamente no chat público.
+
+O sistema de comunicação entre dashboard e bot utiliza um protocolo de mensagens baseado em WebSockets para garantir atualizações em tempo real e baixa latência, aspectos cruciais para o controle efetivo da dinâmica da aula. Esta comunicação bidirecional permite:
+
+\begin{enumerate}
+\item Envio de comandos do professor para o bot (publicação de conteúdo, criação de atividades)
+\item Transmissão de métricas e alertas do bot para o dashboard (nível de engajamento, dúvidas anônimas)
+\item Sincronização do estado da aula entre múltiplas sessões de navegador, caso o professor precise alternar entre dispositivos
+\end{enumerate}
+
+\subsection{Integração Técnica}
+
+A integração com o Discord foi realizada através das APIs fornecidas pela biblioteca Concord.
+
+A arquitetura implementa os cinco componentes essenciais de um bot educacional descritos na Seção \ref{sec:def-bots}: interface do usuário (canais do Discord), compreensão de linguagem natural (processamento de comandos), gerenciador de diálogo (módulo de interação), integração com backend (dashboard e sistemas de persistência) e geração de resposta (módulo de publicação).
+
+Esta implementação atende diretamente ao objetivo de criar uma prova de conceito funcional utilizando tecnologias adequadas ao contexto educacional, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo \ref{cap:revisao}.
+
+%=====================================================
+
+\section{Funcionalidades Implementadas}
+\label{sec:funcionalidades}
+
+O sistema desenvolvido consiste em dois componentes principais que trabalham de forma integrada: (1) o bot educacional que interage diretamente com os alunos no Discord e (2) o dashboard exclusivo para o professor que permite gerenciar essas interações. Esta arquitetura dual implementa o princípio de "separação de interesses" discutido na Seção \ref{subsec:dashboards} do Capítulo \ref{cap:revisao}, onde o canal de comando (dashboard) é separado do canal de interação (Discord).
+
+\subsection{Funcionalidades do Bot no Discord}
+O bot no ambiente Discord oferece as seguintes funcionalidades:
+
+\begin{enumerate}
+\item \textbf{Publicação de conteúdo estruturado}: O bot apresenta materiais didáticos formatados, incluindo trechos de código com destaque de sintaxe, imagens explicativas e exercícios interativos.
+\item \textbf{Mecanismos de feedback rápido}: Permite que alunos utilizem reações para indicar seu nível de compreensão (como "entendi", "tenho dúvida", "confuso"), criando um barômetro de compreensão em tempo real.
+\item \textbf{Canal de dúvidas anônimas}: Os alunos podem enviar dúvidas de forma privada para o bot, que as encaminha ao professor sem identificar o remetente, reduzindo a inibição.
+\item \textbf{Execução de código}: Para disciplinas de programação, o bot permite a execução segura de snippets de código submetidos pelos alunos, mostrando resultados em tempo real.
+\item \textbf{Atividades interativas}: Disponibiliza quizzes, enquetes e desafios temporalizados, coletando e organizando as respostas dos alunos automaticamente.
+\end{enumerate}
+
+\subsection{Funcionalidades do Dashboard do Professor}
+O dashboard, como interface de controle pedagógico, implementa as seguintes funcionalidades:
+
+\begin{enumerate}
+\item \textbf{Visão consolidada de engajamento}: Métricas visuais que mostram a distribuição de reações dos alunos, nível de participação e áreas que geraram mais dúvidas.
+\item \textbf{Controle de fluxo da aula}: Interface para gerenciar a sequência de conteúdos e atividades sem precisar inserir comandos no chat público.
+\item \textbf{Sistema de alertas}: Notificações automáticas quando determinados padrões são detectados, como uma quantidade significativa de alunos indicando dificuldade.
+\item \textbf{Gerenciador de atividades}: Ferramentas para criar, lançar e monitorar atividades interativas em tempo real.
+\item \textbf{Relatórios pós-aula}: Geração de resumos detalhados após a sessão, incluindo métricas de participação, desempenho e tópicos problemáticos.
+\end{enumerate}
+
+Esta integração entre dashboard e bot cria um sistema coeso que permite ao professor manter o controle pedagógico da aula enquanto facilita interações dinâmicas com os alunos. O professor pode, por exemplo, identificar rapidamente conceitos que geraram confusão através do dashboard e adaptar sua abordagem ou enviar explicações adicionais através do bot, sem interromper o fluxo da aula.
+
+A Figura \ref{fig:dashboard-bot} (Capítulo \ref{cap:revisao}) ilustra esta relação integrada, onde o dashboard atua como interface de comando exclusiva do professor, enquanto o bot serve como ponto de contato e interação para todos os participantes.
+
+%=====================================================
+
+\section{Metodologia de Avaliação}
+\label{sec:metodologia}
+
+A metodologia de avaliação para o bot educacional consiste em uma abordagem experimental com participantes reais assumindo os papéis de professor e alunos em um ambiente de sala de aula simulado, conforme delineado na Seção \ref{sec:objetivos} do Capítulo \ref{cap:revisao}. Esta abordagem permite avaliar a eficácia da ferramenta em condições próximas ao uso real, combinando métricas quantitativas e qualitativas.
+
+%-----------------------------------------------------
+
+\subsection{Ambiente e Participantes}
+\label{subsec:ambiente}
+
+O teste experimental envolve:
+\begin{itemize}
+\item Professores de disciplinas de graduação na área de computação, que utilizarão o dashboard de controle para gerenciar as interações
+\item Alunos de graduação, que interagirão com o bot através da interface do Discord
+\item Sessões de aula remotas simuladas, reproduzindo cenários pedagógicos típicos
+\item Observadores para registrar aspectos qualitativos da interação
+\end{itemize}
+
+%-----------------------------------------------------
+
+\subsection{Coleta de Dados}
+\label{subsec:coleta}
+
+Os dados são coletados através de três mecanismos principais:
+
+\begin{enumerate}
+\item \textbf{Questionários}: Aplicados a professores e alunos para medir percepções sobre o uso do bot
+   
+\item \textbf{Registros automáticos (logs)}: Dados quantitativos sobre frequência e tipos de interações realizadas
+
+\item \textbf{Entrevistas}: Conduzidas com participantes para obter insights qualitativos
+\end{enumerate}
+
+%-----------------------------------------------------
+
+\subsection{Métricas de Avaliação}
+\label{subsec:metricas}
+
+As seguintes métricas são utilizadas para avaliar a eficácia da solução:
+
+\begin{table}[htb]
+\centering
+\caption{Métricas para avaliação da eficácia do bot}
+\label{tab:metricas}
+\begin{tabular}{|p{3cm}|p{9cm}|}
+\hline
+\textbf{Categoria} & \textbf{Métricas} \\
+\hline
+\textbf{Engajamento} & Número de interações por aluno, distribuição temporal das interações, diversidade de tipos de interação \\
+\hline
+\textbf{Impacto pedagógico} & Mudanças na condução da aula, percepção de compreensão do conteúdo, tempo dedicado a esclarecimentos \\
+\hline
+\textbf{Usabilidade} & Facilidade de uso, problemas técnicos, curva de aprendizado \\
+\hline
+\textbf{Metodologias ativas} & Viabilidade de implementação, comparação com experiências presenciais \\
+\hline
+\end{tabular}
+\end{table}
+
+%=====================================================
+
+\section{Resultados Ilustrativos}
+\label{sec:resultados}
+
+%-----------------------------------------------------
+
+\subsection{Dados Quantitativos}
+\label{subsec:dados-quant}
+
+%-----------------------------------------------------
+
+\subsection{Análise Qualitativa}
+\label{subsec:analise-qual}
+
+Aspectos a serem analisados incluem:
+
+\begin{itemize}
+\item Facilidade dos alunos em expressar dúvidas através do bot
+\item Percepção dos professores sobre a identificação de tópicos problemáticos
+\item Curva de aprendizado da ferramenta
+\item Natureza não invasiva da ferramenta como fator de adoção
+\end{itemize}

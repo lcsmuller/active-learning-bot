@@ -2,66 +2,22 @@
 
 %=====================================================
 
-% A introdução geral do documento pode ser apresentada através das seguintes seções: Desafio, Motivação, Proposta, Contribuição e Organização do documento (especificando o que será tratado em cada um dos capítulos). O Capítulo 1 não contém subseções\footnote{Ver o Capítulo \ref{cap-exemplos} para comentários e exemplos de subseções.}.
+O ensino remoto tem se consolidado como uma alternativa viável para a disseminação do conhecimento, especialmente em cenários que exigem distanciamento social \cite{fabiane2024}. No entanto, essa modalidade apresenta desafios significativos, como a manutenção do engajamento dos alunos e a efetividade da comunicação entre docentes e discentes. A ausência de interações presenciais pode levar a uma experiência educacional menos dinâmica e participativa, distanciando as práticas pedagógicas de uma comunicação natural e espontânea \cite{fabiane2024}.
 
-Este modelo foi proposto com o intuito de padronizar e simplificar as monografias, dissertações e teses produzidas no Departamento de Informática da UFPR. Ele foi vagamente inspirado nas normas da ABNT (conforme indicado em \cite{bibufpr15}), mas não as segue \emph{ipsis litteris}. Várias alterações foram feitas com o objetivo de melhorar sua estética e tornar o texto mais legível para trabalhos na área de informática. A versão atualizada deste modelo está disponível em \cite{maziero15}.
+As metodologias ativas \cite{prince2004} de aprendizagem representam uma abordagem educacional que coloca o aluno como protagonista do processo de aprendizagem, em contraste com o ensino tradicional onde o estudante assume um papel predominantemente passivo. Estas metodologias envolvem participação direta, reflexão contínua e engajamento prático do aluno na construção do conhecimento. No contexto presencial, técnicas como aprendizagem baseada em problemas \cite{yew2016}, sala de aula invertida \cite{vanalten2019} e aprendizagem colaborativa \cite{laal2012} já demonstraram resultados positivos. No entanto, sua aplicação em ambientes remotos permanece um desafio significativo devido às limitações de interação natural entre os participantes \cite{fabiane2024}.
 
-Este modelo está baseado em uma classe especifica \verb#ppginf.cls#, que aceita várias opções de compilação. A versão do documento pode ser:
+A integração de tecnologias interativas no ambiente educacional virtual emerge como elemento essencial para superar os obstáculos do ensino remoto e viabilizar metodologias ativas neste contexto. Dentre essas ferramentas capazes de recriar os elementos de metodologias ativas, estão os bots. Os bots, programas de computador capazes de simular interações humanas de forma automatizada e personalizada, apresentam-se como ferramentas capazes de recriar elementos de naturalidade na comunicação digital, aproximando o ambiente virtual da espontaneidade característica das interações presenciais \cite{okonkwo2021}.
 
-\begin{itemize}
+Este trabalho tem como objetivo investigar o uso de bots como facilitadores de interações naturais em ambientes virtuais, o que poderia viabilizar a aplicação de metodologias ativas no ensino remoto. A pesquisa parte da observação que os bots podem atuar como pontes tecnológicas que diminuem a distância comunicativa entre participantes em ambientes virtuais, promovendo um fluxo mais natural e espontâneo de interações entre professores e alunos, sem que isso represente uma sobrecarga adicional para os docentes.
 
-\item \verb#defesa#: é gerado um documento em espaço 1,5, frente simples e sem as páginas iniciais adicionais; é uma versão adequada para receber as anotações dos membros da banca de defesa.
+Para alcançar este objetivo, foi desenvolvido um bot integrado ao Discord, uma plataforma de comunicação virtual que, embora não seja tradicionalmente educacional, foi escolhida por oferecer recursos que emulam eficientemente um ambiente de ensino interativo. A plataforma suporta videoconferência, chat simultâneo, compartilhamento de conteúdo e criação de enquetes, proporcionando um ecossistema digital onde interações naturais podem ser facilitadas por um bot que intermedia as interações entre professor e aluno.
 
-\item \verb#final#: é gerado um documento em espaço simples, frente/verso, com páginas iniciais (capa, ficha catalográfica, folha de aprovação, agradecimentos, etc). É uma versão bem mais compacta, mais ecológica e ideal para a impressão definitiva.
+A pesquisa busca analisar como este bot pode criar um ambiente virtual onde interações naturais são facilitadas, tornando viável a aplicação de princípios de ensino ativo mesmo à distância. O estudo examina especificamente como esta ferramenta pode transformar a natureza das comunicações digitais educacionais, aproximando-as da fluidez e espontaneidade das interações presenciais, elementos fundamentais para o sucesso das metodologias ativas.
 
-\end{itemize}
+A eficácia da ferramenta é avaliada em três dimensões principais: o aumento do engajamento espontâneo dos alunos durante as aulas remotas, a fluidez e naturalidade da comunicação entre docentes e discentes mediada pelo bot, e a receptividade dos usuários quanto à integração dessa tecnologia como elemento natural do processo educacional.
 
-Para obter os melhores resultados, compile este modelo usando a seguinte sequência de passos:
+O efeito do uso do bot proposto foi avaliado através da coleta de dados via preenchimento de questionários enviados aos participantes, e de informações extraídas pelo bot em sua mediação das interações básicas durante a experiência prática.
 
-\begin{quote}
-\begin{footnotesize}
-\begin{verbatim}
-pdflatex  main          // compilação inicial
-bibtex main             // processa referências bibliográficas
-pdflatex  main          // compilação final
-\end{verbatim}
-\end{footnotesize}
-\end{quote}
-
-ou
-
-\begin{quote}
-\begin{footnotesize}
-\begin{verbatim}
-make                    // faz tudo...
-\end{verbatim}
-\end{footnotesize}
-\end{quote}
-
-Os principais itens considerados na formatação deste documento foram:
-
-\begin{itemize}
-
-\item Papel em formato A4, com margens de 20 mm à direita e embaixo, 30 mm nos demais lados. Não devem ser usados cabeçalhos ou rodapés além dos que estão aqui propostos.
-
-\item O texto principal do documento escrito em 12 pontos. O fonte principal do texto pode ser selecionado no arquivo \verb#packages.tex#.
-
-\item Código-fonte, listagens e textos similares são formatados em fonte Courier 12 ou 10 pontos.
-
-\item O espaçamento padrão entre linhas é 1,5 linhas (1 linha na versão final). Não inserir espaços adicionais entre parágrafos normais. Figuras, tabelas, listagens e listas de itens devem ter um espaço adicional antes e após os mesmos.
-
-\item As páginas iniciais não são numeradas.
-
-\item O corpo do texto é numerado com algarismos arábicos (1, 2, 3, ...) a partir da introdução, ate o final do documento. Os números de página devem estar situados no alto à direita (páginas direitas) ou à esquerda (páginas esquerdas).
-
-\item Expressões em inglês, grego, latim ou outras línguas devem ser enfatizadas em itálico, como \emph{sui generis} ou \emph{scheduling} (use o comando \verb#\emph{...}#).
-
-\item Para reforçar algo, deve-se usar somente \textbf{negrito}. \underline{Sublinhado} ou MAIÚSCULAS não devem ser usados como forma de ênfase!
-
-\item As notas de rodapé também têm um modelo\footnote{As notas de rodapé dever ser escritas em tamanho 10 pt, numeradas em arábico.}. Notas de rodapé servem para fazer algum comentário paralelo; não as use para colocar URLs, referências bibliográficas ou significado de siglas.
-
-\end{itemize}
-
-Felizmente o \LaTeX\ resolve a maior parte dessas questões!
+Este trabalho está organizado da seguinte forma: o Capítulo 2 apresenta a revisão bibliográfica, abordando conceitos fundamentais sobre bots, interações naturais e metodologias ativas em ambientes virtuais; o Capítulo 3 descreve a concepção e implementação do bot educacional proposto, com foco nas funcionalidades que promovem interações naturais; o Capítulo 4 detalha a prova de conceito e analisa os resultados obtidos no ambiente educacional remoto; e o Capítulo 5 apresenta a conclusão com análise dos resultados, limitações do estudo e sugestões de trabalhos futuros.
 
 %=====================================================

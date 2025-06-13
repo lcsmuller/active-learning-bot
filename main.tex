@@ -27,13 +27,13 @@
 % a língua principal do documento deve vir POR ÚLTIMO.
 
 % Versão para a defesa (português)
-\documentclass[defesa,oneside,english,brazilian]{ppginf}
+% \documentclass[defesa,oneside,english,brazilian]{ppginf}
 
 % Versão para a defesa (inglês)
 %\documentclass[defesa,oneside,brazilian,english]{ppginf}
 
 % Versão final para a biblioteca da UFPR (português)
-%\documentclass[final,oneside,english,brazilian]{ppginf}
+\documentclass[final,oneside,english,brazilian]{ppginf}
 
 % Versão final para a biblioteca da UFPR (inglês)
 %\documentclass[final,oneside,brazilian,english]{ppginf}
@@ -55,16 +55,15 @@
 % Campos não utilizados podem ser removidos ou comentados.
 
 % título
-\title{Um modelo \LaTeX\ para dissertações e teses \\ (escrevi um título mais longo para ver como se comporta a quebra de linhas e o espaçamento entre elas)}
+\title{Bot Educacional para Facilitação de Metodologias Ativas no Ensino Remoto: Uma Abordagem de Interação Natural em Ambientes Virtuais}
 
 % palavras-chave e keywords (p/ resumo, abstract e metadados do PDF)
-\pchave{Palavra-chave 1. Palavra-chave 2. Palavra-chave 3.}
-\keyword{Keyword 1. Keyword 2. Keyword 3.}
+\pchave{Bots educacionais. Metodologias ativas. Ensino remoto. Interações mediadas. Feedback em tempo real.}
+\keyword{Educational bots. Active methodologies. Remote teaching. Mediated interactions. Real-time feedback.}
 
 % autoria
-\author{Carlos Alberto Maziero}
-\advisor{Donald Knuth}
-\coadvisor{Leslie Lamport}
+\author{Lucas Müller}
+\advisor{Bruno Müller}
 
 % instituição
 \IfLanguageName{brazilian}
@@ -81,7 +80,7 @@
   { \field{Computação} }
 
 % data (só o ano)
-\date{2018}
+\date{2025}
 
 % local
 \IfLanguageName{brazilian}
@@ -101,7 +100,7 @@
 % em português, mesmo em documentos em outras línguas. Vá entender...
 
 % tese de doutorado
-\descr{Tese apresentada como requisito parcial à obtenção do grau de Doutor em Ciência da Computação no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+% \descr{Tese apresentada como requisito parcial à obtenção do grau de Doutor em Ciência da Computação no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
 
 % exame de qualificação de doutorado
 %\descr{Documento apresentado como requisito parcial ao exame de qualificação de Doutorado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
@@ -113,7 +112,7 @@
 %\descr{Documento apresentado como requisito parcial ao exame de qualificação de Mestrado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
 
 % trabalho de conclusão de curso
-%\descr{Trabalho apresentado como requisito parcial à conclusão do Curso de Bacharelado em XYZ, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+\descr{Trabalho apresentado como requisito parcial à conclusão do Curso de Bacharelado em Ciência da Computação, Setor de Ciências Exatas, da Universidade Federal do Paraná}
 
 % trabalho de disciplina
 %\descr{Trabalho apresentado como requisito parcial à conclusão da disciplina XYZ no Curso de Bacharelado em XYZ, Setor de Ciências Exatas, da Universidade Federal do Paraná}
@@ -154,7 +153,7 @@
 \clearpage
 \listoftables				% tabelas
 \include{0-iniciais/acronimos}		% acrônimos, deve ser preenchida à mão
-\include{0-iniciais/simbolos}		% símbolos, idem
+% \include{0-iniciais/simbolos}		% símbolos, idem
 \tableofcontents			% sumário
 
 %=====================================================
@@ -166,10 +165,9 @@
 % inclusao de cada capítulo, alterar a gosto (do professor de Metodologia)
 \include{1-intro/texto}			% introdução
 \include{2-fundam/texto}		% fundamentação teórica
-%\include{3-arte/texto}			% estado da arte
-%\include{4-proposta/texto}		% proposta
-%\include{5-valida/texto}		% experimentação e validação
-%\include{6-conclusao/texto}		% conclusão
+\include{3-proposta/texto}		% proposta
+\include{4-valida/texto}		% experimentação e validação
+\include{5-conclusao/texto}		% conclusao
 
 %=====================================================
 
@@ -184,13 +182,13 @@
 %=====================================================
 
 % inclusão de apêndices
-\appendix
+% \appendix
 
 % inclusão de apêndice
-\include{a1-exemplo/texto}
+% \include{a1-exemplo/texto}
 
 % inclusão de apêndice
-\include{a2-exemplo/texto}
+% \include{a2-exemplo/texto}
 
 %=====================================================
 
