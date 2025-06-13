@@ -22,7 +22,7 @@ O modelo de interação implementado neste trabalho fundamenta-se nos três prin
 
 ## 3.2 Integração com o Ambiente Educacional
 
-O bot foi projetado para se integrar ao Discord, uma plataforma de comunicação digital que combina recursos de chat em texto, voz e compartilhamento de mídia. Embora o Discord tenha sido originalmente desenvolvido para comunidades de jogos, suas características o tornam adequado para emular um ambiente educacional remoto:
+O bot foi projetado para se integrar ao Discord, uma plataforma de comunicação digital que combina recursos de chat em texto, voz e compartilhamento de mídia. Embora o Discord tenha sido originalmente desenvolvido para comunidades de jogos, as seguintes características o tornam adequado para emular um ambiente educacional remoto:
 
 - **Canais temáticos**: Permitem organizar discussões por tópicos específicos
 - **Transmissão de voz/vídeo**: Facilita aulas síncronas com interação audiovisual
@@ -30,13 +30,15 @@ O bot foi projetado para se integrar ao Discord, uma plataforma de comunicação
 - **Sistema de reações**: Oferece mecanismo não-verbal para expressão de compreensão ou dúvidas
 - **Persistência de mensagens**: Mantém o histórico de interações disponível para consulta posterior
 
-A **integração sutil** com o ambiente educacional, mencionada anteriormente, refere-se à capacidade do bot de participar do processo educacional sem causar rupturas no fluxo natural da aula ou exigir mudanças drásticas nas práticas pedagógicas já estabelecidas. Essa sutileza manifesta-se em três dimensões:
+A **integração sutil** com o ambiente educacional, refere-se à capacidade do bot de participar do processo educacional sem causar rupturas no fluxo natural da aula ou exigir mudanças drásticas nas práticas pedagógicas já estabelecidas. Essa sutileza manifesta-se em três dimensões:
 
 1. **Presença não-intrusiva**: O bot não interrompe a condução da aula, apenas complementa as atividades quando solicitado ou programado.
 
 2. **Curva de aprendizado reduzida**: Professores e alunos não precisam dominar ferramentas complexas, pois as interações ocorrem através de comandos intuitivos e reações simples.
 
 3. **Flexibilidade metodológica**: O sistema adapta-se a diferentes estilos de ensino, não impondo uma abordagem pedagógica específica.
+
+Para materializar esta integração, o sistema também disponibiliza um dashboard específico para uso do professor, que permite o controle da aula de forma centralizada e intuitiva, sem a necessidade de comandos complexos ou interrupções no fluxo de comunicação, como será detalhado na seção 3.2.1.
 
 ### 3.2.1 Dashboard do Professor
 
@@ -52,7 +54,7 @@ Esta abordagem permite que o professor mantenha o controle pedagógico da aula s
 
 ## 3.3 Recursos para Promoção de Metodologias Ativas
 
-O bot implementa diversos recursos específicos para viabilizar metodologias ativas em ambiente remoto:
+O bot implementa diversos recursos específicos para viabilizar metodologias ativas em ambiente remoto. Na seção 3.3.1 é apresentado mecanismos de feedback em tempo real que permitem ao professor avaliar continuamente a compreensão dos alunos, a 3.3.2 aborda ferramentas para atividades colaborativas que incentivam a interação entre os estudantes, e por fim 3.3.3 trata das funcionalidades específicas para aprendizagem baseada em problemas que estimulam o raciocínio crítico e a resolução de situações práticas.
 
 ### 3.3.1 Feedback em Tempo Real
 
@@ -72,7 +74,7 @@ Para fomentar a aprendizagem entre pares, o bot oferece:
 
 ### 3.3.3 Aprendizagem Baseada em Problemas
 
-Para implementar esta metodologia ativa específica, o sistema disponibiliza:
+A aprendizagem baseada em problemas (seção 1) envolve vários elementos que podem ser incluídos em nosso aplicativo. Dentre esses elementos [ref], incluímos os seguintes, por serem os mais simples de se implementar:
 
 - **Desafios temporizados**: Problemas com tempo definido para resolução
 - **Pistas progressivas**: Sugestões que são liberadas gradualmente durante a resolução
@@ -80,7 +82,7 @@ Para implementar esta metodologia ativa específica, o sistema disponibiliza:
 
 ## 3.4 Exemplo Prático: Aula de Comandos de Repetição
 
-Para ilustrar a aplicação concreta do bot em um contexto educacional real, apresentamos a seguir um cenário baseado em uma aula da disciplina CI1055 - Algoritmos e Estruturas de Dados I, ministrada no Departamento de Informática da UFPR. O exemplo demonstra como o bot auxilia o professor durante uma aula sobre "Comandos de Repetição" em Pascal.
+Para ilustrar a aplicação concreta do bot em um contexto educacional real, apresentamos a seguir um cenário baseado em uma aula da disciplina CI1055 - Algoritmos e Estruturas de Dados I, ministrada no Departamento de Informática da UFPR. O exemplo demonstra como o bot auxilia o professor durante uma aula sobre "Comandos de Repetição" em Pascal. Nas próximas subseções, detalharemos as etapas de preparação da aula pelo professor e as interações que ocorrem durante a sessão síncrona, evidenciando como os recursos do bot facilitam a implementação das metodologias ativas.
 
 ### 3.4.1 Preparação da Aula
 
@@ -341,4 +343,3 @@ Resumo da aula: "Comandos de Repetição em Pascal"
 - Desafio "Números pares": 19/23 participaram, 15/19 completaram com sucesso
 - Alunos com participação abaixo do esperado: 2 (lista anexa)
 - Recomendação: Reforçar o conceito de incremento de variáveis na próxima aula
-````

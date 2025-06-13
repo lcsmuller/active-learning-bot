@@ -56,3 +56,7 @@ characteristics, detection and challenges. 2012 IEEE International Conference on
 [31] PESQUITA, C. Promoting active learning in bioinformatics through a chatbot-based interactive exercise. **Biochemistry and Molecular Biology Education**, v. 49, n. 2, p. 232-240, 2021.
 
 [32] WINKLER, R.; SÖLLNER, M. Unleashing the potential of chatbots in education: A state-of-the-art analysis. In: **Academy of Management Annual Meeting**, 2018.
+
+[33] Ligiane Nascimento Silva. TRANSFORMANDO A EDUCAÇÃO ONLINE: Os Impactos da Inteligência Artificial nos Cursos à Distância. Revista Gestão Universitária. Disponível em: http://gestaouniversitaria.com.br/artigos/transformando-a-educacao-online-os-impactos-da-inteligencia-artificial-nos-cursos-a-distancia
+
+[34] Silva, A. L., & Souza, M. C. (2024). A COVID-19 E OS DESAFIOS EDUCACIONAIS COVID-19 AND EDUCATIONAL CHALLENGES COVID-19 Y LOS DESAFÍOS EDUCATIVOS. Revista Científica Multidisciplinar Núcleo do Conhecimento, 19(03), 19-35.

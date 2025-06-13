@@ -40,7 +40,7 @@ Em termos de **funcionalidade**, os bots podem ser classificados como [9]:
 - **Comunidade**: Bots que ajudam a gerenciar comunidades, como bots de moderação em plataformas de redes sociais.
 - **Arquivadores**: Bots que ajudam a organizar e arquivar informações, como bots de gerenciamento de documentos ou bots de busca.
 
-Este trabalho concentra-se em bots informacionais e de produtividade, com foco em sua aplicação no contexto educacional, onde eles podem atuar como assistentes virtuais que facilitam a interação entre alunos e professores, a fim de promover um ambiente remoto de aprendizagem mais dinâmico e interativo.
+Este trabalho concentra-se em bots do tipo "produtividade" e "colaboração" como propósito, e "funcionalidade e qualidade" como funcionalidade. O foco é a sua aplicação dentro do contexto educacional, onde eles podem atuar como assistentes virtuais que facilitam a interação entre alunos e professores, a fim de promover um ambiente remoto de aprendizagem mais dinâmico e interativo.
 
 ## 2.3 Bots no Contexto Educacional
 
@@ -48,7 +48,7 @@ Na educação, os bots têm sido utilizados para diversos propósitos, desde for
 
 Estudos recentes têm explorado aplicações educacionais específicas de bots. Por exemplo, o uso de chatbots para melhorar a retenção de conhecimento em estudantes universitários [11], e aumentar o engajamento em cursos online abertos e massivos (MOOCs) [12].
 
-De uma maneira geral, bots educacionais são particularmente eficazes quando (1) fornecem feedback imediato aos alunos, (2) oferecem disponibilidade contínua para assistência, (3) personalizam a experiência de aprendizado, (4) reduzem a carga cognitiva dos instrutores e (5) facilitam a colaboração entre os alunos [ref].
+De uma maneira geral, bots educacionais são particularmente eficazes quando (1) fornecem feedback imediato aos alunos, (2) oferecem disponibilidade contínua para assistência, (3) personalizam a experiência de aprendizado, (4) reduzem a carga cognitiva dos instrutores e (5) permitem que os instrutores se concentrem em atividades pedagógicas e interativas [33].
 
 A seguir, exploramos quatro dimensões importantes relacionadas ao uso de bots educacionais: os desafios específicos do ensino remoto que podem ser mitigados por essas ferramentas, os princípios de interação humano-computador relevantes para o design de bots educacionais eficazes, os princípios fundamentais para a interação mediada por bots na educação, e o papel dos dashboards como ferramentas de controle pedagógico.
 
@@ -56,7 +56,7 @@ A seguir, exploramos quatro dimensões importantes relacionadas ao uso de bots e
 
 O ensino remoto apresenta desafios únicos que podem ser parcialmente mitigados pelo uso de tecnologias interativas como bots. Hodges et al. [14] distinguem entre "ensino remoto emergencial" e educação online planejada, destacando que muitas instituições foram forçadas a adotar o primeiro modelo durante a pandemia de COVID-19, sem tempo adequado para planejamento.
 
-Entre os principais desafios identificados estão [ref]:
+Entre os principais desafios identificados estão [34]:
 
 - Limitações tecnológicas e acesso desigual
 - Competências digitais insuficientes de professores e alunos

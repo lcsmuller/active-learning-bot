@@ -1,0 +1,3 @@
+[submodule "tese"]
+	path = tese
+	url = git@gitlab.c3sl.ufpr.br:lm19/tese.git

@@ -1,6 +1,6 @@
 # **Capítulo 4 – Prova de Conceito: Bot para Interação Educacional**
 
-Este capítulo apresenta a prova de conceito do bot educacional desenvolvido para este trabalho, detalhando sua implementação técnica e a metodologia de avaliação proposta para futuros experimentos.
+Este capítulo apresenta a prova de conceito do bot educacional desenvolvido para este trabalho, detalhando sua implementação técnica e a metodologia de avaliação proposta para futuros experimentos. O dashboard contêm elementos que são a representação gráfica do bot.
 
 ## 4.1 Contexto da Interação Professor-Aluno em Ambientes Remotos
 
