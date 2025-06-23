@@ -1,62 +1,90 @@
-\chapter{Bot Educacional para Metodologias Ativas em Ambientes Virtuais}
+\chapter{\textit{Bot} Educacional para Metodologias Ativas em Ambientes
+Virtuais}
 \label{cap:bot}
 
 % Usar o graphicspath para buscar figuras no subdiretório figuras
 \graphicspath{\currfiledir/figuras/}
 
-%=====================================================
-
-Este capítulo apresenta a concepção do bot educacional desenvolvido neste trabalho, sua arquitetura funcional e como ele se integra ao ambiente de ensino remoto para facilitar metodologias ativas. Para ilustrar a aplicação prática, utilizaremos um exemplo concreto baseado em uma aula de programação da disciplina CI1055 - Algoritmos e Estruturas de Dados I.
-
-%=====================================================
+Este capítulo apresenta a concepção do \textit{bot} educacional desenvolvido
+neste trabalho, sua arquitetura funcional e como ele se integra ao ambiente de
+ensino remoto para facilitar metodologias ativas. Para ilustrar a aplicação
+prática, utilizaremos um exemplo concreto baseado em uma aula de programação da
+disciplina CI1055 (Algoritmos e Estruturas de Dados I) do DINF da UFPR
+\cite{ufpr2021ci1055}.
 
 \section{Visão Conceitual da Aplicação}
 \label{sec:visao}
 
-O bot educacional proposto foi concebido como um mediador de interações em ambientes virtuais de aprendizagem, especificamente voltado para facilitar a implementação de metodologias ativas durante sessões de ensino remoto. O sistema atua como uma ponte entre professor e alunos, promovendo trocas mais naturais de informações e feedback.
+O \textit{bot} educacional proposto foi concebido como um mediador de interações
+em ambientes virtuais de aprendizagem, especificamente voltado para facilitar a
+implementação de metodologias ativas durante sessões de ensino remoto. O sistema
+atua como uma ponte entre professor e alunos, promovendo trocas mais naturais de
+informações e \textit{feedback}.
 
-A Figura a seguir ilustra o modelo conceitual de interação entre os participantes do processo educacional mediado pelo bot:
+A Figura a seguir ilustra o modelo conceitual de interação entre os
+participantes do processo educacional mediado pelo \textit{bot}:
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{modelo-interacao.png}
-\caption{Fluxo de interações no ambiente educacional virtual mediado pelo bot. A figura mostra um diagrama com o professor à esquerda, o dashboard do professor como interface de controle, o bot educacional ao centro, e os alunos à direita, ilustrando os fluxos de comunicação: (a) professor controlando a aula via dashboard, (b) dashboard enviando comandos ao bot, (c) bot processando e disponibilizando o material para os alunos, (d) alunos interagindo com o conteúdo, (e) bot coletando feedback dos alunos, e (f) bot fornecendo análises em tempo real ao professor através do dashboard.} 
+\includegraphics[width=16cm]{modelo-interacao.png}
+\caption{Fluxo de interações no ambiente educacional virtual mediado pelo
+\textit{bot}. A figura mostra um diagrama com o professor à esquerda, o
+\textit{dashboard} do professor como interface de controle, o \textit{bot}
+educacional ao centro, e os alunos à direita, ilustrando os fluxos de
+comunicação: (a) professor controlando a aula via \textit{dashboard}, (b)
+\textit{dashboard} enviando comandos ao \textit{bot}, (c) \textit{bot} 
+processando e disponibilizando o material para os alunos, (d) alunos interagindo
+com o conteúdo, (e) \textit{bot} coletando \textit{feedback} dos alunos, e (f)
+\textit{bot} fornecendo análises em tempo real ao professor através do
+\textit{dashboard}.} 
 \label{fig:modelo-interacao}
 \end{figure}
 
-O modelo de interação implementado neste trabalho fundamenta-se nos três princípios para interação mediada por bots na educação discutidos na Seção \ref{subsec:principios}: comunicação multidirecional, engajamento ativo e adaptação contextual. Estes princípios nortearam todo o processo de design e desenvolvimento da solução, garantindo que o bot efetivamente contribua para a implementação de metodologias ativas no ambiente virtual.
-
-%=====================================================
+O modelo de interação implementado neste trabalho fundamenta-se nos três
+princípios para interação mediada por \textit{bots} na educação discutidos na
+Seção \ref{subsec:principios}: comunicação multidirecional, engajamento ativo e
+adaptação contextual. Estes princípios nortearam todo o processo de
+\textit{design} e desenvolvimento da solução, garantindo que o \textit{bot}
+efetivamente contribua para a implementação de metodologias ativas no ambiente
+virtual.
 
 \section{Integração com o Ambiente Educacional}
 \label{sec:integracao}
 
-O bot foi projetado para se integrar ao Discord, uma plataforma de comunicação digital que combina recursos de chat em texto, voz e compartilhamento de mídia. Embora o Discord tenha sido originalmente desenvolvido para comunidades de jogos, as seguintes características o tornam adequado para emular um ambiente educacional remoto:
-
-\begin{itemize}
-\item \textbf{Canais temáticos}: Permitem organizar discussões por tópicos específicos
-\item \textbf{Transmissão de voz/vídeo}: Facilita aulas síncronas com interação audiovisual
-\item \textbf{Compartilhamento de tela}: Possibilita demonstrações práticas pelo professor
-\item \textbf{Sistema de reações}: Oferece mecanismo não-verbal para expressão de compreensão ou dúvidas
-\item \textbf{Persistência de mensagens}: Mantém o histórico de interações disponível para consulta posterior
-\end{itemize}
-
-A \textbf{integração sutil} com o ambiente educacional, refere-se à capacidade do bot de participar do processo educacional sem causar rupturas no fluxo natural da aula ou exigir mudanças drásticas nas práticas pedagógicas já estabelecidas. Essa sutileza manifesta-se em três dimensões:
+O \textit{bot} foi projetado para se integrar ao Discord, pelos motivos
+discutidos na Seção \ref{sec:ferramentas}. A integração sutil com o ambiente
+educacional, refere-se à capacidade do \textit{bot} de participar do processo
+educacional sem causar rupturas no fluxo natural da aula ou exigir mudanças
+drásticas nas práticas pedagógicas já estabelecidas. Essa sutileza manifesta-se
+em três dimensões:
 
 \begin{enumerate}
-\item \textbf{Presença não-intrusiva}: O bot não interrompe a condução da aula, apenas complementa as atividades quando solicitado ou programado.
-\item \textbf{Curva de aprendizado reduzida}: Professores e alunos não precisam dominar ferramentas complexas, pois as interações ocorrem através de comandos intuitivos e reações simples.
-\item \textbf{Flexibilidade metodológica}: O sistema adapta-se a diferentes estilos de ensino, não impondo uma abordagem pedagógica específica.
+\item \textbf{Presença não-intrusiva}: O \textit{bot} não interrompe a condução
+da aula, apenas complementa as atividades quando solicitado ou programado.
+\item \textbf{Curva de aprendizado reduzida}: Professores e alunos não precisam
+dominar ferramentas complexas, pois as interações ocorrem através de comandos
+intuitivos e reações simples.
+\item \textbf{Flexibilidade metodológica}: O sistema adapta-se a diferentes
+estilos de ensino, não impondo uma abordagem pedagógica específica.
 \end{enumerate}
 
-Para materializar esta integração, o sistema também disponibiliza um dashboard específico para uso do professor, que permite o controle da aula de forma centralizada e intuitiva, sem a necessidade de comandos complexos ou interrupções no fluxo de comunicação, como será detalhado na seção \ref{subsec:dashboard}.
+Para materializar esta integração, o sistema também disponibiliza um
+\textit{dashboard} específico para uso do professor, como visto em
+\ref{subsec:dashboards}, que permite o controle da aula de forma centralizada e
+intuitiva, sem a necessidade de comandos complexos ou interrupções no fluxo de
+comunicação, como será detalhado na seção \ref{subsec:dashboard}.
 
-%-----------------------------------------------------
-
-\subsection{Dashboard do Professor}
+\subsection{\textit{Dashboard} do Professor}
 \label{subsec:dashboard}
 
-Um elemento chave do sistema é o dashboard exclusivo para o professor, que permite controlar o fluxo da aula sem a necessidade de inserir comandos no chat principal. Este dashboard é apresentado como uma interface web segura, acessível apenas pelo professor, que se comunica com o bot em tempo real. Esta abordagem está diretamente alinhada com o objetivo de proporcionar uma integração não-invasiva ao fluxo de trabalho docente, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo \ref{cap:revisao}. Através dele, o professor pode:
+Um elemento chave do sistema é o \textit{dashboard} exclusivo para o professor,
+que permite controlar o fluxo da aula sem a necessidade de inserir comandos no
+\textit{chat} principal. Este \textit{dashboard} é apresentado como uma
+interface web segura, acessível apenas pelo professor, que se comunica com o
+\textit{bot} em tempo real. Esta abordagem está diretamente alinhada com o
+objetivo de proporcionar uma integração não-invasiva ao fluxo de trabalho
+docente, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo
+\ref{cap:revisao}. Através dele, o professor pode:
 
 \begin{itemize}
 \item Visualizar estatísticas de engajamento dos alunos em tempo real
@@ -66,67 +94,86 @@ Um elemento chave do sistema é o dashboard exclusivo para o professor, que perm
 \item Obter relatórios detalhados sobre o desempenho da turma
 \end{itemize}
 
-Esta abordagem permite que o professor mantenha o controle pedagógico da aula sem interrupções no fluxo da comunicação, enquanto os alunos interagem diretamente com o bot através de slash commands e reações no ambiente do Discord.
-
-%=====================================================
+Esta abordagem permite que o professor mantenha o controle pedagógico da aula
+sem interrupções no fluxo da comunicação, enquanto os alunos interagem
+diretamente com o \textit{bot} através de \textit{slash commands} e reações no
+ambiente do Discord.
 
 \section{Recursos para Promoção de Metodologias Ativas}
 \label{sec:recursos}
 
-O bot implementa diversos recursos específicos para viabilizar metodologias ativas em ambiente remoto. Na seção \ref{subsec:feedback} é apresentado mecanismos de feedback em tempo real que permitem ao professor avaliar continuamente a compreensão dos alunos, a \ref{subsec:colaboracao} aborda ferramentas para atividades colaborativas que incentivam a interação entre os estudantes, e por fim \ref{subsec:pbl} trata das funcionalidades específicas para aprendizagem baseada em problemas que estimulam o raciocínio crítico e a resolução de situações práticas.
+O \textit{bot} implementa diversos recursos específicos para viabilizar
+metodologias ativas em ambiente remoto. Na seção \ref{subsec:feedback} é
+apresentado mecanismos de \textit{feedback} em tempo real que permitem ao
+professor avaliar continuamente a compreensão dos alunos, a
+\ref{subsec:colaboracao} aborda ferramentas para atividades colaborativas que
+incentivam a interação entre os estudantes, e por fim \ref{subsec:pbl} trata das
+funcionalidades específicas para aprendizagem baseada em problemas que estimulam
+o raciocínio crítico e a resolução de situações práticas.
 
-%-----------------------------------------------------
-
-\subsection{Feedback em Tempo Real}
+\subsection{\textit{Feedback} em Tempo Real}
 \label{subsec:feedback}
 
-Um dos principais desafios do ensino remoto é perceber as reações dos alunos. O bot permite que os estudantes expressem sua compreensão ou dúvidas durante a explanação, sem interromper o fluxo da aula, através de:
+Um dos principais desafios do ensino remoto é perceber as reações dos alunos. O
+\textit{bot} permite que os estudantes expressem sua compreensão ou dúvidas
+durante a explanação, sem interromper o fluxo da aula, através de:
 
 \begin{itemize}
-\item \textbf{Barômetro de compreensão}: Interface visual que agregada as reações dos alunos
-\item \textbf{Alertas de dificuldade}: Notificação ao professor quando um número significativo de alunos indica não compreender um tópico
-\item \textbf{Dúvidas anônimas}: Permite que alunos enviem questões sem exposição pública
+\item \textbf{Barômetro de compreensão}: Interface visual que agregada as
+reações dos alunos
+\item \textbf{Alertas de dificuldade}: Notificação ao professor quando um número
+significativo de alunos indica não compreender um tópico
+\item \textbf{Dúvidas anônimas}: Permite que alunos enviem questões sem
+exposição pública
 \end{itemize}
-
-%-----------------------------------------------------
 
 \subsection{Atividades Colaborativas}
 \label{subsec:colaboracao}
 
-Para fomentar a aprendizagem entre pares, o bot oferece:
+Para fomentar a aprendizagem entre pares, o \textit{bot} oferece:
 
 \begin{itemize}
-\item \textbf{Grupos dinâmicos}: Formação automática de equipes para discussão de tópicos específicos
-\item \textbf{Compartilhamento facilitado}: Interface para troca de soluções e ideias entre alunos
-\item \textbf{Revisão coletiva}: Sistema para avaliação colaborativa de respostas
+\item \textbf{Grupos dinâmicos}: Formação automática de equipes para discussão
+de tópicos específicos
+\item \textbf{Compartilhamento facilitado}: Interface para troca de soluções e
+ideias entre alunos
+\item \textbf{Revisão coletiva}: Sistema para avaliação colaborativa de
+respostas
 \end{itemize}
-
-%-----------------------------------------------------
 
 \subsection{Aprendizagem Baseada em Problemas}
 \label{subsec:pbl}
 
-A aprendizagem baseada em problemas (seção 1) envolve vários elementos que podem ser incluídos em nosso aplicativo. Dentre esses elementos, incluímos os seguintes, por serem os mais simples de se implementar:
+A aprendizagem baseada em problemas (vide Seção \ref{cap:intro}) envolve vários
+elementos que podem ser incluídos em nosso aplicativo. Dentre esses elementos,
+incluímos os seguintes, por serem os mais simples de se implementar:
 
 \begin{itemize}
-\item \textbf{Desafios temporizados}: Problemas com tempo definido para resolução
-\item \textbf{Pistas progressivas}: Sugestões que são liberadas gradualmente durante a resolução
-\item \textbf{Compilação e execução de código}: Para disciplinas de programação, execução segura de códigos submetidos pelos alunos
+\item \textbf{Desafios temporizados}: Problemas com tempo definido para
+resolução
+\item \textbf{Pistas progressivas}: Sugestões que são liberadas gradualmente
+durante a resolução
+\item \textbf{Compilação e execução de código}: Para disciplinas de programação,
+execução segura de códigos submetidos pelos alunos
 \end{itemize}
-
-%=====================================================
 
 \section{Exemplo Prático: Aula de Comandos de Repetição}
 \label{sec:exemplo}
 
-Para ilustrar a aplicação concreta do bot em um contexto educacional real, apresentamos a seguir um cenário baseado em uma aula da disciplina CI1055 - Algoritmos e Estruturas de Dados I, ministrada no Departamento de Informática da UFPR. O exemplo demonstra como o bot auxilia o professor durante uma aula sobre "Comandos de Repetição" em Pascal. Nas próximas subseções, detalharemos as etapas de preparação da aula pelo professor e as interações que ocorrem durante a sessão síncrona, evidenciando como os recursos do bot facilitam a implementação das metodologias ativas.
-
-%-----------------------------------------------------
+Para ilustrar a aplicação concreta do \textit{bot} em um contexto educacional
+real, apresentamos a seguir um cenário baseado em uma aula da disciplina CI1055
+- Algoritmos e Estruturas de Dados I, ministrada no Departamento de Informática
+da UFPR. O exemplo demonstra como o \textit{bot} auxilia o professor durante uma
+aula sobre "Comandos de Repetição" em Pascal. Nas próximas seções, detalharemos
+as etapas de preparação da aula pelo professor e as interações que ocorrem
+durante a sessão síncrona, evidenciando como os recursos do \textit{bot}
+facilitam a implementação das metodologias ativas.
 
 \subsection{Preparação da Aula}
 \label{subsec:preparacao}
 
-Antes da aula, o professor utiliza o dashboard para preparar o material didático:
+Antes da aula, o professor utiliza o \textit{dashboard} para preparar o material
+didático:
 
 \begin{lstlisting}[
   basicstyle=\ttfamily\footnotesize,
@@ -143,7 +190,7 @@ Antes da aula, o professor utiliza o dashboard para preparar o material didátic
   showstringspaces=false,
   tabsize=2
 ]
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Criar Nova Aula
 Título: "Comandos de Repetição em Pascal"
 Descrição: "Introdução aos comandos de repetição em Pascal com foco no comando while"
@@ -183,8 +230,6 @@ end.
 
 O sistema confirma a criação da aula e fornece um código de acesso para os alunos.
 
-%-----------------------------------------------------
-
 \subsection{Interação Durante a Aula}
 \label{subsec:interacao}
 
@@ -205,7 +250,7 @@ Durante a aula síncrona, as seguintes interações ocorrem:
   showstringspaces=false,
   tabsize=2
 ]
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Aula "Comandos de Repetição em Pascal"
 Sistema: Aula iniciada. Os alunos podem acessar usando o código #AED1-2310.
 
@@ -214,14 +259,14 @@ Sistema: Exibindo "Objetivos da aula" para todos os participantes.
 
 [Discord - Canal da Aula]
 Bot: @everyone O professor iniciou a aula "Comandos de Repetição em Pascal". 
-     Use /participar para confirmar sua presença.
+     Use (*@\textit{/participar}@*) para confirmar sua presença.
 
-[Vários alunos utilizam o comando /participar]
+[Vários alunos utilizam o comando (*@\textit{/participar}@*)]
 
 Professor [no canal de voz]: Vamos começar entendendo por que precisamos de comandos 
                              de repetição. Observem este exemplo inicial no canal.
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Mostrar Código "Exemplo inicial"
 Sistema: Código exibido no canal #exemplos-de-codigo.
 
@@ -239,18 +284,18 @@ end.
 ```
 Para testar este código, utilize /executar exemplo1
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Discussão
 [Pergunta] "Qual o problema desta abordagem se quisermos imprimir de 1 até 1000?"
 
 [Discord - Canal da Aula]
 Bot: DISCUSSÃO: Qual o problema desta abordagem se quisermos imprimir de 1 até 1000?
-     Use /responder para participar da discussão.
+     Use (*@\textit{/responder}@*) para participar da discussão.
 
-Aluno1: /responder Teríamos que escrever mil linhas de código!
-Aluno2: /responder Código muito repetitivo e difícil de manter.
+Aluno1: (*@\textit{/responder}@*) Teríamos que escrever mil linhas de código!
+Aluno2: (*@\textit{/responder}@*) Código muito repetitivo e difícil de manter.
 
-[Dashboard do Professor - Painel de Engajamento]
+[(*@\textit{Dashboard}@*) do Professor - Painel de Engajamento]
 Status: 15/23 alunos responderam
 Participação ativa: 65%
 Respostas mais comuns: "código repetitivo" (60%), "muitas linhas" (27%)
@@ -259,14 +304,14 @@ Respostas mais comuns: "código repetitivo" (60%), "muitas linhas" (27%)
 [5 alunos reagem com "joinha" (entendi)]
 [2 alunos reagem com "?" (tenho dúvida)]
 
-[Dashboard do Professor - Alertas]
+[(*@\textit{Dashboard}@*) do Professor - Alertas]
 ATENÇÃO 2 alunos indicaram dúvidas sobre o conceito atual.
 Recomendação: Revisitar o conceito com uma abordagem alternativa.
 
 Professor [no canal de voz]: Estou vendo que temos algumas dúvidas. 
                              Vamos revisitar o conceito de forma diferente.
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Mostrar Exemplo Interativo
 [Título] "Loop while básico"
 [Código]
@@ -313,7 +358,7 @@ Bot:
 Aluno8: /duvida O que acontece se eu esquecer de incrementar i dentro do loop?
 Bot: @Professor Dúvida enviada anonimamente: "O que acontece se eu esquecer de incrementar i dentro do loop?"
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Responder Dúvida
 [Criar Exemplo] "Loop infinito"
 ```pascal
@@ -353,7 +398,7 @@ repetir o mesmo valor várias vezes:
 ...
 ```
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Criar Desafio
 [Título] "Números pares"
 [Descrição] "Escreva um programa que leia um número n e imprima todos os números pares de 2 até n"
@@ -370,13 +415,13 @@ Use /iniciar-desafio para começar a resolver.
 
 [Vários alunos utilizam o comando /iniciar-desafio, recebendo acesso a canais privados para resolver o problema]
 
-[Dashboard do Professor - Monitor de Progresso]
+[(*@\textit{Dashboard}@*) do Professor - Monitor de Progresso]
 15/23 alunos iniciaram o desafio
 8/23 já submeteram soluções
 6/23 passaram em todos os testes
 
 [Após o tempo definido]
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Encerrar Desafio
 > Compartilhar Solução Anônima [ID: 3]
 
@@ -401,7 +446,7 @@ begin
 end.
 ```
 
-[Dashboard do Professor]
+[(*@\textit{Dashboard}@*) do Professor]
 > Encerrar Aula
 > Gerar Relatório
 
@@ -409,7 +454,7 @@ end.
 Bot: Esta aula foi encerrada. Um resumo das atividades foi enviado ao professor.
      Todo o material continua disponível para consulta nos canais respectivos.
 
-[E-mail do Professor - Relatório Automático]
+[(*@\textit{E-mail}@*) do Professor - Relatório Automático]
 Resumo da aula: "Comandos de Repetição em Pascal"
 - Participação: 23/25 alunos ativos (92%)
 - Média de interações por aluno: 7.2
