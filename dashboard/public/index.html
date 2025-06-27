@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCC Bot Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div id="header-container"></div>
+        
+        <!-- Student Feedback & Real-time Events -->
+        <div id="events-container"></div>
+
+        <!-- Highlighted Messages -->
+        <div id="highlighted-messages-container"></div>
+
+        <!-- Currently Active Content -->
+        <div id="active-content-container"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <!-- Class Management -->
+            <div id="class-management-container"></div>
+            
+            <!-- Content Sharing -->
+            <div id="content-sharing-container"></div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript modules -->
+    <script type="module" src="./js/dashboard-app.js"></script>
+    <script>
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Simple component loading without module imports for initial load
+            const components = [
+                { file: 'header.html', target: '#header-container' },
+                { file: 'events.html', target: '#events-container' },
+                { file: 'highlighted-messages.html', target: '#highlighted-messages-container' },
+                { file: 'active-content.html', target: '#active-content-container' },
+                { file: 'class-management.html', target: '#class-management-container' },
+                { file: 'content-sharing.html', target: '#content-sharing-container' }
+            ];
+
+            // Load components
+            for (const component of components) {
+                try {
+                    const response = await fetch(`./components/${component.file}`);
+                    if (response.ok) {
+                        const html = await response.text();
+                        const targetElement = document.querySelector(component.target);
+                        if (targetElement) {
+                            targetElement.innerHTML = html;
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Failed to load component ${component.file}:`, error);
+                }
+            }
+            
+            // Dispatch a custom event to signal that components are loaded
+            document.dispatchEvent(new CustomEvent('componentsLoaded'));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- Header Component -->
+<div class="header">
+    <div class="header-main">
+        <h1>🤖 TCC Bot Dashboard</h1>
+        <p>Educational Bot Control Panel</p>
+    </div>
+    <div class="header-class-status" id="header-class-status">
+        <div class="header-class-title">📚 Current Class</div>
+        <div class="header-class-content">
+            <div class="header-no-class" id="header-no-class">No active class</div>
+            <div class="hidden" id="header-class-info">
+                <div class="header-class-item">
+                    <span class="header-class-label">Title:</span>
+                    <span class="header-class-value" id="header-class-title"></span>
+                </div>
+                <div class="header-class-item">
+                    <span class="header-class-label">Code:</span>
+                    <span class="header-class-value" id="header-class-code"></span>
+                </div>
+                <div class="header-class-item">
+                    <span class="header-class-label">Started:</span>
+                    <span class="header-class-value" id="header-class-time"></span>
+                </div>
+                <div class="header-class-item">
+                    <span class="header-class-label">Students:</span>
+                    <span class="header-class-value" id="header-student-count">0 students online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-status">
+        <div class="status-indicator" id="bot-status">
+            <div class="status-dot disconnected" id="bot-status-dot"></div>
+            <span class="status-text" id="bot-status-text">Bot Disconnected</span>
+        </div>
+        <div class="status-indicator" id="dashboard-status">
+            <div class="status-dot disconnected" id="dashboard-status-dot"></div>
+            <span class="status-text" id="dashboard-status-text">Dashboard Disconnected</span>
+        </div>
+    </div>
+</div>

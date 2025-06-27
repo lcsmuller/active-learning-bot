@@ -1,0 +1,25 @@
+{
+  "name": "educational-bot-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard for Educational Discord Bot",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo \"Building dashboard...\" && echo \"Modular dashboard ready!\"",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "educational-bot",
+    "dashboard",
+    "discord",
+    "remote-learning"
+  ],
+  "author": "Lucas Müller",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.18.3"
+  }
+}
+

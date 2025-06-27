@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'dashboard/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: ./dashboard
+        run: npm ci
+
+      - name: Type check
+        working-directory: ./dashboard
+        run: npm run type-check
+
+      - name: Run ESLint
+        working-directory: ./dashboard
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        working-directory: ./dashboard
+        run: npm run format:check
+
+      - name: Run tests
+        working-directory: ./dashboard
+        run: npm test
+
+      - name: Build project
+        working-directory: ./dashboard
+        run: npm run build
