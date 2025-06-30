@@ -1,0 +1,4 @@
+[submodule "bot/concord"]
+	path = bot/concord
+	url = git@github.com:Cogmasters/concord.git
+	branch = dev

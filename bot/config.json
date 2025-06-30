@@ -1,0 +1,27 @@
+{
+    "token": "${DISCORD_TOKEN}",
+    "log": {
+        "level": "TRACE",
+        "trace": "tccbot_trace.log",
+        "quiet": false,
+        "overwrite": true,
+        "color": true,
+        "http": "tccbot_http.log",
+        "ws": "tccbot_ws.log",
+        "disable": ["WEBSOCKETS", "HTTP"]
+    },
+    "setup": {
+        "application_id": "1389434170534793236",
+        "guild_id": "1389434830755860500",
+        "rules_channel_id": "1389697485789859950",
+        "announcements_channel_id": "1389697586541236365",
+        "voice_channels_category_id": "1389434832106295380",
+        "class_codes": [
+            "AED1-2024",
+            "PROG-101",
+            "ALGO-202",
+            "COMP-301",
+            "DATA-401"
+        ]
+    }
+}

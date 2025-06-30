@@ -1,0 +1,12 @@
+# Ignore all
+*
+# But these
+!.gitignore
+!config.json
+!main.c
+!setup.c
+!Makefile
+!concord
+!examples/
+!src/
+!include/

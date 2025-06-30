@@ -88,16 +88,16 @@ docente, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo
 
 \begin{itemize}
 \item Visualizar estatísticas de engajamento dos alunos em tempo real
-\item Controlar a apresentação de slides e materiais didáticos
 \item Receber alertas sobre dúvidas e dificuldades dos alunos
 \item Lançar atividades interativas e acompanhar seu progresso
 \item Obter relatórios detalhados sobre o desempenho da turma
+\item Destacar respostas e discussões dos alunos para promover a colaboração
 \end{itemize}
 
 Esta abordagem permite que o professor mantenha o controle pedagógico da aula
 sem interrupções no fluxo da comunicação, enquanto os alunos interagem
-diretamente com o \textit{bot} através de \textit{slash commands} e reações no
-ambiente do Discord.
+diretamente com o \textit{bot} através de comandos e reações no ambiente do
+Discord.
 
 \section{Recursos para Promoção de Metodologias Ativas}
 \label{sec:recursos}
@@ -105,11 +105,9 @@ ambiente do Discord.
 O \textit{bot} implementa diversos recursos específicos para viabilizar
 metodologias ativas em ambiente remoto. Na seção \ref{subsec:feedback} é
 apresentado mecanismos de \textit{feedback} em tempo real que permitem ao
-professor avaliar continuamente a compreensão dos alunos, a
-\ref{subsec:colaboracao} aborda ferramentas para atividades colaborativas que
-incentivam a interação entre os estudantes, e por fim \ref{subsec:pbl} trata das
-funcionalidades específicas para aprendizagem baseada em problemas que estimulam
-o raciocínio crítico e a resolução de situações práticas.
+professor avaliar continuamente a compreensão dos alunos, e \ref{subsec:pbl}
+trata das funcionalidades específicas para aprendizagem baseada em problemas que
+estimulam o raciocínio crítico e a resolução de situações práticas.
 
 \subsection{\textit{Feedback} em Tempo Real}
 \label{subsec:feedback}
@@ -125,20 +123,6 @@ reações dos alunos
 significativo de alunos indica não compreender um tópico
 \item \textbf{Dúvidas anônimas}: Permite que alunos enviem questões sem
 exposição pública
-\end{itemize}
-
-\subsection{Atividades Colaborativas}
-\label{subsec:colaboracao}
-
-Para fomentar a aprendizagem entre pares, o \textit{bot} oferece:
-
-\begin{itemize}
-\item \textbf{Grupos dinâmicos}: Formação automática de equipes para discussão
-de tópicos específicos
-\item \textbf{Compartilhamento facilitado}: Interface para troca de soluções e
-ideias entre alunos
-\item \textbf{Revisão coletiva}: Sistema para avaliação colaborativa de
-respostas
 \end{itemize}
 
 \subsection{Aprendizagem Baseada em Problemas}
@@ -252,16 +236,14 @@ Durante a aula síncrona, as seguintes interações ocorrem:
 ]
 [(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Aula "Comandos de Repetição em Pascal"
-Sistema: Aula iniciada. Os alunos podem acessar usando o código #AED1-2310.
-
-> Mostrar Slide 1
-Sistema: Exibindo "Objetivos da aula" para todos os participantes.
+Sistema: Aula iniciada. Os alunos podem acessar o canal de vídeo usando o código
+         de acesso enviado em sua mensagem privada.
 
 [Discord - Canal da Aula]
 Bot: @everyone O professor iniciou a aula "Comandos de Repetição em Pascal". 
-     Use (*@\textit{/participar}@*) para confirmar sua presença.
+     Entre no canal de videoconferência para confirmar sua presença.
 
-[Vários alunos utilizam o comando (*@\textit{/participar}@*)]
+[Vários alunos entram no canal de vídeo]
 
 Professor [no canal de voz]: Vamos começar entendendo por que precisamos de comandos 
                              de repetição. Observem este exemplo inicial no canal.
@@ -282,7 +264,7 @@ begin
   writeln(5);
 end.
 ```
-Para testar este código, utilize /executar exemplo1
+Para testar este código, utilize /executar
 
 [(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Discussão

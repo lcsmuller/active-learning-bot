@@ -2,5 +2,11 @@
     "eslint.format.enable": true,
     "eslint.workingDirectories": [
       "./dashboard"  
-    ]
+    ],
+    "files.associations": {
+      "*.PRE.h": "csharp",
+      "discord.h": "c",
+      "logmod.h": "c",
+      "tccbot.h": "c"
+    }
 }

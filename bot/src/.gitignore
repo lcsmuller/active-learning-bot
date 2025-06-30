@@ -1,0 +1,9 @@
+# Ignore all files
+*
+# But these
+!.gitignore
+!Makefile
+!tccbot_context.c
+!tccbot_dashboard.c
+!tccbot_dashboard-events.c
+!tccbot_interactions-handler.c

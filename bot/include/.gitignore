@@ -1,0 +1,5 @@
+# Ignore all files
+*
+# But these
+!.gitignore
+!tccbot.h
