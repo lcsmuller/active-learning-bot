@@ -2,18 +2,51 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const { WebSocketServer } = require('ws');
+const session = require('express-session');
 
 const app = express();
 const server = http.createServer(app);
 
+// Demo credentials
+const DEMO_CREDENTIALS = {
+  email: 'demo@ufpr.br',
+  password: 'demo'
+};
+
+// Session middleware
+app.use(session({
+  secret: 'tccbot-dashboard-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false, // Set to true if using HTTPS
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
+}));
+
 // Basic middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+
+// Authentication middleware
+function requireAuth(req, res, next) {
+  if (req.session && req.session.authenticated) {
+    return next();
+  } else {
+    return res.redirect('/login');
+  }
+}
+
+// Serve static files only for authenticated users (except login page)
+app.use('/public', requireAuth, express.static(path.join(__dirname, 'public')));
+app.use('/js', requireAuth, express.static(path.join(__dirname, 'public/js')));
+app.use('/css', requireAuth, express.static(path.join(__dirname, 'public/css')));
+app.use('/components', requireAuth, express.static(path.join(__dirname, 'public/components')));
 
 const wss = new WebSocketServer({ server });
 
 let botSocket = null;
-let dashboardSocket = null;
+let dashboardSockets = new Set(); // Support multiple dashboard connections
 
 let classMetrics = {
   classInfo: null,
@@ -273,19 +306,28 @@ function trackBotEvent(data) {
 }
 
 /**
- * Send class metrics to dashboard when class ends
+ * Send class metrics to all connected dashboards when class ends
  */
 function sendMetricsToDashboard() {
-  if (dashboardSocket?.readyState === 1 && classMetrics.classInfo) {
+  if (dashboardSockets.size > 0 && classMetrics.classInfo) {
     const metricsMessage = {
       event: 'class_metrics',
       data: serializeMetrics()
     };
     
-    console.log('Sending class metrics to dashboard:', metricsMessage.data);
-    dashboardSocket.send(JSON.stringify(metricsMessage));
+    console.log(`Sending class metrics to ${dashboardSockets.size} dashboard(s):`, metricsMessage.data);
+    
+    // Send to all connected dashboards
+    dashboardSockets.forEach(dashboardSocket => {
+      if (dashboardSocket.readyState === 1) {
+        dashboardSocket.send(JSON.stringify(metricsMessage));
+      } else {
+        // Remove disconnected sockets
+        dashboardSockets.delete(dashboardSocket);
+      }
+    });
   } else {
-    console.log('Cannot send metrics - dashboard not connected or no class data');
+    console.log('Cannot send metrics - no dashboards connected or no class data');
   }
 }
 
@@ -305,20 +347,26 @@ wss.on('connection', (ws) => {
           console.log('Bot connected');
         } else if (message.data.type === 'dashboard') {
           ws.type = 'dashboard';
-          dashboardSocket = ws;
-          console.log('Dashboard connected');
+          dashboardSockets.add(ws);
+          console.log(`Dashboard connected. Total dashboards: ${dashboardSockets.size}`);
         }
       } else if (ws.type === 'bot') {
-        console.log(`Forwarding bot message to dashboard: ${message.event}`);
+        console.log(`Forwarding bot message to ${dashboardSockets.size} dashboard(s): ${message.event}`);
         
         // Track metrics for bot events
         if (message.event === 'bot_event') {
           trackBotEvent(message.data);
         }
         
-        if (dashboardSocket?.readyState === 1) {
-          dashboardSocket.send(JSON.stringify(message));
-        }
+        // Send to all connected dashboards
+        dashboardSockets.forEach(dashboardSocket => {
+          if (dashboardSocket.readyState === 1) {
+            dashboardSocket.send(JSON.stringify(message));
+          } else {
+            // Remove disconnected sockets
+            dashboardSockets.delete(dashboardSocket);
+          }
+        });
       } else if (ws.type === 'dashboard') {
         console.log(`Forwarding dashboard message to bot: ${message.event}`);
         
@@ -341,14 +389,167 @@ wss.on('connection', (ws) => {
     if (ws === botSocket) {
       botSocket = null;
       console.log('Bot disconnected');
-    } else if (ws === dashboardSocket) {
-      dashboardSocket = null;
-      console.log('Dashboard disconnected');
+    } else if (ws.type === 'dashboard') {
+      dashboardSockets.delete(ws);
+      console.log(`Dashboard disconnected. Remaining dashboards: ${dashboardSockets.size}`);
     }
   });
 
   ws.on('error', (err) => {
     console.error(`WebSocket error on ${socketId}:`, err);
+  });
+});
+
+// Authentication routes
+app.get('/login', (req, res) => {
+  if (req.session && req.session.authenticated) {
+    return res.redirect('/');
+  }
+  res.send(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCC Bot Dashboard - Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-header h1 {
+            color: #333;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .login-header p {
+            color: #666;
+            margin: 0.5rem 0 0;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+        .error {
+            color: #e74c3c;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .demo-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+        .demo-info h3 {
+            margin: 0 0 0.5rem;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .demo-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🤖 TCC Bot Dashboard</h1>
+            <p>Educational Discord Bot Management</p>
+        </div>
+        
+        <div class="demo-info">
+            <h3>Demo Credentials:</h3>
+            <p><strong>Email:</strong> demo@ufpr.br</p>
+            <p><strong>Password:</strong> demo</p>
+        </div>
+        
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            ${req.query.error ? '<div class="error">Invalid credentials. Please try again.</div>' : ''}
+        </form>
+    </div>
+</body>
+</html>
+  `);
+});
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  
+  if (email === DEMO_CREDENTIALS.email && password === DEMO_CREDENTIALS.password) {
+    req.session.authenticated = true;
+    req.session.userEmail = email;
+    res.redirect('/');
+  } else {
+    res.redirect('/login?error=1');
+  }
+});
+
+app.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/login');
   });
 });
 
@@ -359,7 +560,7 @@ app.get('/health', (_req, res) => {
     timestamp: new Date().toISOString(),
     connections: {
       bot: botSocket ? 'connected' : 'disconnected',
-      dashboard: dashboardSocket ? 'connected' : 'disconnected'
+      dashboards: dashboardSockets.size
     }
   });
 });
@@ -398,9 +599,18 @@ app.post('/send-metrics', (_req, res) => {
   }
 });
 
-// Serve frontend for all other routes
-app.get('*', (_req, res) => {
+// Serve frontend for authenticated users only
+app.get('/', requireAuth, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Catch all other routes and redirect to login if not authenticated
+app.get('*', (req, res) => {
+  if (req.session && req.session.authenticated) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  } else {
+    res.redirect('/login');
+  }
 });
 
 const PORT = process.env.PORT || 3001;

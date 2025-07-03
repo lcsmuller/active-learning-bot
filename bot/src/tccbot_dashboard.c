@@ -7,6 +7,14 @@ void tccbot_dashboard_send(struct discord *client, const char *event_type, const
                            const char *data_json)
 {
     struct tccbot_context *ctx = discord_get_data(client);
+
+    // Check if WebSocket connection is active
+    if (!ctx->ws_running || !ctx->dashboard_ws)
+    {
+        logmod_log(WARN, NULL, "⚠️ Dashboard not connected, skipping send: %s", event_type);
+        return;
+    }
+
     char buf[2048];
 
     jsonb_init(&ctx->serial.b);
@@ -35,6 +43,8 @@ void tccbot_dashboard_send(struct discord *client, const char *event_type, const
     if (res != CURLE_OK)
     {
         logmod_log(WARN, NULL, "✗ Failed to send to dashboard: %s", curl_easy_strerror(res));
+        // Mark connection as broken to trigger reconnection
+        ctx->ws_running = false;
         return;
     }
     logmod_log(INFO, NULL, "✓ Sent to dashboard: %s", buf);

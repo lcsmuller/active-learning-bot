@@ -158,6 +158,7 @@ static void on_student_interaction(struct discord *client, const struct discord_
 void on_dashboard_interaction(struct discord *client)
 {
     static char buf[4096];
+
     struct tccbot_context *ctx = discord_get_data(client);
     const struct curl_ws_frame *frame;
     size_t recv = 0;
@@ -168,6 +169,7 @@ void on_dashboard_interaction(struct discord *client)
         return;
     }
 
+    memset(buf, 0, sizeof(buf));
     CURLcode result = curl_ws_recv(ctx->dashboard_ws, buf, sizeof(buf), &recv, &frame);
     switch (result)
     {
@@ -228,8 +230,12 @@ int main(void)
     if (!ws_url)
         ws_url = "ws://localhost:3001";
 
-    if (!dashboard_connect_ws(dashboard_ws, ws_url))
+    bool dashboard_connected = dashboard_connect_ws(dashboard_ws, ws_url);
+    if (!dashboard_connected)
+    {
         logmod_log(WARN, NULL, "⚠️ Initial dashboard connection failed, will retry automatically");
+        // continue anyway - reconnection will be attempted automatically
+    }
 
     struct discord *client = discord_from_json("config.json");
     if (!client)
@@ -238,12 +244,13 @@ int main(void)
         goto _cleanup;
     }
 
-    struct tccbot_context ctx = tccbot_context_init(client, dashboard_ws, dashboard_ws != NULL);
+    struct tccbot_context ctx = tccbot_context_init(client, dashboard_ws, false);
     if (ctx.setup.roles.size == 0)
     {
         logmod_log(FATAL, NULL, "✗ No roles configured for the bot - please run ./setup first");
         goto _cleanup;
     }
+    ctx.ws_running = dashboard_connected;
 
     discord_set_data(client, &ctx);
     discord_set_on_ready(client, &on_ready);

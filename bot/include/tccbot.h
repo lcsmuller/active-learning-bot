@@ -27,7 +27,6 @@ struct tccbot_context
         u64snowflake application_id;
         u64snowflake guild_id;
         u64snowflake rules_channel_id;
-        u64snowflake announcements_channel_id;
         u64snowflake voice_channels_category_id;
         struct strings class_codes;
         struct discord_roles roles;

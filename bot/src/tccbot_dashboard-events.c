@@ -153,7 +153,8 @@ CCORDcode tccbot_dashboard_on_start_class(struct discord *client, const char *pa
         tccbot_dashboard_send(client, "start_class_ack", ctx->class_id, "{\"success\":true}");
         return CCORD_OK;
     }
-    logmod_log(WARN, NULL, "✓ Class code '%s' not found in configuration", ctx->class_id);
+    logmod_log(WARN, NULL, "✓ Class code '%s' not found in configuration", recv_class_code);
+
     tccbot_dashboard_send(client, "start_class_ack", ctx->class_id, "{\"success\":false}");
     return CCORD_BAD_PARAMETER;
 }
@@ -173,10 +174,10 @@ static void done_delete_channel(struct discord *client, struct discord_response 
 
 CCORDcode tccbot_dashboard_on_end_class(struct discord *client, const char *payload, const size_t len)
 {
+    static char class_code[64] = {0};
+
     (void)len;
     struct tccbot_context *ctx = discord_get_data(client);
-
-    char class_code[64] = {0};
     const jsmnf_pair *f = jsmnf_find_path(ctx->parser.l.root, (char *[]){"data", "classCode"}, 2);
     if (!f)
     {
@@ -219,10 +220,11 @@ CCORDcode tccbot_dashboard_on_create_poll(struct discord *client, const char *pa
 
 CCORDcode tccbot_dashboard_on_send_discussion(struct discord *client, const char *payload, const size_t len)
 {
-    (void)len;
     static char discussion_json[2048];
 
+    (void)len;
     struct tccbot_context *ctx = discord_get_data(client);
+
     const jsmnf_pair *f = jsmnf_find_path(ctx->parser.l.root, (char *[]){"data", "message"}, 2);
     if (!f)
     {
@@ -252,10 +254,15 @@ CCORDcode tccbot_dashboard_on_send_discussion(struct discord *client, const char
 CCORDcode tccbot_dashboard_on_active_content(struct discord *client, const char *payload, const size_t len)
 {
     static char discord_message[4096];
-    static char content_buffer[2048];
+    static char json_payload[2048];
+    static char escaped_content[1024];
+    static char escaped_title[256];
+    static char poll_title[256];
+    static char code_title[256];
 
     (void)len;
     struct tccbot_context *ctx = discord_get_data(client);
+    char content_buffer[2048] = {0};
 
     if (!active_channel_id)
     {
@@ -288,9 +295,6 @@ CCORDcode tccbot_dashboard_on_active_content(struct discord *client, const char 
     logmod_log(INFO, NULL, "📺 Active content from teacher: %.*s", content_len, content);
 
     // Parse content to determine type and extract information
-    static char json_payload[2048];
-    static char escaped_content[1024];
-    static char escaped_title[256];
     const char *content_type = "Unknown";
     const char *content_title = "";
 
@@ -317,7 +321,6 @@ CCORDcode tccbot_dashboard_on_active_content(struct discord *client, const char 
             const char *question_end = strstr(question_start, "\n");
             if (question_end)
             {
-                static char poll_title[256];
                 int title_len = (int)(question_end - question_start);
                 if (title_len > 0 && title_len < 255)
                 {
@@ -339,7 +342,6 @@ CCORDcode tccbot_dashboard_on_active_content(struct discord *client, const char 
             const char *title_end = strstr(title_start, "**");
             if (title_end)
             {
-                static char code_title[256];
                 int title_len = (int)(title_end - title_start);
                 if (title_len > 0 && title_len < 255)
                 {
@@ -387,10 +389,10 @@ CCORDcode tccbot_dashboard_on_active_content(struct discord *client, const char 
 void tccbot_dashboard_on_reaction_add(struct discord *client, const struct discord_message_reaction_add *event)
 {
     static char reaction_json[1024];
+    static char message_id[64];
+    static char user_id[64];
 
     struct tccbot_context *ctx = discord_get_data(client);
-    char message_id[64] = {0};
-    char user_id[64] = {0};
 
     if (event->message_id != active_message_id)
         return;

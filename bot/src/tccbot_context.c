@@ -11,18 +11,21 @@ struct tccbot_context tccbot_context_init(struct discord *client, CURL *curl_eas
         fld_aid = discord_config_get_field(client, (char *[]){"setup", "application_id"}, 2),
         fld_gid = discord_config_get_field(client, (char *[]){"setup", "guild_id"}, 2),
         fld_rcid = discord_config_get_field(client, (char *[]){"setup", "rules_channel_id"}, 2),
-        fld_acid = discord_config_get_field(client, (char *[]){"setup", "announcements_channel_id"}, 2),
         fld_vccid = discord_config_get_field(client, (char *[]){"setup", "voice_channels_category_id"}, 2),
         fld_cc = discord_config_get_field(client, (char *[]){"setup", "class_codes"}, 2);
-    u64snowflake aid = 0ULL, gid = 0ULL, rcid = 0ULL, acid = 0ULL, vccid = 0ULL;
+    u64snowflake aid = 0ULL, gid = 0ULL, rcid = 0ULL, vccid = 0ULL;
     struct strings class_codes = {0};
 
-    cog_strtou64((char *)fld_aid.start, fld_aid.size, &aid);
-    cog_strtou64((char *)fld_gid.start, fld_gid.size, &gid);
-    cog_strtou64((char *)fld_rcid.start, fld_rcid.size, &rcid);
-    cog_strtou64((char *)fld_acid.start, fld_acid.size, &acid);
-    cog_strtou64((char *)fld_vccid.start, fld_vccid.size, &vccid);
-    strings_from_json(fld_cc.start, fld_cc.size, &class_codes);
+    if (fld_aid.size)
+        cog_strtou64((char *)fld_aid.start, fld_aid.size, &aid);
+    if (fld_gid.size)
+        cog_strtou64((char *)fld_gid.start, fld_gid.size, &gid);
+    if (fld_rcid.size)
+        cog_strtou64((char *)fld_rcid.start, fld_rcid.size, &rcid);
+    if (fld_vccid.size)
+        cog_strtou64((char *)fld_vccid.start, fld_vccid.size, &vccid);
+    if (fld_cc.size)
+        strings_from_json(fld_cc.start, fld_cc.size, &class_codes);
 
     struct tccbot_context new_ctx = {
         .dashboard_ws = curl_easy_handle,
@@ -31,7 +34,6 @@ struct tccbot_context tccbot_context_init(struct discord *client, CURL *curl_eas
             .application_id = aid,
             .guild_id = gid,
             .rules_channel_id = rcid,
-            .announcements_channel_id = acid,
             .voice_channels_category_id = vccid,
             .class_codes = class_codes,
         },
@@ -41,7 +43,11 @@ struct tccbot_context tccbot_context_init(struct discord *client, CURL *curl_eas
     {
         size_t json_size = 0;
         char *json = cog_load_whole_file("roles.json", &json_size);
-        discord_roles_from_json(json, json_size, &new_ctx.setup.roles);
+        if (discord_roles_from_json(json, json_size, &new_ctx.setup.roles) <= 0)
+        {
+            logmod_log(ERROR, NULL, "✗ Failed to load roles from 'roles.json'");
+            memset(&new_ctx.setup.roles, 0, sizeof(new_ctx.setup.roles));
+        }
         free(json);
     }
 
