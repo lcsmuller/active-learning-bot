@@ -404,9 +404,10 @@ app.get('*', (_req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+const DOMAIN = process.env.NODE_ENV === 'production' ? 'tcc.muller.codes' : 'localhost';
 
 server.listen(PORT, () => {
   console.log(`Educational Bot Dashboard running on port ${PORT}`);
-  console.log(`Dashboard: http://localhost:${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/health`);
+  console.log(`Dashboard: http://${DOMAIN}:${PORT}`);
+  console.log(`Health check: http://${DOMAIN}:${PORT}/health`);
 });
