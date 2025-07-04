@@ -12,6 +12,16 @@ prática, utilizaremos um exemplo concreto baseado em uma aula de programação 
 disciplina CI1055 (Algoritmos e Estruturas de Dados I) do DINF da UFPR
 \cite{ufpr2021ci1055}.
 
+O Capítulo está organizado da seguinte forma: a Seção \ref{sec:visao}
+apresenta a visão conceitual da aplicação e o modelo de interação proposto, a
+Seção \ref{sec:integracao} discute a integração do \textit{bot} com o ambiente
+educacional e o \textit{dashboard} do professor, a Seção \ref{sec:recursos}
+detalha os recursos específicos implementados para promoção de metodologias
+ativas, incluindo \textit{feedback} em tempo real e aprendizagem baseada em
+problemas, e finalmente, a Seção \ref{sec:exemplo} apresenta um exemplo prático
+completo de uso do sistema em uma aula de comandos de repetição, demonstrando
+todas as funcionalidades em ação.
+
 \section{Visão Conceitual da Aplicação}
 \label{sec:visao}
 
@@ -80,8 +90,8 @@ comunicação, como será detalhado na seção \ref{subsec:dashboard}.
 Um elemento chave do sistema é o \textit{dashboard} exclusivo para o professor,
 que permite controlar o fluxo da aula sem a necessidade de inserir comandos no
 \textit{chat} principal. Este \textit{dashboard} é apresentado como uma
-interface web segura, acessível apenas pelo professor, que se comunica com o
-\textit{bot} em tempo real. Esta abordagem está diretamente alinhada com o
+interface \textit{web} segura, acessível apenas pelo professor, que se comunica
+com o \textit{bot} em tempo real. Esta abordagem está diretamente alinhada com o
 objetivo de proporcionar uma integração não-invasiva ao fluxo de trabalho
 docente, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo
 \ref{cap:revisao}. Através dele, o professor pode:
@@ -125,6 +135,15 @@ significativo de alunos indica não compreender um tópico
 exposição pública
 \end{itemize}
 
+A escolha dessas funcionalidades baseou-se na identificação de elementos que
+tornam uma conversa por texto interativa e natural. Em ambientes de mensagens
+instantâneas, observa-se que a interação fluida depende de mecanismos como
+reações rápidas (emojis), possibilidade de comunicação anônima e indicadores
+visuais de engajamento. Transportar esses aspectos para o ambiente educacional
+remoto visa recriar a naturalidade das interações presenciais, onde o professor
+consegue perceber expressões faciais, gestos e reações instantâneas dos
+alunos\cite{huang2021}.
+
 \subsection{Aprendizagem Baseada em Problemas}
 \label{subsec:pbl}
 
@@ -140,6 +159,18 @@ durante a resolução
 \item \textbf{Compilação e execução de código}: Para disciplinas de programação,
 execução segura de códigos submetidos pelos alunos
 \end{itemize}
+
+A seleção dessas funcionalidades fundamentou-se na observação de como conversas
+por texto se tornam mais dinâmicas e envolventes. Elementos como desafios com
+tempo limitado simulam a urgência e foco das interações síncronas, enquanto
+pistas progressivas reproduzem o aspecto colaborativo de uma conversa onde
+informações são reveladas gradualmente conforme a necessidade. A execução
+imediata de código, por sua vez, proporciona tanto o \textit{feedback}
+instantâneo característico de diálogos interativos quanto um espaço mais
+igualitário, onde alunos com recursos computacionais limitados conseguem
+executar código remotamente mesmo em máquinas menos potentes ou dispositivos
+móveis, eliminando barreiras técnicas que poderiam comprometer sua
+participação\cite{fabiane2024}.
 
 \section{Exemplo Prático: Aula de Comandos de Repetição}
 \label{sec:exemplo}
@@ -175,8 +206,9 @@ didático:
   tabsize=2
 ]
 [(*@\textit{Dashboard}@*) do Professor]
-> Criar Nova Aula
+> Criar Nova Aula Por Videoconferência
 Título: "Comandos de Repetição em Pascal"
+Código de Disciplina: "AED1-2024"
 Descrição: "Introdução aos comandos de repetição em Pascal com foco no comando while"
 Tópicos: "Loops", "Comando while", "Repetição", "Pascal"
 
@@ -184,7 +216,6 @@ Tópicos: "Loops", "Comando while", "Repetição", "Pascal"
 [Título] "Objetivos da aula"
 [Conteúdo] "Introduzir conceitos de repetição, apresentar o comando while, 
            resolver exemplos práticos"
-[Tipo] Slide
 
 > Adicionar Conteúdo
 [Título] "Exemplo inicial: imprimir números de 1 a 5"
@@ -212,8 +243,6 @@ end.
 [Tempo] 60 segundos
 \end{lstlisting}
 
-O sistema confirma a criação da aula e fornece um código de acesso para os alunos.
-
 \subsection{Interação Durante a Aula}
 \label{subsec:interacao}
 
@@ -236,23 +265,22 @@ Durante a aula síncrona, as seguintes interações ocorrem:
 ]
 [(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Aula "Comandos de Repetição em Pascal"
-Sistema: Aula iniciada. Os alunos podem acessar o canal de vídeo usando o código
-         de acesso enviado em sua mensagem privada.
+Sistema: Canal de videoconferência #AED1-2024 criado para a aula.
 
-[Discord - Canal da Aula]
+[Discord - Canal #AED1-2024]
 Bot: @everyone O professor iniciou a aula "Comandos de Repetição em Pascal". 
      Entre no canal de videoconferência para confirmar sua presença.
 
-[Vários alunos entram no canal de vídeo]
+[Vários alunos entram no canal de vídeoconferência]
 
-Professor [no canal de voz]: Vamos começar entendendo por que precisamos de comandos 
-                             de repetição. Observem este exemplo inicial no canal.
+Professor [Canal #AED1-2024]: Vamos começar entendendo por que precisamos de
+      comandos de repetição. Observem este exemplo inicial no canal.
 
 [(*@\textit{Dashboard}@*) do Professor]
 > Mostrar Código "Exemplo inicial"
-Sistema: Código exibido no canal #exemplos-de-codigo.
+Sistema: Código exibido no canal da disciplina #AED1-2024:
 
-[Discord - Canal #exemplos-de-codigo]
+[Discord - Canal #AED1-2024]
 Bot: 
 ```pascal
 program imprimir_de_1_a_5;
@@ -264,18 +292,18 @@ begin
   writeln(5);
 end.
 ```
-Para testar este código, utilize /executar
+Para testar este código, utilize /execute
 
 [(*@\textit{Dashboard}@*) do Professor]
 > Iniciar Discussão
 [Pergunta] "Qual o problema desta abordagem se quisermos imprimir de 1 até 1000?"
 
-[Discord - Canal da Aula]
+[Discord - Canal #AED1-2024]
 Bot: DISCUSSÃO: Qual o problema desta abordagem se quisermos imprimir de 1 até 1000?
-     Use (*@\textit{/responder}@*) para participar da discussão.
+     Use (*@\textit{/answer}@*) para participar da discussão.
 
-Aluno1: (*@\textit{/responder}@*) Teríamos que escrever mil linhas de código!
-Aluno2: (*@\textit{/responder}@*) Código muito repetitivo e difícil de manter.
+Aluno1: (*@\textit{/answer}@*) Teríamos que escrever mil linhas de código!
+Aluno2: (*@\textit{/answer}@*) Código muito repetitivo e difícil de manter.
 
 [(*@\textit{Dashboard}@*) do Professor - Painel de Engajamento]
 Status: 15/23 alunos responderam
@@ -290,8 +318,8 @@ Respostas mais comuns: "código repetitivo" (60%), "muitas linhas" (27%)
 ATENÇÃO 2 alunos indicaram dúvidas sobre o conceito atual.
 Recomendação: Revisitar o conceito com uma abordagem alternativa.
 
-Professor [no canal de voz]: Estou vendo que temos algumas dúvidas. 
-                             Vamos revisitar o conceito de forma diferente.
+Professor [Canal #AED1-2024]: Estou vendo que temos algumas dúvidas. 
+                              Vamos revisitar o conceito de forma diferente.
 
 [(*@\textit{Dashboard}@*) do Professor]
 > Mostrar Exemplo Interativo
@@ -311,7 +339,7 @@ end.
 ```
 [Opções] Ativar execução por alunos
 
-[Discord - Canal #exemplos-de-codigo]
+[Discord - Canal #AED1-2024]
 Bot: EXEMPLO INTERATIVO: Loop while básico
 ```pascal
 program exemplo;
@@ -325,9 +353,9 @@ begin
   end;
 end.
 ```
-Use /executar para ver o resultado deste código.
+Use /execute para ver o resultado deste código.
 
-Aluno5: /executar
+Aluno5: /execute
 Bot: 
 ```
 1
@@ -337,7 +365,7 @@ Bot:
 5
 ```
 
-Aluno8: /duvida O que acontece se eu esquecer de incrementar i dentro do loop?
+Aluno8: /ask O que acontece se eu esquecer de incrementar i dentro do loop?
 Bot: @Professor Dúvida enviada anonimamente: "O que acontece se eu esquecer de incrementar i dentro do loop?"
 
 [(*@\textit{Dashboard}@*) do Professor]
@@ -356,7 +384,7 @@ begin
 end.
 ```
 
-[Discord - Canal #exemplos-de-codigo]
+[Discord - Canal #AED1-2024]
 Bot: Resposta à dúvida: O que acontece se esquecer de incrementar i
 ```pascal
 program loop_infinito;
@@ -389,13 +417,13 @@ repetir o mesmo valor várias vezes:
 - Entrada: "10" | Saída esperada: "2 4 6 8 10"
 - Entrada: "7" | Saída esperada: "2 4 6"
 
-[Discord - Canal #desafios]
+[Discord - Canal #AED1-2024]
 Bot: NOVO DESAFIO: Números pares
 Escreva um programa que leia um número n e imprima todos os números pares de 2 até n.
 Tempo: 10 minutos
-Use /iniciar-desafio para começar a resolver.
+Use /solve para começar a resolver.
 
-[Vários alunos utilizam o comando /iniciar-desafio, recebendo acesso a canais privados para resolver o problema]
+[Vários alunos utilizam o comando /solve, recebendo acesso a canais privados para resolver o problema]
 
 [(*@\textit{Dashboard}@*) do Professor - Monitor de Progresso]
 15/23 alunos iniciaram o desafio
@@ -407,7 +435,7 @@ Use /iniciar-desafio para começar a resolver.
 > Encerrar Desafio
 > Compartilhar Solução Anônima [ID: 3]
 
-[Discord - Canal #desafios]
+[Discord - Canal #AED1-2024]
 Bot: O tempo para o desafio "Números pares" encerrou!
 Estatísticas:
 - 19/23 alunos participaram
@@ -432,9 +460,9 @@ end.
 > Encerrar Aula
 > Gerar Relatório
 
-[Discord - Canal da Aula]
+[Discord - Canal #AED1-2024]
 Bot: Esta aula foi encerrada. Um resumo das atividades foi enviado ao professor.
-     Todo o material continua disponível para consulta nos canais respectivos.
+Sistema: Canal de videoconferência #AED1-2024 encerrado.
 
 [(*@\textit{E-mail}@*) do Professor - Relatório Automático]
 Resumo da aula: "Comandos de Repetição em Pascal"
@@ -443,5 +471,4 @@ Resumo da aula: "Comandos de Repetição em Pascal"
 - Tópicos com mais dúvidas: "loop infinito" (5 menções), "incremento de variáveis" (3 menções)
 - Desafio "Números pares": 19/23 participaram, 15/19 completaram com sucesso
 - Alunos com participação abaixo do esperado: 2 (lista anexa)
-- Recomendação: Reforçar o conceito de incremento de variáveis na próxima aula
 \end{lstlisting}

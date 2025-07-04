@@ -1,0 +1,53 @@
+"Carimbo de data/hora","Você participou do experimento como:","Foi fácil usar o bot?","O bot ajudou a entender o conteúdo?","O dashboard foi fácil?","Dashboard ajudou a monitorar?","Antes do experimento, já participou de EAD?","Satisfação com EAD antes?","Funcionalidades usadas no experimento","Bot reduziu carga na aula?","O bot tornou a aula mais interativa?","Facilitou comunicação?","Reduziu sensação de isolamento?","Gostaria que usassem em mais aulas?","O que mais gostou?","O que poderia melhorar?"
+"2025/07/03 12:34:23 PM GMT-3","Ambos","4","5","5","5","Sim, várias vezes","2","Reações;Dúvidas;Código;Quizzes","4","5","5","4","5","os Poll","comandos não são muito intuitivos ( /ask)"
+"2025/07/03 1:29:48 PM GMT-3","Aluno","4","5","4","3","Sim, algumas","3","Reações;Dúvidas;Quizzes;Outros","5","5","5","5","5","Poder comentar em anonimo e não ser necessario responder em audio","destacar a mensagem do professor, mostrar as respostas dos colegas, na hora de escrever /answer ja poder colocar a resposta aqui"
+"2025/07/03 1:31:35 PM GMT-3","Ambos","4","5","4","4","Sim, várias vezes","4","Reações;Dúvidas;Código;Outros","4","5","5","5","5","gostei de responder digitando e nao precisar falar","destacar mensagem do professor, poder responder no chat mesmo no /answer, ficou um pouco confuso que abre um modal"
+"2025/07/03 1:43:50 PM GMT-3","Ambos","5","3","5","5","Sim, várias vezes","5","Reações;Código;Quizzes","3","5","5","4","4","Poder responder e perguntar coisas de maneira anônima","Uma maneira mais fácil de responder coisas sem ter q usar comandos, por exemplo, botão"
+"2025/07/03 1:53:41 PM GMT-3","Ambos","5","3","","","Sim, várias vezes","4","Reações;Código;Quizzes","3","5","5","5","5","Possibilidade fo anonimato","Responder de maneira mais fácil, sem ter que usar comandos, utilizando um botão.
+
+Para professores, acompanhar o dashboard e dar a aula com slides requer o uso de 2 telas"
+"2025/07/03 2:44:48 PM GMT-3","Ambos","4","4","","","Sim, algumas","2","Reações;Dúvidas;Código;Quizzes","3","4","4","4","4","Aluno:
+
+- Torna o chat um canal mais viável para interagir com o professor, geralmente o professor esquece o chat e foca somente no canal de voz, com esse dashboard e bot, o professor consegue visualizar melhor as interações via chat nas aulas
+
+- É possível anonimizar sua pergunta se a pessoa for mais acanhada para perguntar
+
+- Só o professor consegue ver sua pergunta, anonimizada ou não, permitindo que você faça perguntas sem que seus colegas julguem você, como duvidar da sua capacidade ou apontar que você está atrasando a aula 
+
+Professor:
+
+- Resume o chat dos alunos ao final da aula
+
+- Consegue criar enquetes de maneira bem intuitiva
+
+- Consegue compartilhar trechos de códigos de maneira simplificada
+
+- Verificação dos campos de texto para evitar que você mande perguntas/enquetes vazias","Aluno:
+
+- Perguntas e respostas poderiam ser inline como ""/ask minha pergunta 123?"" poderia já mandar a pergunta ""minha pergunta 123?"" ao invés de abrir um popup só para escrever a pergunta/resposta 
+
+- O canal/chat da aula é fechada no final da aula, poderia ter um lifetime ou não fechar at all, porque assim é possível salvar conversa para posterior consulta
+
+- Perguntas de alunos que o professor responder, poderia adicionar no chat, para melhor contextualização, anonimizado obviamente porque não acrescenta em nada saber que João perguntou X
+
+Professor:
+
+- Opção de download do dashboard da aula só em JSON, com IDs numéricos do Discord, acho que um export PDF com valores em alto nível seria mais útil, já que dá para usar um chat gpt para conseguir resumir a aula depois, ao invés de implementar um próprio script para resumir json
+
+- Não tem opção de bloquear perguntas anonimizadas, já que tem gente que pode se aproveitar do anonimizado para transmitir ódio
+
+- Não remove dependência com o chat do discord, poderia ter um quadro com todo o chat ou padronizar mensagens sem tag (pergunta, resposta) como uma das opções
+
+- Falta ter um autocomplete no código ao gerar novas aulas através do dashboard
+
+- Botão de fechar aula deveria estar em cima"
+"2025/07/03 5:13:41 PM GMT-3","Ambos","5","5","","","Sim, várias vezes","4","Reações;Dúvidas;Código;Quizzes","5","5","5","4","5","interatibilidade com o uso do dashboard","n sei, achei tudo mto legal"
+"2025/07/03 6:17:16 PM GMT-3","Ambos","5","4","","","Sim, várias vezes","4","Dúvidas;Código;Quizzes","4","5","5","5","5","Da possibilidade de perguntar ao professor e testar meus conhecimentos com quizzes.","A opção de mandar coisas anonimamente poderia ser mais fácil de utilizar, algumas vezes tive que sair do menu para poder fazer isso."
+"2025/07/03 7:54:44 PM GMT-3","Ambos","3","4","","","Sim, algumas","3","Reações;Dúvidas;Quizzes;Outros","3","3","4","3","4","Gostei da opção do estudante mandar mensagem privadas para o professor durante a aula dentro da dashboard. Isso permite que o estudante consigo na aula ao vivo mandar questões particulares para o professor, sem precisar se expor no chat coletivo para comunicar. ","- As perguntas no privado poderiam serem enviadas de forma anônima ou identificadas com o nome do estudante. Ficando a cargo do professor em configurar se ele aceita ambos tipos de pergunta ou somente as identificadas. (Isso evita que professores passem por algum constrangimento quando tem a opção anônima) 
+
+- Pensando que o foco está nas interações, acredito que teria que ter um ajuste dentro disso. Onde as respostas dos colegas dentro de uma pergunta pudessem serem compartilhadas ali no coletivo, não somente enviadas para o professor via dashboard. Isso abriria mais espaço para as interações, principalmente entre os estudantes, que também é importante de ocorrer dentro dessas aulas. Importante enviar essas respostas para a dashboard, como forma de registro, porém, tem que abrir esse espaço da interação coletiva. Claro que isso é pensando em perguntas que o professor busque essas respostas coletivas e  públicas. 
+
+- Na dashboard, o professor conseguir verificar quem e o que cada estudante respondeu dentro das perguntas/interações feitas durante a aula. Isso facilita o professor identificar quem estava presente, quem estava participando e também uma forma de avaliar (se esse for um dos objetivos do professor na aula).
+
+"
+"2025/07/03 8:14:03 PM GMT-3","Ambos","4","4","","","Apenas pandemia","4","Reações;Dúvidas;Código;Quizzes","4","5","5","3","5","Perguntas anônimas ","Limitar as reações a uma por aluno e apenas as opções disponíveis. Aparecer notificações pro professor quando chega pergunta. Adicionar um botão no lugar do /answer"

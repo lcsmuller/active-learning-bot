@@ -27,13 +27,13 @@
 % a língua principal do documento deve vir POR ÚLTIMO.
 
 % Versão para a defesa (português)
-% \documentclass[defesa,oneside,english,brazilian]{ppginf}
+\documentclass[defesa,oneside,english,brazilian]{ppginf}
 
 % Versão para a defesa (inglês)
 %\documentclass[defesa,oneside,brazilian,english]{ppginf}
 
 % Versão final para a biblioteca da UFPR (português)
-\documentclass[final,oneside,english,brazilian]{ppginf}
+% \documentclass[final,oneside,english,brazilian]{ppginf}
 
 % Versão final para a biblioteca da UFPR (inglês)
 %\documentclass[final,oneside,brazilian,english]{ppginf}
@@ -50,6 +50,7 @@
 %=====================================================
 
 \begin {document}
+\selectlanguage{brazilian}
 
 % Principais dados, usados para gerar as páginas iniciais.
 % Campos não utilizados podem ser removidos ou comentados.
@@ -184,13 +185,10 @@ interactions. Real-time feedback.}
 %=====================================================
 
 % inclusão de apêndices
-% \appendix
+\appendix
 
 % inclusão de apêndice
-% \include{a1-exemplo/texto}
-
-% inclusão de apêndice
-% \include{a2-exemplo/texto}
+\include{a1/texto}
 
 %=====================================================
 
