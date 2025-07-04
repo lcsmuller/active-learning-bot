@@ -1,0 +1,402 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc} % codificacao de caracteres
+\usepackage[T1]{fontenc}    % codificacao de fontes
+\usepackage[brazil]{babel}  % idioma
+\usepackage{graphicx}       %fundo
+\usepackage{amsmath}        % matematica
+\usepackage{amsfonts}       % fontes matematicas
+\usepackage{amssymb}        % simbolos matematicos
+\usetheme{default}          % tema
+\usecolortheme{orchid}     % cores
+\usefonttheme[onlymath]{serif} % fonte modo matematico
+
+\beamertemplatenavigationsymbolsempty % Desativando os botoes de navegacao
+
+% Tela cheia
+\hypersetup{pdfpagemode=FullScreen}
+
+% Titulo
+\makeatletter
+\newcommand\titlegraphicii[1]{\def\inserttitlegraphicii{#1}}
+\titlegraphicii{}
+\setbeamertemplate{title page}
+{
+  \vbox{}
+   {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\hfill\inserttitlegraphicii\par}
+  \begin{centering}
+    \begin{beamercolorbox}[sep=2pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=12pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.2em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip0.2em\par
+    \begin{beamercolorbox}[sep=2pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=4pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+  \end{centering}
+  %\vfill
+}
+\makeatother
+\title{\textit{Bot} Educacional para Metodologias Ativas no Ensino Remoto}
+%\subtitle{Subtítulo}
+\author{\textbf{Lucas Müller}}
+\institute{UNIVERSIDADE FEDERAL DO PARANÁ \\ 
+SETOR DE CIÊNCIAS EXATAS \\
+DEPARTAMENTO DE INFORMÁTICA \\
+BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
+\date{Orientador: Prof. Bruno Müller Junior}
+
+
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+{%
+ \usebackgroundtemplate{
+  \centering
+  \includegraphics[width=\paperwidth]{CapaUFPR.png}
+ }
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+{%
+ \usebackgroundtemplate{
+  \centering
+  \includegraphics[width=\paperwidth]{FundoUFPR2.png}
+ }
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Introdução e Motivação}
+
+\begin{frame}{Contexto}
+  \begin{itemize}
+  \item O ensino remoto se consolidou como alternativa viável para educação
+  \item Desafios: manutenção do engajamento e comunicação efetiva
+  \item Ausência de interações presenciais resulta em experiência menos dinâmica
+  \item Metodologias ativas colocam o aluno como protagonista
+  \item \textbf{Problema}: Como aplicar metodologias ativas no ensino remoto?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivação}
+  \begin{itemize}
+  \item Metodologias ativas são eficazes no ensino presencial:
+    \begin{itemize}
+    \item Aprendizagem baseada em problemas
+    \item Sala de aula invertida
+    \item Aprendizagem colaborativa
+    \end{itemize}
+  \item Limitações no ambiente remoto:
+    \begin{itemize}
+    \item Comunicação unidirecional
+    \item Falta de feedback imediato
+    \item Menor espontaneidade nas interações
+    \end{itemize}
+  \item \textbf{Solução proposta}: Uso de \textit{bots} como mediadores
+  \end{itemize}
+\end{frame}
+
+\section{Fundamentação Teórica}
+
+\begin{frame}{O que são \textit{Bots} Educacionais?}
+  \begin{itemize}
+  \item Programas automatizados que simulam interações humanas
+  \item \textbf{Componentes principais}:
+    \begin{itemize}
+    \item Interface do usuário
+    \item Compreensão de linguagem natural
+    \item Gerenciador de diálogo
+    \item Integração com backend
+    \item Geração de resposta
+    \end{itemize}
+  \item Podem facilitar interações naturais em ambientes virtuais
+  \item Potencial para diminuir distância comunicativa no ensino remoto
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Princípios para Interação Mediada}
+  \begin{block}{Três princípios fundamentais}
+  \begin{enumerate}
+  \item \textbf{Comunicação multidirecional}: Fluxo bidirecional de informações
+  \item \textbf{Engajamento ativo}: Participação contínua dos estudantes
+  \item \textbf{Adaptação contextual}: Ajuste em tempo real às necessidades
+  \end{enumerate}
+  \end{block}
+  
+  \begin{itemize}
+  \item Esses princípios nortearam o desenvolvimento da solução
+  \item Objetivo: aproximar ambiente virtual da espontaneidade presencial
+  \end{itemize}
+\end{frame}
+
+\section{Proposta e Implementação}
+
+\begin{frame}{Arquitetura da Solução}
+  \begin{itemize}
+  \item \textbf{Plataforma}: Discord (comunicação interativa)
+  \item \textbf{Componentes}:
+    \begin{itemize}
+    \item \textit{Bot} educacional (interação com alunos)
+    \item \textit{Dashboard} do professor (controle pedagógico)
+    \end{itemize}
+  \item \textbf{Implementação}: Biblioteca Concord em C
+  \item \textbf{Arquitetura modular}:
+    \begin{itemize}
+    \item Módulo de publicação
+    \item Módulo de interação
+    \item Módulo de análise
+    \item Módulo de persistência
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Funcionalidades Implementadas}
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+    \textbf{Para os Alunos:}
+    \begin{itemize}
+    \item Feedback rápido via reações
+    \item Dúvidas anônimas
+    \item Execução de código
+    \item Atividades interativas
+    \item Quizzes temporizados
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \textbf{Para o Professor:}
+    \begin{itemize}
+    \item Dashboard de controle
+    \item Barômetro de compreensão
+    \item Sistema de alertas
+    \item Relatórios em tempo real
+    \item Gerenciamento de atividades
+    \end{itemize}
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo Prático: Aula de Programação}
+  \begin{itemize}
+  \item \textbf{Disciplina}: CI1055 - Algoritmos e Estruturas de Dados I
+  \item \textbf{Tópico}: Comandos de Repetição em Pascal
+  \item \textbf{Fluxo da aula}:
+    \begin{enumerate}
+    \item Professor prepara material via dashboard
+    \item Bot publica conteúdo formatado
+    \item Alunos interagem com reações e comandos
+    \item Professor recebe feedback em tempo real
+    \item Execução de código pelos alunos
+    \item Relatório automático pós-aula
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\section{Validação e Resultados}
+
+\begin{frame}{Metodologia de Avaliação}
+  \begin{itemize}
+  \item \textbf{Participantes}: 10 usuários (professores e alunos)
+  \item \textbf{Métodos de coleta}:
+    \begin{itemize}
+    \item Questionários estruturados
+    \item Logs automáticos de interação
+    \item Observação das sessões
+    \end{itemize}
+  \item \textbf{Dimensões avaliadas}:
+    \begin{itemize}
+    \item Engajamento dos alunos
+    \item Eficácia pedagógica
+    \item Usabilidade da ferramenta
+    \item Aceitação da tecnologia
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Principais Resultados}
+  \begin{itemize}
+  \item \textbf{Eficácia na promoção de metodologias ativas}:
+    \begin{itemize}
+    \item Média 4,7/5,0 para "tornar aula mais interativa"
+    \item 90\% dos participantes deram notas máximas
+    \end{itemize}
+  \item \textbf{Redução de barreiras de participação}:
+    \begin{itemize}
+    \item Anonimato seletivo bem avaliado
+    \item Participantes destacaram não precisar "responder em áudio"
+    \end{itemize}
+  \item \textbf{Melhoria na comunicação}:
+    \begin{itemize}
+    \item Média 4,7/5,0 para facilitação da comunicação
+    \item "Torna o chat um canal mais viável"
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Aceitação e Limitações}
+  \begin{block}{Aceitação}
+  \begin{itemize}
+  \item 90\% desejam usar em mais aulas (média 4,6/5,0)
+  \item Forte aceitação da tecnologia
+  \item Integração não-invasiva ao fluxo da aula
+  \end{itemize}
+  \end{block}
+  
+  \begin{block}{Limitações Identificadas}
+  \begin{itemize}
+  \item Dependência de comandos de texto
+  \item Necessidade de interfaces mais intuitivas
+  \item Curva de aprendizado inicial
+  \item Necessidade de múltiplas telas para professores
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{Conclusões}
+
+\begin{frame}{Contribuições do Trabalho}
+  \begin{itemize}
+  \item \textbf{Prova de conceito} de bot educacional funcional
+  \item \textbf{Validação empírica} da eficácia em metodologias ativas
+  \item \textbf{Arquitetura modular} replicável em outros contextos
+  \item \textbf{Princípios de design} para interações mediadas
+  \item \textbf{Redução de barreiras} de participação no ensino remoto
+  \item \textbf{Dashboard integrado} para controle pedagógico
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalhos Futuros}
+  \begin{itemize}
+  \item \textbf{Interface mais intuitiva}:
+    \begin{itemize}
+    \item Implementação de botões clicáveis
+    \item Redução da dependência de comandos de texto
+    \end{itemize}
+  \item \textbf{Expansão de funcionalidades}:
+    \begin{itemize}
+    \item Integração com LMS tradicionais
+    \item Suporte a outras linguagens de programação
+    \item Análise de sentimentos em tempo real
+    \end{itemize}
+  \item \textbf{Estudos longitudinais}:
+    \begin{itemize}
+    \item Avaliação em semestres completos
+    \item Análise de impacto no aprendizado
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section*{Considerações Finais}
+
+\begin{frame}{Resumo das Contribuições}
+  \begin{itemize}
+  \item
+    \alert{Bot educacional} integrado ao Discord demonstrou viabilidade técnica e pedagógica
+  \item
+    \alert{Metodologias ativas} podem ser efetivamente implementadas no ensino remoto
+  \item
+    \alert{Interações naturais} foram facilitadas através dos três princípios propostos
+  \end{itemize}
+  
+  \begin{itemize}
+  \item
+    Próximos passos:
+    \begin{itemize}
+    \item
+      Melhorar interfaces de usuário
+    \item
+      Expandir para outras disciplinas
+    \item
+      Estudos longitudinais de impacto
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Agradecimentos}
+  \begin{center}
+  \Large
+  Obrigado pela atenção!
+  
+  \vspace{1cm}
+  
+  \normalsize
+  \textbf{Lucas Müller}\\
+  Orientador: Prof. Bruno Müller Junior\\
+  
+  \vspace{0.5cm}
+  
+  Universidade Federal do Paraná\\
+  Departamento de Informática\\
+  Bacharelado em Ciência da Computação
+  
+  \vspace{1cm}
+  
+  \textit{Perguntas?}
+  \end{center}
+\end{frame}
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+    
+  \beamertemplatebookbibitems
+
+  \bibitem{prince2004}
+    M.~Prince.
+    \newblock {\em Does Active Learning Work? A Review of the Research}.
+    \newblock Journal of Engineering Education, 2004.
+
+  \bibitem{fabiane2024}
+    F.~Santos et al.
+    \newblock {\em Ensino Remoto: Desafios e Oportunidades}.
+    \newblock Revista Brasileira de Educação, 2024.
+    
+  \beamertemplatearticlebibitems
+
+  \bibitem{huang2021}
+    J.~Huang et al.
+    \newblock Chatbot Architecture and Design.
+    \newblock {\em IEEE Transactions on Education}, 67(2):145--160,
+    2021.
+    
+  \bibitem{okonkwo2021}
+    C.~Okonkwo et al.
+    \newblock Educational Bots in Remote Learning.
+    \newblock {\em Computers \& Education}, 175:104--115,
+    2021.
+  \end{thebibliography}
+\end{frame}
+
+}
+
+\end{document}
+
+
