@@ -2,6 +2,7 @@
 *
 # But these
 !.gitignore
+!.clang-format
 !config.json
 !main.c
 !setup.c
@@ -10,3 +11,4 @@
 !examples/
 !src/
 !include/
+!README.md

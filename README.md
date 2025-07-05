@@ -1,99 +1,65 @@
-# TCC Bot - Educational Discord Bot - Implementation
+# Educational Discord Bot - Bachelor Thesis Project
 
-This is a minimal working implementation of the educational Discord bot described in the Bachelor's Thesis "Bot Educacional para Metodologias Ativas em Ambientes Virtuais" by Lucas Müller at UFPR.
+This repository contains the complete implementation and documentation for an Educational Discord Bot system developed as part of a Bachelor Thesis at UFPR (Universidade Federal do Paraná).
+
+## Project Overview
+
+The project consists of an educational Discord bot that facilitates remote learning interactions, complete with a web-based dashboard for monitoring and management. The system is designed to enhance online educational experiences through interactive Discord-based tools.
+
+## Repository Structure
+
+### 📤 [`bot/`](./bot/)
+
+Contains the main Discord bot implementation written in C using the Concord Discord library. This is the core component that handles Discord interactions, processes educational commands, and communicates with the dashboard.
+
+- **Language**: C
+- **Key Features**: Discord API integration, educational interaction handling, WebSocket communication with dashboard
+- **Main Files**: `main.c`, `tccbot.h`, various source modules
+
+### 🌐 [`dashboard/`](./dashboard/)
+
+Web-based dashboard for monitoring and managing the educational bot. Built with Node.js and Express, providing real-time insights into bot activities and educational interactions.
+
+- **Language**: JavaScript (Node.js)
+- **Key Features**: Real-time monitoring, WebSocket communication, web interface
+- **Framework**: Express.js with WebSocket support
+
+### 📊 [`slides-latex/`](./slides-latex/)
+
+LaTeX source files for presentation slides related to the thesis project. Contains the academic presentation materials with UFPR branding.
+
+- **Format**: LaTeX/Beamer
+- **Content**: Project presentation, methodology, results
+- **Output**: PDF slides for thesis defense
+
+### 📖 [`thesis-latex/`](./thesis-latex/)
+
+Complete LaTeX source code for the bachelor thesis document. Includes all chapters, references, and academic formatting following UFPR standards.
+
+- **Format**: LaTeX
+- **Structure**: Multi-chapter thesis with appendices
+- **Content**: Literature review, methodology, implementation, validation, conclusions
 
 ## Quick Start
 
-### 1. Start the Dashboard
+1. **Bot Setup**: Navigate to `bot/` directory and follow the setup instructions
+2. **Dashboard**: Go to `dashboard/` directory to run the web interface
+3. **Documentation**: Thesis and slides can be compiled from their respective LaTeX directories
 
-```bash
-cd dashboard
-./start.sh
-```
+## Requirements
 
-Access: <http://localhost:3001>
+- **Bot**: GCC compiler, libcurl, Concord Discord library
+- **Dashboard**: Node.js, npm
+- **Documentation**: LaTeX distribution (TeXLive recommended)
 
-### 2. Start the Discord Bot
+## Academic Context
 
-```bash
-cd bot
-export DISCORD_TOKEN="your_discord_bot_token"
-make && ./main
-```
+This project was developed as part of the Computer Science undergraduate program at UFPR, focusing on the application of Discord bots in educational environments and remote learning scenarios.
 
-## Core Features Implemented
+## Author
 
-From the thesis requirements, this minimal version implements:
-
-✅ **Dashboard Interface** - Web-based teacher control panel  
-✅ **Real-time Communication** - WebSocket bot-dashboard integration  
-✅ **Anonymous Questions** - Students can ask questions privately  
-✅ **Interactive Polls** - Teacher-created polls with student responses  
-✅ **Class Management** - Start/end classes with access codes  
-✅ **Discussion Sharing** - Teacher discussion sharing to students  
-✅ **Engagement Tracking** - Real-time student participation metrics  
-
-## Architecture
-
-**Dual Architecture** (as per thesis):
-
-- **Dashboard** (Node.js + Express + WebSocket) - Teacher interface
-- **Discord Bot** (C + Concord library) - Student interface
-
-**Communication Flow**:
-
-1. Teacher uses dashboard to control class
-2. Dashboard sends commands to bot via WebSocket  
-3. Bot interacts with students on Discord
-4. Bot sends engagement data back to dashboard
-5. Teacher sees real-time feedback
-
-## Student Commands (Discord)
-
-- `!ask <question>` - Ask anonymous question to teacher
-- `!poll <answer>` - Respond to teacher's poll
-- `!help` - Show available commands
-
-## Teacher Interface (Dashboard)
-
-- Start/End class sessions
-- Start a discussion on the Discord channel
-- Create interactive polls
-- Monitor real-time student engagement
-- View questions from students
-
-## Technical Implementation
-
-**No Authentication** - Simplified for proof of concept  
-**No Database** - In-memory state management  
-**WebSocket Communication** - Real-time dashboard-bot integration  
-**Dependencies** - Only essential packages  
-
-## Files Structure
-
-```console
-dashboard/
-├── server.js          # Express server with WebSocket
-├── package.json       # Dependencies  
-├── public/index.html  # Teacher dashboard interface
-└── start.sh           # Startup script
-
-bot/
-├── main.c             # Discord bot implementation
-├── Makefile           # Compilation configuration  
-└── concord/           # Discord library
-```
-
-## Thesis Compliance
-
-This implementation directly addresses the thesis concepts:
-
-- **Comunicação multidirecional** ✓ Bot mediates teacher-student interaction
-- **Engajamento ativo** ✓ Anonymous questions & polls encourage participation  
-- **Adaptação contextual** ✓ Teachers control flow via dashboard
-- **Integração não-invasiva** ✓ Simple commands don't disrupt class
-- **Separação de canais** ✓ Dashboard (command) vs Discord (interaction)
+Lucas Müller - Computer Science Student, UFPR
 
 ## License
 
-MIT License - Lucas Müller, UFPR 2024
+This project is part of an academic thesis. Please refer to individual directories for specific licensing information.

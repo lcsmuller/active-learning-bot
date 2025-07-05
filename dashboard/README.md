@@ -1,122 +1,186 @@
-# Educational Bot Dashboard - Implementation
+# Educational Bot Dashboard
 
-A minimal proof-of-concept dashboard for educational Discord bot interaction, as described in the bachelor thesis.
+A web-based dashboard for monitoring and managing the Educational Discord Bot. Built with Node.js, Express, and WebSocket for real-time communication.
+
+## Overview
+
+This dashboard provides a web interface for monitoring Discord bot activities, managing educational interactions, and analyzing bot performance. It communicates with the Discord bot through WebSocket connections to provide real-time updates and control capabilities.
 
 ## Features
 
-This minimal implementation provides:
+- 🌐 **Web Interface**: Clean, responsive web dashboard
+- 🔄 **Real-time Updates**: WebSocket communication with Discord bot
+- 📊 **Activity Monitoring**: Live tracking of bot interactions
+- 🔐 **Demo Authentication**: Simple login system for demonstration
+- 📱 **Responsive Design**: Works on desktop and mobile devices
+- 🔌 **WebSocket Integration**: Bidirectional communication with bot
 
-- **WebSocket Communication**: Real-time bidirectional communication between bot and dashboard
-- **Class Management**: Basic class start/end functionality
-- **Real-time Events**: Display student interactions (join, questions, poll responses)
-- **Discussions**: Start discussions messages from dashboard to Discord via bot
-- **Polls**: Create basic polls that students can respond to
-- **Status Monitoring**: Connection status for bot and dashboard
+## Tech Stack
 
-## Quick Start
+- **Backend**: Node.js with Express.js
+- **WebSockets**: `ws` library for real-time communication
+- **Sessions**: Express-session for session management
+- **Frontend**: Vanilla JavaScript with modular components
+- **Styling**: CSS with responsive design
 
-### Prerequisites
+## Prerequisites
 
 - Node.js (v14 or higher)
-- Discord Bot Token
-- Discord server where the bot has permissions
+- npm (Node Package Manager)
 
-### Setup
+## Installation
 
-1. Install dependencies:
+1. **Install Dependencies**:
 
-```bash
-npm install
+   ```bash
+   npm install
+   ```
+
+## Configuration
+
+The dashboard uses demo credentials by default:
+
+- **Email**: `demo@ufpr.br`
+- **Password**: `demo`
+
+You can modify these in `server.js`:
+
+```javascript
+const DEMO_CREDENTIALS = {
+  email: 'demo@ufpr.br',
+  password: 'demo'
+};
 ```
 
-2. Set environment variables:
+## Running
 
-```bash
-export DISCORD_TOKEN="your_discord_bot_token"
-export DASHBOARD_WS_URL="ws://localhost:3001"  # Optional, defaults to localhost:3001
-```
-
-3. Start the dashboard server:
+### Development Mode
 
 ```bash
 npm run dev
 ```
 
-4. In another terminal, start the bot:
+### Production Mode
 
 ```bash
-cd ../bot
-export DISCORD_TOKEN="your_discord_bot_token"
-make && ./main
+npm start
 ```
 
-5. Open your browser to `http://localhost:3001`
+The dashboard will be available at `http://localhost:3001`
 
-## Usage
+## Available Scripts
 
-### Dashboard Interface
-
-The dashboard provides a simple web interface with:
-
-- **Status Cards**: Show connection status of bot and dashboard
-- **Class Controls**: Start/end class sessions with custom titles and codes
-- **Discussions**: Send discussion messages that the bot will relay to Discord
-- **Polls**: Create polls with multiple choice options
-- **Real-time Events**: View live stream of student interactions
-
-### Discord Bot Commands
-
-Students can interact with the bot using these commands:
-
-- `!join <class_code>` - Join a class session
-- `!ask <question>` - Ask an anonymous question
-- `!poll <option>` - Vote in a poll
-- `!help` - Show available commands
+- `npm run dev` - Start development server
+- `npm start` - Start production server  
+- `npm run build` - Build dashboard (currently informational)
 
 ## Architecture
 
-The system uses a pure WebSocket-based architecture:
+### Server Components
 
-```txt
-Discord Students ↔ Discord Bot ↔ WebSocket ↔ Dashboard ↔ Web Teachers
+- **Express Server**: Main web server handling HTTP requests
+- **WebSocket Server**: Real-time communication with Discord bot
+- **Session Management**: User authentication and session handling
+- **Static File Serving**: Serves frontend assets
+
+### Frontend Structure
+
+```text
+public/
+├── index.html              # Main dashboard page
+├── components/             # Modular UI components
+├── css/                    # Stylesheets
+└── js/                     # JavaScript modules
 ```
 
-### Message Flow
+### API Endpoints
 
-1. **Bot to Dashboard**: Student interactions generate events sent to dashboard
-2. **Dashboard to Bot**: Teacher actions generate commands sent to bot
-3. **Real-time Updates**: All interactions are displayed in real-time on the dashboard
+- `POST /login` - User authentication
+- `POST /logout` - User logout
+- `GET /dashboard` - Main dashboard page (requires auth)
+- `WS /ws` - WebSocket endpoint for bot communication
 
-### Message Format
+## WebSocket Communication
 
-All WebSocket messages follow this JSON structure:
+The dashboard communicates with the Discord bot through WebSocket messages:
 
-```json
-{
-  "event": "event_name",
-  "data": {
-    // Event-specific payload
-  }
-}
-```
+### Bot → Dashboard
 
-## Limitations
+- Connection status updates
+- Discord event notifications
+- User interaction data
+- Error reports and logging
 
-This minimal implementation focuses on core functionality and does **not** include:
+### Dashboard → Bot
 
-- User authentication
-- Database persistence
-- Complex routing
-- Advanced security features
-- File uploads
-- Analytics/reporting
-- Multi-class management
-- Advanced error handling
+- Configuration updates
+- Command execution requests
+- Status queries
 
-These limitations are intentional to keep the implementation simple and focused on demonstrating the core concept described in the thesis.
+## Dashboard Features
+
+### Authentication
+
+Simple demo authentication system for accessing the dashboard. Users must log in with demo credentials to access monitoring features.
+
+### Real-time Monitoring
+
+- Live display of bot connection status
+- Real-time Discord event tracking
+- User interaction monitoring
+- Error and warning notifications
+
+### Responsive Design
+
+The dashboard adapts to different screen sizes and devices, ensuring usability on both desktop and mobile platforms.
 
 ## Development
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
+### Project Structure
+
+```text
+dashboard/
+├── server.js               # Main server file
+├── package.json            # Dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+├── webpack.config.js       # Build configuration
+├── railway.json            # Deployment configuration
+└── public/                 # Frontend assets
+    ├── index.html
+    ├── components/
+    ├── css/
+    └── js/
+```
+
+### Adding New Features
+
+1. **Backend**: Modify `server.js` for new endpoints or WebSocket handlers
+2. **Frontend**: Add components in `public/components/`
+3. **Styling**: Update CSS files for visual changes
+4. **WebSocket**: Extend message handling for bot communication
+
+## Deployment
+
+The project includes configuration for Railway deployment (`railway.json`), but can be deployed to any Node.js hosting platform.
+
+## Integration with Bot
+
+The dashboard is designed to work with the C-based Discord bot. Ensure:
+
+1. Bot is configured to connect to dashboard WebSocket endpoint
+2. Dashboard is running before starting the bot
+3. Network connectivity between bot and dashboard
+4. Proper WebSocket message format compatibility
+
+## Logging
+
+The dashboard logs important events to the console:
+
+- WebSocket connections and disconnections
+- Authentication attempts
+- Error conditions
+- Bot communication events
+
+## License
+
+Part of the Educational Discord Bot Bachelor Thesis Project - UFPR
