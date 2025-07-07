@@ -15,6 +15,10 @@
 % Tela cheia
 \hypersetup{pdfpagemode=FullScreen}
 
+% Bibliografia
+\usepackage[round]{natbib}
+\bibliographystyle{apalike}
+
 % Titulo
 \makeatletter
 \newcommand\titlegraphicii[1]{\def\inserttitlegraphicii{#1}}
@@ -91,29 +95,32 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 
 \begin{frame}{Contexto}
   \begin{itemize}
-  \item O ensino remoto se consolidou como alternativa viável para educação
-  \item Desafios: manutenção do engajamento e comunicação efetiva
-  \item Ausência de interações presenciais resulta em experiência menos dinâmica
-  \item Metodologias ativas colocam o aluno como protagonista
+  \item O ensino remoto se consolidou como alternativa viável para educação;
+    \begin{itemize}
+    \item \textbf{Desafios}: manutenção do engajamento e comunicação efetiva;
+    \item Ausência de interações presenciais resulta em experiência menos dinâmica;
+    \item Metodologias ativas colocam o aluno como protagonista;
+    \end{itemize}
   \item \textbf{Problema}: Como aplicar metodologias ativas no ensino remoto?
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Motivação}
   \begin{itemize}
-  \item Metodologias ativas são eficazes no ensino presencial:
+  \item Metodologias ativas que são eficazes no ensino presencial:
     \begin{itemize}
-    \item Aprendizagem baseada em problemas
-    \item Sala de aula invertida
-    \item Aprendizagem colaborativa
+    \item Aprendizagem baseada em problemas;
+    \item Sala de aula invertida;
+    \item Aprendizagem colaborativa;
     \end{itemize}
   \item Limitações no ambiente remoto:
     \begin{itemize}
-    \item Comunicação unidirecional
-    \item Falta de feedback imediato
-    \item Menor espontaneidade nas interações
+    \item Comunicação unidirecional;
+    \item Falta de feedback imediato;
+    \item Menor espontaneidade nas interações;
     \end{itemize}
-  \item \textbf{Solução proposta}: Uso de \textit{bots} como mediadores
+  \item \textbf{Solução proposta}: Uso de \textit{bots} educacionais como
+  mediadores para corrigir algumas dessas limitações
   \end{itemize}
 \end{frame}
 
@@ -121,32 +128,32 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 
 \begin{frame}{O que são \textit{Bots} Educacionais?}
   \begin{itemize}
-  \item Programas automatizados que simulam interações humanas
-  \item \textbf{Componentes principais}:
+  \item Programas automatizados que simulam interações humanas;
+  \item \textbf{Componentes principais} \citep{huang2021}:
     \begin{itemize}
-    \item Interface do usuário
-    \item Compreensão de linguagem natural
-    \item Gerenciador de diálogo
-    \item Integração com backend
-    \item Geração de resposta
+    \item Interface do usuário;
+    \item Compreensão de linguagem natural;
+    \item Gerenciador de diálogo;
+    \item Integração com backend;
+    \item Geração de resposta;
     \end{itemize}
-  \item Podem facilitar interações naturais em ambientes virtuais
-  \item Potencial para diminuir distância comunicativa no ensino remoto
+  \item Podem facilitar interações naturais em ambientes virtuais;
+  \item Potencial para diminuir distância comunicativa no ensino remoto;
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Princípios para Interação Mediada}
-  \begin{block}{Três princípios fundamentais}
+  \begin{block}{Três princípios fundamentais \citep{prince2004}}
   \begin{enumerate}
-  \item \textbf{Comunicação multidirecional}: Fluxo bidirecional de informações
-  \item \textbf{Engajamento ativo}: Participação contínua dos estudantes
-  \item \textbf{Adaptação contextual}: Ajuste em tempo real às necessidades
+  \item \textbf{Comunicação multidirecional}: Fluxo bidirecional de informações;
+  \item \textbf{Engajamento ativo}: Participação contínua dos estudantes;
+  \item \textbf{Adaptação contextual}: Ajuste em tempo real às necessidades;
   \end{enumerate}
   \end{block}
   
   \begin{itemize}
-  \item Esses princípios nortearam o desenvolvimento da solução
-  \item Objetivo: aproximar ambiente virtual da espontaneidade presencial
+  \item Esses princípios nortearam o desenvolvimento da solução;
+  \item \textbf{Objetivo}: aproximar ambiente virtual da espontaneidade presencial
   \end{itemize}
 \end{frame}
 
@@ -154,60 +161,130 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 
 \begin{frame}{Arquitetura da Solução}
   \begin{itemize}
-  \item \textbf{Plataforma}: Discord (comunicação interativa)
+  \item \textbf{Plataforma}: Discord (comunicação interativa);
   \item \textbf{Componentes}:
     \begin{itemize}
-    \item \textit{Bot} educacional (interação com alunos)
-    \item \textit{Dashboard} do professor (controle pedagógico)
+    \item \textit{Bot} educacional (interação com alunos);
+    \item \textit{Dashboard} do professor (controle pedagógico);
     \end{itemize}
-  \item \textbf{Implementação}: Biblioteca Concord em C
+  \item \textbf{Implementação}: Biblioteca Concord em C;
   \item \textbf{Arquitetura modular}:
     \begin{itemize}
-    \item Módulo de publicação
-    \item Módulo de interação
-    \item Módulo de análise
-    \item Módulo de persistência
+    \item Módulo de publicação;
+    \item Módulo de interação;
+    \item Módulo de análise;
+    \item Módulo de persistência;
     \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Funcionalidades Implementadas}
-  \begin{columns}
-  \begin{column}{0.5\textwidth}
-    \textbf{Para os Alunos:}
-    \begin{itemize}
-    \item Feedback rápido via reações
-    \item Dúvidas anônimas
-    \item Execução de código
-    \item Atividades interativas
-    \item Quizzes temporizados
-    \end{itemize}
-  \end{column}
-  \begin{column}{0.5\textwidth}
-    \textbf{Para o Professor:}
-    \begin{itemize}
-    \item Dashboard de controle
-    \item Barômetro de compreensão
-    \item Sistema de alertas
-    \item Relatórios em tempo real
-    \item Gerenciamento de atividades
-    \end{itemize}
-  \end{column}
-  \end{columns}
+\begin{frame}{Diagrama da Arquitetura}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{arquitetura-bot.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Funcionalidades para os Alunos}
+  \begin{itemize}
+  \item \textbf{Dúvidas anônimas}: Envio de perguntas sem exposição da identidade;
+  \item \textbf{Atividades interativas}: Exercícios e desafios integrados ao chat;
+  \item \textbf{Feedback rápido via reações}: Sistema de emoticons para expressar compreensão;
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Dúvidas anônimas}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{func-alunos/2.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Dúvidas anônimas}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{func-alunos/3.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Dúvidas anônimas}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{func-alunos/4.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Atividades interativas}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{func-alunos/5.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Feedback rápido via reações}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{func-alunos/1.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Funcionalidades para o Professor}
+  \begin{itemize}
+  \item \textbf{Dashboard de controle}: Interface web para gerenciar todas as funcionalidades;
+  \item \textbf{Barômetro de compreensão}: Visualização em tempo real do nível de entendimento;
+  \item \textbf{Sistema de alertas}: Notificações sobre dúvidas e baixa participação;
+  \item \textbf{Gerenciamento de atividades}: Criação e controle de quizzes e exercícios;
+  \item \textbf{Relatórios}: Análise estatística da interação dos alunos;
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Dashboard de controle}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{func-professores/1.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Barômetro de compreensão}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{func-professores/2.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Sistema de alertas}
+  \begin{center}
+    \includegraphics[width=1.1\textwidth]{func-professores/3.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Gerenciamento de atividades}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{func-professores/6.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Gerenciamento de atividades}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{func-professores/7.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Relatórios}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{func-professores/4.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Relatórios}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{func-professores/5.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Exemplo Prático: Aula de Programação}
   \begin{itemize}
   \item \textbf{Disciplina}: CI1055 - Algoritmos e Estruturas de Dados I
   \item \textbf{Tópico}: Comandos de Repetição em Pascal
-  \item \textbf{Fluxo da aula}:
+  \item \textbf{Fluxo integrado da aula}:
     \begin{enumerate}
-    \item Professor prepara material via dashboard
-    \item Bot publica conteúdo formatado
-    \item Alunos interagem com reações e comandos
-    \item Professor recebe feedback em tempo real
-    \item Execução de código pelos alunos
-    \item Relatório automático pós-aula
+    \item Professor prepara material via dashboard, organizando conteúdo e atividades;
+    \item Bot então publica conteúdo formatado no Discord, iniciando a interação;
+    \item Alunos começam a interagir com reações e comandos, participando ativamente;
+    \item Professor recebe feedback em tempo real, adaptando a aula conforme necessário;
+    \item Sistema gera relatório automático pós-aula, fechando o ciclo pedagógico;
     \end{enumerate}
   \end{itemize}
 \end{frame}
@@ -216,19 +293,16 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 
 \begin{frame}{Metodologia de Avaliação}
   \begin{itemize}
-  \item \textbf{Participantes}: 10 usuários (professores e alunos)
-  \item \textbf{Métodos de coleta}:
-    \begin{itemize}
-    \item Questionários estruturados
-    \item Logs automáticos de interação
-    \item Observação das sessões
-    \end{itemize}
+  \item \textbf{Participantes}: 10 usuários (8 da área da informática, 2 da área de humanas);
+  \item \textbf{Formato}: Experimentos individuais com cada participante;
+  \item \textbf{Total de sessões}: 20 (cada participante atuou uma vez como aluno e uma vez como professor);
+  \item \textbf{Métodos de coleta}: Questionários estruturados;
   \item \textbf{Dimensões avaliadas}:
     \begin{itemize}
-    \item Engajamento dos alunos
-    \item Eficácia pedagógica
-    \item Usabilidade da ferramenta
-    \item Aceitação da tecnologia
+    \item Engajamento dos alunos;
+    \item Eficácia pedagógica;
+    \item Usabilidade da ferramenta;
+    \item Aceitação da tecnologia;
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -237,18 +311,18 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
   \begin{itemize}
   \item \textbf{Eficácia na promoção de metodologias ativas}:
     \begin{itemize}
-    \item Média 4,7/5,0 para "tornar aula mais interativa"
-    \item 90\% dos participantes deram notas máximas
+    \item Média 4,7/5,0 para "tornar aula mais interativa";
+    \item 90\% dos participantes deram notas máximas;
     \end{itemize}
   \item \textbf{Redução de barreiras de participação}:
     \begin{itemize}
-    \item Anonimato seletivo bem avaliado
-    \item Participantes destacaram não precisar "responder em áudio"
+    \item Anonimato seletivo bem avaliado;
+    \item Participantes destacaram não precisar "responder em áudio";
     \end{itemize}
   \item \textbf{Melhoria na comunicação}:
     \begin{itemize}
-    \item Média 4,7/5,0 para facilitação da comunicação
-    \item "Torna o chat um canal mais viável"
+    \item Média 4,7/5,0 para facilitação da comunicação;
+    \item "Torna o chat um canal mais viável";
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -256,18 +330,18 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 \begin{frame}{Aceitação e Limitações}
   \begin{block}{Aceitação}
   \begin{itemize}
-  \item 90\% desejam usar em mais aulas (média 4,6/5,0)
-  \item Forte aceitação da tecnologia
-  \item Integração não-invasiva ao fluxo da aula
+  \item 90\% desejam usar em mais aulas (média 4,6/5,0);
+  \item Forte aceitação da tecnologia;
+  \item Integração não-invasiva ao fluxo da aula;
   \end{itemize}
   \end{block}
   
   \begin{block}{Limitações Identificadas}
   \begin{itemize}
-  \item Dependência de comandos de texto
-  \item Necessidade de interfaces mais intuitivas
-  \item Curva de aprendizado inicial
-  \item Necessidade de múltiplas telas para professores
+  \item Dependência de comandos de texto;
+  \item Necessidade de interfaces mais intuitivas;
+  \item Curva de aprendizado inicial;
+  \item Necessidade de múltiplas telas para professores (ex.: dashboard e chat);
   \end{itemize}
   \end{block}
 \end{frame}
@@ -276,12 +350,12 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 
 \begin{frame}{Contribuições do Trabalho}
   \begin{itemize}
-  \item \textbf{Prova de conceito} de bot educacional funcional
-  \item \textbf{Validação empírica} da eficácia em metodologias ativas
-  \item \textbf{Arquitetura modular} replicável em outros contextos
-  \item \textbf{Princípios de design} para interações mediadas
-  \item \textbf{Redução de barreiras} de participação no ensino remoto
-  \item \textbf{Dashboard integrado} para controle pedagógico
+  \item \textbf{Prova de conceito} de bot educacional funcional;
+  \item \textbf{Validação empírica} da eficácia em metodologias ativas;
+  \item \textbf{Arquitetura modular} replicável em outros contextos;
+  \item \textbf{Princípios de design} para interações mediadas;
+  \item \textbf{Redução de barreiras} de participação no ensino remoto;
+  \item \textbf{Dashboard integrado} para controle pedagógico;
   \end{itemize}
 \end{frame}
 
@@ -289,19 +363,18 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
   \begin{itemize}
   \item \textbf{Interface mais intuitiva}:
     \begin{itemize}
-    \item Implementação de botões clicáveis
-    \item Redução da dependência de comandos de texto
+    \item Implementação de botões clicáveis;
+    \item Redução da dependência de comandos de texto;
     \end{itemize}
   \item \textbf{Expansão de funcionalidades}:
     \begin{itemize}
-    \item Integração com LMS tradicionais
-    \item Suporte a outras linguagens de programação
-    \item Análise de sentimentos em tempo real
+    \item Integração com LMS (Learning Management Systems) tradicionais;
+    \item Análise de sentimentos em tempo real;
     \end{itemize}
   \item \textbf{Estudos longitudinais}:
     \begin{itemize}
-    \item Avaliação em semestres completos
-    \item Análise de impacto no aprendizado
+    \item Avaliação em semestres completos;
+    \item Análise de impacto no aprendizado;
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -311,23 +384,20 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 \begin{frame}{Resumo das Contribuições}
   \begin{itemize}
   \item
-    \alert{Bot educacional} integrado ao Discord demonstrou viabilidade técnica e pedagógica
+    \alert{Bot educacional} integrado ao Discord demonstrou viabilidade técnica e pedagógica;
   \item
-    \alert{Metodologias ativas} podem ser efetivamente implementadas no ensino remoto
+    \alert{Metodologias ativas} podem ser efetivamente implementadas no ensino remoto;
   \item
-    \alert{Interações naturais} foram facilitadas através dos três princípios propostos
+    \alert{Interações naturais} foram facilitadas através dos três princípios propostos;
   \end{itemize}
   
   \begin{itemize}
   \item
     Próximos passos:
     \begin{itemize}
-    \item
-      Melhorar interfaces de usuário
-    \item
-      Expandir para outras disciplinas
-    \item
-      Estudos longitudinais de impacto
+    \item Melhorar interfaces de usuário;
+    \item Expandir para outras disciplinas;
+    \item Estudos longitudinais de impacto;
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -348,10 +418,6 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
   Universidade Federal do Paraná\\
   Departamento de Informática\\
   Bacharelado em Ciência da Computação
-  
-  \vspace{1cm}
-  
-  \textit{Perguntas?}
   \end{center}
 \end{frame}
 
@@ -360,42 +426,21 @@ BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO} % opcional
 % All of the following is optional and typically not needed. 
 \appendix
 \section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
-
-\begin{frame}[allowframebreaks]
-  \frametitle<presentation>{For Further Reading}
-    
-  \begin{thebibliography}{10}
-    
-  \beamertemplatebookbibitems
-
-  \bibitem{prince2004}
-    M.~Prince.
-    \newblock {\em Does Active Learning Work? A Review of the Research}.
-    \newblock Journal of Engineering Education, 2004.
-
-  \bibitem{fabiane2024}
-    F.~Santos et al.
-    \newblock {\em Ensino Remoto: Desafios e Oportunidades}.
-    \newblock Revista Brasileira de Educação, 2024.
-    
-  \beamertemplatearticlebibitems
-
-  \bibitem{huang2021}
-    J.~Huang et al.
-    \newblock Chatbot Architecture and Design.
-    \newblock {\em IEEE Transactions on Education}, 67(2):145--160,
-    2021.
-    
-  \bibitem{okonkwo2021}
-    C.~Okonkwo et al.
-    \newblock Educational Bots in Remote Learning.
-    \newblock {\em Computers \& Education}, 175:104--115,
-    2021.
-  \end{thebibliography}
-\end{frame}
+\subsection<presentation>*{Leituras Recomendadas}
 
 }
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Referências}
+  \bibliography{referencias}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+  \Huge
+  \textit{Perguntas?}
+  \end{center}
+\end{frame}
 
 \end{document}
 

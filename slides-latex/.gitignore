@@ -5,3 +5,6 @@
 !*.png
 !main.pdf
 !main.tex
+!Makefile
+!func-alunos
+!func-professores
