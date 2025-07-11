@@ -1,0 +1,615 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./ppginf.cls
+Document Class: ppginf 2022/09/14 Manuscript LaTeX class for PPGInf/UFPR
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/brazilian.ldf))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian.tex)
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/iflang.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wallpaper/wallpaper.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg)))
+(./packages.tex (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxtext.sty
+`newtxtext' v1.737, 2024/01/11 Text macros taking advantage of TeXGyre Termes a
+nd its extensions (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty
+`newtxmath' v1.732, 2023/11/05 Math macros based originally on txfonts (msharpe
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+amsthm NOT loaded
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/moreverb/moreverb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook-2020.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd) (./main.aux
+(./0-iniciais/catalografica.aux) (./0-iniciais/aprovacao.aux)
+(./0-iniciais/dedica.aux) (./0-iniciais/agradece.aux) (./0-iniciais/resumo.aux)
+(./0-iniciais/abstract.aux) (./0-iniciais/acronimos.aux) (./1-intro/texto.aux)
+(./2-fundam/texto.aux) (./3-proposta/texto.aux) (./4-valida/texto.aux))
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/var/lib/texm
+f/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/d
+vips/newtx/ntx-ec-tlf.enc}] (./0-iniciais/catalografica.tex)
+(./0-iniciais/aprovacao.tex) (./0-iniciais/dedica.tex)
+(./0-iniciais/agradece.tex) (./0-iniciais/resumo.tex [2])
+(./0-iniciais/abstract.tex [3]) (./main.lof) [4] (./main.lot) [5]
+(./0-iniciais/acronimos.tex [6]) (./main.toc) [7] (./1-intro/texto.tex
+Cap\'{\i }tulo 1.
+
+Package natbib Warning: Citation `fabiane2024' on page 8 undefined on input lin
+e 24.
+
+
+Package natbib Warning: Citation `prince2004' on page 8 undefined on input line
+ 29.
+
+
+Package natbib Warning: Citation `yew2016' on page 8 undefined on input line 35
+.
+
+
+Package natbib Warning: Citation `vanalten2019' on page 8 undefined on input li
+ne 35.
+
+
+Package natbib Warning: Citation `laal2012' on page 8 undefined on input line 3
+6.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 8 undefined on input lin
+e 39.
+
+
+Package natbib Warning: Citation `okonkwo2021' on page 8 undefined on input lin
+e 48.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 8 undefined on input lin
+e 56.
+
+[8]
+
+Package natbib Warning: Citation `hodges2020' on page 9 undefined on input line
+ 60.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 9 undefined on input lin
+e 62.
+
+
+Package natbib Warning: Citation `prince2004' on page 9 undefined on input line
+ 65.
+
+
+Package natbib Warning: Citation `winkler2018' on page 9 undefined on input lin
+e 71.
+
+
+Package natbib Warning: Citation `okonkwo2021' on page 9 undefined on input lin
+e 71.
+
+
+Package natbib Warning: Citation `zawacki2019' on page 9 undefined on input lin
+e 71.
+
+
+Package natbib Warning: Citation `prince2004' on page 9 undefined on input line
+ 82.
+
+
+Package natbib Warning: Citation `okonkwo2021' on page 9 undefined on input lin
+e 82.
+
+
+Package natbib Warning: Citation `seering2018' on page 9 undefined on input lin
+e 89.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 9 undefined on input lin
+e 91.
+
+
+Package natbib Warning: Citation `han2022' on page 9 undefined on input line 93
+.
+
+
+Package natbib Warning: Citation `roy1987' on page 9 undefined on input line 96
+.
+
+
+Package natbib Warning: Citation `norman2013' on page 9 undefined on input line
+ 96.
+
+
+Package natbib Warning: Citation `sweller2011' on page 9 undefined on input lin
+e 97.
+
+
+Package natbib Warning: Citation `kernighan1988' on page 9 undefined on input l
+ine 100.
+
+
+Package natbib Warning: Citation `verbert2013' on page 9 undefined on input lin
+e 103.
+
+[9]
+
+Package natbib Warning: Citation `muller' on page 10 undefined on input line 14
+2.
+
+[10]
+
+Package natbib Warning: Citation `prince2004' on page 11 undefined on input lin
+e 185.
+
+
+Package natbib Warning: Citation `yew2016' on page 11 undefined on input line 1
+85.
+
+
+Package natbib Warning: Citation `vanalten2019' on page 11 undefined on input l
+ine 185.
+
+
+Package natbib Warning: Citation `laal2012' on page 11 undefined on input line 
+185.
+
+
+Package natbib Warning: Citation `hien2018' on page 11 undefined on input line 
+188.
+
+
+Package natbib Warning: Citation `demetriadis2018' on page 11 undefined on inpu
+t line 188.
+
+
+Package natbib Warning: Citation `winkler2018' on page 11 undefined on input li
+ne 188.
+
+) [11] [12] (./2-fundam/texto.tex
+Cap\'{\i }tulo 2.
+
+Package natbib Warning: Citation `dale2016' on page 13 undefined on input line 
+25.
+
+
+Package natbib Warning: Citation `eslahi2012' on page 13 undefined on input lin
+e 26.
+
+
+Package natbib Warning: Citation `huang2021' on page 13 undefined on input line
+ 34.
+
+[13]
+
+pdfTeX warning: pdflatex (file ./2-fundam//huang-arquitetura.pdf): PDF inclusio
+n: found PDF version <1.6>, but at most version <1.5> allowed
+
+Package natbib Warning: Citation `huang2021' on page 14 undefined on input line
+ 79.
+
+
+Package natbib Warning: Citation `huang2021' on page 14 undefined on input line
+ 79.
+
+
+Package natbib Warning: Citation `lebeuf2019' on page 14 undefined on input lin
+e 87.
+
+
+Package natbib Warning: Citation `seering2018' on page 14 undefined on input li
+ne 88.
+
+
+Package natbib Warning: Citation `lebeuf2019' on page 14 undefined on input lin
+e 95.
+
+
+Package natbib Warning: Citation `seering2018' on page 14 undefined on input li
+ne 113.
+
+[14 <./2-fundam//huang-arquitetura.pdf>]
+
+Package natbib Warning: Citation `zawacki2019' on page 15 undefined on input li
+ne 147.
+
+
+Package natbib Warning: Citation `okonkwo2021' on page 15 undefined on input li
+ne 151.
+
+
+Package natbib Warning: Citation `han2022' on page 15 undefined on input line 1
+53.
+
+[15]
+
+Package natbib Warning: Citation `silva2024' on page 16 undefined on input line
+ 160.
+
+
+Package natbib Warning: Citation `hodges2020' on page 16 undefined on input lin
+e 179.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 16 undefined on input li
+ne 179.
+
+
+Package natbib Warning: Citation `fabiane2024' on page 16 undefined on input li
+ne 181.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd)
+
+Package natbib Warning: Citation `winkler2018' on page 16 undefined on input li
+ne 194.
+
+
+Package natbib Warning: Citation `roy1987' on page 16 undefined on input line 1
+99.
+
+
+Package natbib Warning: Citation `norman2013' on page 16 undefined on input lin
+e 203.
+
+[16{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+
+Package natbib Warning: Citation `sweller2011' on page 17 undefined on input li
+ne 213.
+
+
+Package natbib Warning: Citation `calvo2013' on page 17 undefined on input line
+ 228.
+
+
+Package natbib Warning: Citation `piaget1970' on page 17 undefined on input lin
+e 234.
+
+
+Package natbib Warning: Citation `winkler2018' on page 17 undefined on input li
+ne 240.
+
+
+Package natbib Warning: Citation `verbert2013' on page 17 undefined on input li
+ne 255.
+
+
+Package natbib Warning: Citation `verbert2013' on page 17 undefined on input li
+ne 259.
+
+[17]
+
+Package natbib Warning: Citation `huang2021' on page 18 undefined on input line
+ 286.
+
+
+Package natbib Warning: Citation `pietrusky2024chatbot' on page 18 undefined on
+ input line 296.
+
+
+Package natbib Warning: Citation `wright2024enhancing' on page 18 undefined on 
+input line 298.
+
+
+Package natbib Warning: Citation `espinoza2021' on page 18 undefined on input l
+ine 302.
+
+[18 <./2-fundam//relacao-dashboard-bot.png>]
+
+Package natbib Warning: Citation `discordjs' on page 19 undefined on input line
+ 324.
+
+
+Package natbib Warning: Citation `discordpy' on page 19 undefined on input line
+ 328.
+
+
+Package natbib Warning: Citation `muller' on page 19 undefined on input line 33
+1.
+
+
+Package natbib Warning: Citation `kernighan1988' on page 19 undefined on input 
+line 342.
+
+
+Package natbib Warning: Citation `pears2007' on page 19 undefined on input line
+ 352.
+
+[19]
+
+Package natbib Warning: Citation `hien2018' on page 20 undefined on input line 
+359.
+
+
+Package natbib Warning: Citation `demetriadis2018' on page 20 undefined on inpu
+t line 364.
+
+
+Package natbib Warning: Citation `yin2024' on page 20 undefined on input line 3
+70.
+
+
+Package natbib Warning: Citation `winkler2018' on page 20 undefined on input li
+ne 377.
+
+) [20] (./3-proposta/texto.tex
+Cap\'{\i }tulo 3.
+
+Package natbib Warning: Citation `ufpr2021ci1055' on page 21 undefined on input
+ line 16.
+
+[21 <./3-proposta//modelo-interacao.png>] [22]
+
+Package natbib Warning: Citation `huang2021' on page 23 undefined on input line
+ 140.
+
+[23]
+
+Package natbib Warning: Citation `fabiane2024' on page 24 undefined on input li
+ne 174.
+
+[24] (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd) [25{/usr/share/t
+exlive/texmf-dist/fonts/enc/dvips/base/8r.enc}] [26] [27] [28] [29]) [30]
+(./4-valida/texto.tex
+Cap\'{\i }tulo 4.
+
+LaTeX Warning: Reference `subsec:aceitacao-adocao' on page 31 undefined on inpu
+t line 10.
+
+
+LaTeX Warning: Reference `subsec:funcionalidades-mais-utilizadas' on page 31 un
+defined on input line 11.
+
+[31] [32] [33 <./4-valida//arquitetura-bot.png (PNG copy)>]
+
+LaTeX Warning: Reference `appendix:repo' on page 34 undefined on input line 158
+.
+
+[34 <./4-valida//dashboard-preview.png>] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]\T1/ntxtlf/b/n/12 (+20) Engajamento
+
+Underfull \hbox (badness 3088) in paragraph at lines 379--379
+[]\T1/ntxtlf/b/n/12 (+20) Usabilidade da
+
+LaTeX Warning: Reference `subsec:analise-qual' on page 38 undefined on input li
+ne 402.
+
+[38]
+
+LaTeX Warning: Reference `subsec:eficacia-pedagogica' on page 39 undefined on i
+nput line 415.
+
+
+LaTeX Warning: Reference `subsec:reduz-carga-comunicacao' on page 39 undefined 
+on input line 416.
+
+
+LaTeX Warning: Reference `subsec:aceitacao-adocao' on page 39 undefined on inpu
+t line 418.
+
+
+LaTeX Warning: Reference `subsec:funcionalidades-mais-utilizadas' on page 39 un
+defined on input line 419.
+
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+[39 <./4-valida/forms.pdf>]
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+Runaway argument?
+{figure> 
+! Paragraph ended before \end  was complete.
+<to be read again> 
+                   \par 
+l.454 
+      
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--455
+|[]\T1/ntxtlf/m/it/12 (+20) Eficácia Pe-da-gó-gica|
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--479
+|[]\T1/ntxtlf/m/it/12 (+20) Redução de Carga e Fa-ci-li-ta-ção da Co-mu-ni-ca-ç
+ão|
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
+|[]\T1/ntxtlf/m/it/12 (+20) Aceitação e Ado-ção|
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+! Package pdfpages Error: Page 5 of `4-valida/forms.pdf' does not exist.
+
+See the pdfpages package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.509 \includepdf[pages=5,scale=0.8]{forms.pdf}
+                                               
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: found PDF 
+version <1.7>, but at most version <1.5> allowed
+
+!pdfTeX error: pdflatex (file ./4-valida/forms.pdf): PDF inclusion: required pa
+ge does not exist <4>
+ ==> Fatal error occurred, no output PDF file produced!

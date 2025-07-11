@@ -12,18 +12,18 @@ apresenta a definição e os componentes de \textit{bots}, a Seção
 \ref{sec:bots-educ} aborda os \textit{bots} no contexto educacional, incluindo
 os desafios do ensino remoto e aspectos de interação humano-computador na
 educação, a Seção \ref{sec:ferramentas} analisa bibliotecas e tecnologias para
-desenvolvimento de \textit{bots}, a Seção \ref{sec:trab-rel} apresenta trabalhos
-relacionados, e finalmente, a Seção \ref{sec:objetivos} delineia os objetivos
-específicos deste trabalho com base nos conceitos apresentados.
+desenvolvimento de \textit{bots}, e finalmente, a Seção \ref{sec:trab-rel}
+apresenta trabalhos relacionados, estabelecendo as bases conceituais para este
+trabalho.
 
 \section{Definição e Componentes de \textit{Bots}} \label{sec:def-bots}
 
 \textit{Bots} são programas automatizados projetados para interagir com usuários
 ou sistemas, realizando tarefas específicas com diferentes níveis de autonomia.
-\textit{Bots} podem ser definidos como "aplicações que combinam uma interface
-conversacional com a capacidade de executar tarefas específicas para o usuário"
-\cite{dale2016}, ou também "uma aplicação que realiza certas tarefas repetitivas
-de maneira mais rápida que o ser humano" \cite{eslahi2012}.
+\textit{Bots} podem ser definidos como ``aplicações que combinam uma interface
+conversacional com a capacidade de executar tarefas específicas para o usuário''
+\cite{dale2016}, ou também ``uma aplicação que realiza certas tarefas repetitivas
+de maneira mais rápida que o ser humano'' \cite{eslahi2012}.
 
 A arquitetura de um \textit{bot} é descrita de diferentes maneiras na
 literatura, mas geralmente envolve um conjunto de componentes essenciais que
@@ -130,8 +130,8 @@ mensagens. \\
 \caption{Classificação de \textit{bots} segundo propósito e funcionalidade}
 \end{table}
 
-\noindent Este trabalho concentra-se em \textit{bots} do tipo "produtividade" e
-"colaboração" como propósito, e "funcionalidade e qualidade" como
+\noindent Este trabalho concentra-se em \textit{bots} do tipo ``produtividade'' e
+``colaboração'' como propósito, e ``funcionalidade e qualidade'' como
 funcionalidade. O foco é a sua aplicação dentro do contexto educacional, onde
 eles podem atuar como assistentes virtuais que facilitam a interação entre
 alunos e professores, a fim de promover um ambiente remoto de aprendizagem mais
@@ -173,10 +173,10 @@ de controle pedagógico.
 
 O ensino remoto apresenta desafios únicos que podem ser parcialmente mitigados
 pelo uso de tecnologias interativas como \textit{bots}. Aqui se faz distinção entre
-"ensino remoto emergencial" e educação \textit{online} planejada, destacando que
+``ensino remoto emergencial'' e educação \textit{online} planejada, destacando que
 muitas instituições foram forçadas a adotar o primeiro modelo durante a pandemia
 de COVID-19, sem tempo adequado para planejamento
-\cite{hodges2020}\cite{fabiane2024}.
+\cite{hodges2020,fabiane2024}.
 
 \noindent Entre os principais desafios identificados estão \cite{fabiane2024}:
 
@@ -254,9 +254,9 @@ interações. Os \textit{dashboards} pedagógicos surgem como uma solução para
 necessidade, oferecendo uma visão consolidada das atividades e permitindo
 intervenções em tempo real sem interromper o fluxo da aula \cite{verbert2013}.
 
-\textit{Dashboards} de aprendizagem são "\textit{displays} únicos que agregam
+\textit{Dashboards} de aprendizagem são ``\textit{displays} únicos que agregam
 diferentes indicadores sobre aprendiz, atividades de aprendizagem e/ou contexto
-de aprendizagem em uma ou múltiplas visualizações" \cite{verbert2013}. No
+de aprendizagem em uma ou múltiplas visualizações'' \cite{verbert2013}. No
 contexto de \textit{bots} educacionais, estes \textit{dashboards} evoluem para
 se tornarem não apenas ferramentas de visualização, mas interfaces de comando
 que permitem aos professores:
@@ -282,11 +282,11 @@ controle pedagógico.}
 
 Esta abordagem separa claramente o canal de comando (\textit{dashboard}, visível
 apenas para o professor) do canal de interação (plataforma de comunicação,
-visível para todos os participantes), seguindo o princípio de "separação de
-interesses" como essencial para ambientes de aprendizagem tecnologicamente
-mediados. A eficácia desse modelo de interação será avaliada em experimentos
-controlados, onde participantes assumirão papéis de professor e alunos,
-interagindo em um ambiente de sala de aula simulado.
+visível para todos os participantes), seguindo o princípio de ``separação de
+interesses'' \cite{huang2021} como essencial para ambientes de aprendizagem
+tecnologicamente mediados. A eficácia desse modelo de interação será avaliada em
+experimentos controlados, onde participantes assumirão papéis de professor e
+alunos, interagindo em um ambiente de sala de aula simulado.
 
 \section{Ferramentas para Desenvolvimento de \textit{Bots} no Discord}
 \label{sec:ferramentas}
@@ -379,55 +379,7 @@ Um trabalho particularmente relevante é o de Winkler e Söllner
 importância de promover interações que estimulem o pensamento crítico e a
 reflexão.
 
-\section{Objetivos do Trabalho} \label{sec:objetivos}
-
-Com base na revisão bibliográfica apresentada, este trabalho tem como objetivo
-desenvolver e avaliar um \textit{bot} educacional assistivo e conversacional
-para plataformas de colaboração, especificamente o Discord, que facilite a
-implementação de metodologias ativas em ambientes de ensino remoto.
-
-Os objetivos específicos são:
-
-\begin{enumerate}
-\item \textbf{Desenvolver um \textit{bot} educacional} que incorpore os três
-princípios fundamentais para interação mediada discutidos na Seção
-\ref{subsec:principios}: comunicação multidirecional, engajamento ativo e
-adaptação contextual.
-\item \textbf{Implementar funcionalidades específicas} que abordem diretamente
-os desafios do ensino remoto identificados na Seção \ref{subsec:desafios}, com
-foco especial em manter o engajamento dos alunos, facilitar o \textit{feedback}
-imediato e promover interações sociais significativas em ambientes virtuais.
-\item \textbf{Proporcionar uma integração não-invasiva} da ferramenta ao fluxo
-de trabalho docente, aplicando os princípios de \textit{design} centrado no
-usuário e minimizando a carga cognitiva adicional, conforme destacado nos
-estudos de IHC educacional na Seção \ref{subsec:ihc}.
-\item \textbf{Criar uma prova de conceito funcional} utilizando tecnologias
-adequadas ao contexto educacional, considerando aspectos de eficiência,
-portabilidade e manutenção, conforme discutido na Seção \ref{sec:ferramentas}.
-\item \textbf{Estabelecer uma metodologia de avaliação experimental} com
-participantes reais assumindo os papéis de professor e alunos, onde o professor
-utiliza o \textit{dashboard} de controle enquanto os alunos interagem com o
-\textit{bot} em um ambiente de sala de aula simulado, permitindo mensurar a
-eficácia da solução em situações próximas ao uso real, combinando métricas
-quantitativas e qualitativas, inspirada nos trabalhos apresentados na Seção
-\ref{sec:trab-rel}.
-\end{enumerate}
-
-Tecnicamente, o desenvolvimento será realizado utilizando a biblioteca Concord
-em C (desenvolvida pelo autor), aproveitando suas vantagens em termos de
-controle granular sobre a \textit{API} do Discord e sua relevância educacional,
-conforme discutido na Seção \ref{sec:ferramentas}.
-
-Este trabalho se diferencia dos esforços anteriores apresentados na Seção
-\ref{sec:trab-rel} por seu foco específico em facilitar metodologias ativas em
-ambientes remotos, com ênfase na integração não-invasiva à prática docente e sua
-metodologia de avaliação que simula condições reais de uso. Enquanto outros
-trabalhos têm explorado \textit{bots} para responder dúvidas ou fornecer
-\textit{feedback} automatizado, esta proposta busca transformar a própria
-dinâmica de interação durante as aulas síncronas, com uma avaliação sistemática
-em um ambiente controlado.
-
 Os próximos capítulos detalham a concepção e implementação do \textit{bot} 
-(\ref{cap:bot}), bem como sua avaliação através da metodologia experimental com
-participantes em diferentes papéis (Capítulo 4), demonstrando como os conceitos
-teóricos discutidos neste capítulo se manifestam na prática educacional.
+educacional proposto, bem como sua avaliação através da metodologia experimental
+com participantes em diferentes papéis, demonstrando como os conceitos teóricos
+discutidos neste capítulo se manifestam na prática educacional.

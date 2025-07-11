@@ -10,125 +10,21 @@ interação ativa ao ambiente de ensino remoto. A ferramenta permitiu que alunos
 interagissem com o conteúdo de aula e expressassem \textit{feedbacks}
 espontâneos, contribuindo para a adaptação do professor em tempo real.
 
-O Capítulo está organizado da seguinte forma: a Seção \ref{sec:sintese}
-apresenta uma síntese dos principais resultados obtidos no experimento,
-incluindo os achados relacionados à eficácia na promoção de metodologias ativas
-e aspectos técnicos da implementação, a Seção \ref{sec:limitacoes-conclusao} 
+Como apresentado no Capítulo \ref{cap:prova}, o experimento validou a hipótese
+central de que \textit{bots} educacionais podem efetivamente facilitar
+metodologias ativas em ambientes remotos. Os resultados detalhados, apresentados
+na Seção \ref{sec:resultados}, demonstraram resultados promissores em múltiplas
+dimensões pedagógicas e técnicas, sugerindo a viabilidade e eficácia da
+abordagem proposta.
+
+O Capítulo está organizado da seguinte forma: a Seção \ref{sec:limitacoes-conclusao} 
 discute as limitações identificadas no estudo e suas implicações, a Seção
 \ref{sec:contribuicoes} destaca as contribuições do trabalho para o campo da
 educação mediada por tecnologia, e finalmente, a Seção \ref{sec:trabalhos-futuros}
 apresenta direções para trabalhos futuros que podem expandir e aprimorar os
 resultados obtidos.
 
-\section{Síntese dos Resultados}
-\label{sec:sintese}
-
-A avaliação experimental do \textit{bot} educacional demonstrou resultados
-promissores em múltiplas dimensões pedagógicas e técnicas. Com 10 participantes
-atuando tanto como professores quanto como alunos, o experimento forneceu uma
-perspectiva abrangente sobre a eficácia da ferramenta em contextos educacionais
-remotos.
-
-\subsection{Principais Achados}
-
-\subsubsection{Eficácia na Promoção de Metodologias Ativas}
-
-O objetivo principal do trabalho - facilitar a implementação de metodologias
-ativas em ambientes remotos - foi alcançado com sucesso significativo. A
-ferramenta obteve média de 4,7 (em escala de 1 a 5) na questão sobre tornar a
-aula mais interativa, com 90\% dos participantes atribuindo notas máximas. Este
-resultado confirma que o \textit{bot} efetivamente transformou a dinâmica
-tradicional de aulas remotas, tradicionalmente caracterizadas por comunicação
-unidirecional.
-
-\subsubsection{Redução de Barreiras de Participação}
-
-O anonimato seletivo implementado no sistema mostrou-se um fator crucial para o
-engajamento. Os participantes destacaram consistentemente a importância de
-"poder comentar em anônimo" e não precisar "responder em áudio", indicando que
-a ferramenta efetivamente reduziu inibições comuns em ambientes virtuais de
-aprendizagem. Esta funcionalidade atendeu diretamente ao princípio de
-"comunicação multidirecional" estabelecido no referencial teórico.
-
-\subsubsection{Melhoria na Comunicação Professor-Aluno}
-
-A facilitação da comunicação obteve uma das melhores avaliações (média 4,7),
-confirmando que o sistema conseguiu criar canais eficazes de \textit{feedback}
-entre professor e alunos. Comentários indicaram que o \textit{bot} "torna o chat
-um canal mais viável para interagir com o professor", abordando uma limitação
-real do ensino remoto onde professores frequentemente negligenciam canais
-textuais em favor da comunicação por voz.
-
-\subsubsection{Aceitação e Potencial de Adoção}
-
-Com 90\% dos participantes manifestando desejo de usar a ferramenta em mais
-aulas (média 4,6), o experimento demonstrou forte aceitação da tecnologia. Este
-resultado é particularmente significativo considerando que os participantes
-experimentaram tanto os benefícios quanto as limitações atuais da implementação.
-
-\subsection{Limitações Identificadas}
-
-\subsubsection{Interface de Usuário}
-
-A principal barreira identificada foi a dependência de comandos de texto para
-interação. Múltiplos participantes solicitaram interfaces mais intuitivas,
-especificamente botões clicáveis em lugar de comandos como "/ask" e "/answer".
-Esta limitação, embora não comprometa a funcionalidade, pode afetar a adoção em
-larga escala.
-
-\subsubsection{Curva de Aprendizado}
-
-Embora a ferramenta tenha sido considerada relativamente fácil de usar (média
-4,3), comentários indicaram que alguns aspectos da interface requerem
-familiarização. A implementação de interfaces mais visuais poderia reduzir
-significativamente esta barreira inicial.
-
-\subsection{Validação dos Objetivos Específicos}
-
-\subsubsection{Integração Não-invasiva}
-
-O objetivo de criar uma integração sutil ao fluxo de trabalho docente foi
-parcialmente validado. Embora participantes tenham elogiado a natureza
-não-intrusiva da ferramenta, alguns comentários sugeriram que professores
-precisam de múltiplas telas para gerenciar simultaneamente o \textit{dashboard}
-e materiais de aula, indicando oportunidades de melhoria na ergonomia da
-solução.
-
-\subsubsection{Viabilidade Técnica}
-
-A implementação usando a biblioteca Concord em C demonstrou-se tecnicamente
-viável, com o sistema operando estável durante todas as sessões experimentais.
-A arquitetura dual (\textit{bot} + \textit{dashboard}) atendeu adequadamente às
-necessidades de separação entre canal de comando e canal de interação.
-
-\subsubsection{Métricas de Engajamento}
-
-As funcionalidades implementadas (reações, dúvidas anônimas, execução de código
-e \textit{quizzes}) foram amplamente utilizadas, com cada uma sendo adotada por
-60-70\% dos participantes. Esta distribuição equilibrada indica que o conjunto
-de recursos atendeu a diferentes preferências e estilos de interação.
-
-\subsection{Contribuições Científicas Validadas}
-
-Os resultados confirmaram as contribuições científicas propostas:
-
-\begin{enumerate}
-\item \textbf{Demonstração de viabilidade}: A integração sutil de tecnologias
-interativas no ensino remoto foi comprovadamente viável e eficaz.
-\item \textbf{Evidências empíricas}: O experimento forneceu dados quantitativos
-e qualitativos robustos sobre o impacto positivo de \textit{bots} educacionais.
-\item \textbf{Arquitetura flexível}: A separação entre \textit{dashboard} e
-\textit{bot} mostrou-se adequada para diferentes contextos pedagógicos.
-\item \textbf{Métricas de avaliação}: As métricas propostas (engajamento,
-impacto pedagógico, usabilidade) capturaram adequadamente a eficácia da solução.
-\end{enumerate}
-
-Em síntese, o experimento validou a hipótese central de que \textit{bots}
-educacionais podem efetivamente facilitar metodologias ativas em ambientes
-remotos, embora melhorias na experiência do usuário sejam necessárias para
-maximizar o potencial de adoção da tecnologia.
-
-\section{Limitações do Estudo}
+\section{Limitações do Trabalho}
 \label{sec:limitacoes-conclusao}
 
 A metodologia e implementação deste trabalho apresentam algumas limitações que
@@ -182,7 +78,7 @@ Este trabalho contribui para o campo da educação digital ao:
 
 \begin{enumerate}
 \item Demonstrar a viabilidade de integração sutil de tecnologias interativas no
-ensino remoto
+ensino remoto usando metodologias ativas
 \item Fornecer evidências empíricas sobre o impacto positivo de \textit{bots} 
 educacionais no engajamento
 \item Propor uma arquitetura flexível e de baixo impacto para interações

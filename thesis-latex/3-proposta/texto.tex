@@ -1,4 +1,4 @@
-\chapter{\textit{Bot} Educacional para Metodologias Ativas em Ambientes
+\chapter{\textit{Bot} Educacional para uso em Metodologias Ativas em Ambientes
 Virtuais}
 \label{cap:bot}
 
@@ -18,14 +18,13 @@ e Estruturas de Dados I) do DINF da UFPR \cite{ufpr2021ci1055}.
 \section{Visão Conceitual da Aplicação}
 \label{sec:visao}
 
-O \textit{bot} educacional proposto foi concebido como um mediador de interações
-em ambientes virtuais de aprendizagem, especificamente voltado para facilitar a
-implementação de metodologias ativas durante sessões de ensino remoto. O sistema
-atua como uma ponte entre professor e alunos, promovendo trocas mais naturais de
-informações e \textit{feedback}.
+Como visto na Seção \ref{sec:metodologia}, o \textit{bot} educacional foi
+projetado para atuar como uma ponte entre professor e alunos, promovendo trocas
+mais naturais de informações e \textit{feedback}.
 
-A Figura a seguir ilustra o modelo conceitual de interação entre os
-participantes do processo educacional mediado pelo \textit{bot}:
+A Figura \ref{fig:modelo-interacao} a seguir ilustra o modelo conceitual de
+interação entre os participantes do processo educacional mediado pelo
+\textit{bot}:
 
 \begin{figure}[htb]
 \centering
@@ -45,8 +44,8 @@ com o conteúdo, (e) \textit{bot} coletando \textit{feedback} dos alunos, e (f)
 
 O modelo de interação implementado neste trabalho fundamenta-se nos três
 princípios para interação mediada por \textit{bots} na educação discutidos na
-Seção \ref{subsec:principios}: comunicação multidirecional, engajamento ativo e
-adaptação contextual. Estes princípios nortearam todo o processo de
+Seção \ref{subsec:principios}: (1) comunicação multidirecional, (2) engajamento
+ativo e (3) adaptação contextual. Estes princípios nortearam todo o processo de
 \textit{design} e desenvolvimento da solução, garantindo que o \textit{bot}
 efetivamente contribua para a implementação de metodologias ativas no ambiente
 virtual.
@@ -59,7 +58,8 @@ discutidos na Seção \ref{sec:ferramentas}. A integração sutil com o ambiente
 educacional, refere-se à capacidade do \textit{bot} de participar do processo
 educacional sem causar rupturas no fluxo natural da aula ou exigir mudanças
 drásticas nas práticas pedagógicas já estabelecidas. Essa sutileza manifesta-se
-em três dimensões:
+em três dimensões, (1) presença não-intrusiva, (2) curva de aprendizado reduzida
+e (3) flexibilidade metodológica:
 
 \begin{enumerate}
 \item \textbf{Presença não-intrusiva}: O \textit{bot} não interrompe a condução
@@ -75,7 +75,7 @@ Para materializar esta integração, o sistema também disponibiliza um
 \textit{dashboard} específico para uso do professor, como visto em
 \ref{subsec:dashboards}, que permite o controle da aula de forma centralizada e
 intuitiva, sem a necessidade de comandos complexos ou interrupções no fluxo de
-comunicação, como será detalhado na seção \ref{subsec:dashboard}.
+comunicação, como será detalhado na Seção \ref{subsec:dashboard}.
 
 \subsection{\textit{Dashboard} do Professor}
 \label{subsec:dashboard}
@@ -83,8 +83,8 @@ comunicação, como será detalhado na seção \ref{subsec:dashboard}.
 Um elemento chave do sistema é o \textit{dashboard} exclusivo para o professor,
 que permite controlar o fluxo da aula sem a necessidade de inserir comandos no
 \textit{chat} principal. Este \textit{dashboard} é apresentado como uma
-interface \textit{web} segura, acessível apenas pelo professor, que se comunica
-com o \textit{bot} em tempo real. Esta abordagem está diretamente alinhada com o
+interface \textit{web}, acessível apenas pelo professor, que se comunica com o
+\textit{bot} em tempo real. Esta abordagem está diretamente alinhada com o
 objetivo de proporcionar uma integração não-invasiva ao fluxo de trabalho
 docente, conforme estabelecido na Seção \ref{sec:objetivos} do Capítulo
 \ref{cap:revisao}. Através dele, o professor pode:
@@ -106,26 +106,28 @@ Discord.
 \label{sec:recursos}
 
 O \textit{bot} implementa diversos recursos específicos para viabilizar
-metodologias ativas em ambiente remoto. Na seção \ref{subsec:feedback} é
-apresentado mecanismos de \textit{feedback} em tempo real que permitem ao
-professor avaliar continuamente a compreensão dos alunos, e \ref{subsec:pbl}
-trata das funcionalidades específicas para aprendizagem baseada em problemas que
-estimulam o raciocínio crítico e a resolução de situações práticas.
+metodologias ativas em ambiente remoto. Na Seção \ref{subsec:feedback} são
+apresentados mecanismos de retorno imediato que permitem ao professor avaliar 
+continuamente a compreensão dos alunos, e a Seção \ref{subsec:pbl} trata das 
+funcionalidades específicas para resolução de problemas que estimulam o 
+raciocínio crítico e a aplicação prática de conceitos.
 
-\subsection{\textit{Feedback} em Tempo Real}
+\subsection{Mecanismos de Retorno Imediato}
 \label{subsec:feedback}
 
 Um dos principais desafios do ensino remoto é perceber as reações dos alunos. O
-\textit{bot} permite que os estudantes expressem sua compreensão ou dúvidas
-durante a explanação, sem interromper o fluxo da aula, através de:
+\textit{bot} desenvolvido permite que os estudantes expressem sua compreensão ou
+dúvidas durante a explanação, sem interromper o fluxo da aula, através da 
+implementação de (1) agregação visual de reações, (2) sistema de notificações, e
+(3) canal de comunicação anônima:
 
 \begin{itemize}
-\item \textbf{Barômetro de compreensão}: Interface visual que agregada as
-reações dos alunos
-\item \textbf{Alertas de dificuldade}: Notificação ao professor quando um número
-significativo de alunos indica não compreender um tópico
-\item \textbf{Dúvidas anônimas}: Permite que alunos enviem questões sem
-exposição pública
+\item \textbf{Agregação visual de reações}: Uma interface que coleta e exibe 
+de forma consolidada as reações dos alunos sobre sua compreensão do conteúdo
+\item \textbf{Sistema de notificações inteligentes}: Alertas automáticos ao 
+professor quando um número significativo de alunos indica não compreender um tópico
+\item \textbf{Canal de comunicação anônima}: Funcionalidade que permite aos 
+alunos enviar questões sem exposição pública de sua identidade
 \end{itemize}
 
 A escolha dessas funcionalidades baseou-se na identificação de elementos que
@@ -135,35 +137,45 @@ reações rápidas (emojis), possibilidade de comunicação anônima e indicador
 visuais de engajamento. Transportar esses aspectos para o ambiente educacional
 remoto visa recriar a naturalidade das interações presenciais, onde o professor
 consegue perceber expressões faciais, gestos e reações instantâneas dos
-alunos\cite{huang2021}.
+alunos \cite{huang2021}.
 
-\subsection{Aprendizagem Baseada em Problemas}
+\subsection{Funcionalidades para Resolução de Problemas}
 \label{subsec:pbl}
 
-A aprendizagem baseada em problemas (vide Seção \ref{cap:intro}) envolve vários
-elementos que podem ser incluídos em nosso aplicativo. Dentre esses elementos,
-incluímos os seguintes, por serem os mais simples de se implementar:
+Inspirado nos princípios da ``aprendizagem baseada em problemas'' (vide Seção 
+\ref{cap:intro}), foram desenvolvidas funcionalidades específicas que estimulam
+o raciocínio crítico e a resolução prática de situações-problema. Dentre os 
+diversos elementos que poderiam ser implementados, foram selecionados os 
+seguintes, priorizando simplicidade de implementação devido ao caráter 
+exploratório deste trabalho:
 
 \begin{itemize}
-\item \textbf{Desafios temporizados}: Problemas com tempo definido para
-resolução
-\item \textbf{Pistas progressivas}: Sugestões que são liberadas gradualmente
-durante a resolução
-\item \textbf{Compilação e execução de código}: Para disciplinas de programação,
-execução segura de códigos submetidos pelos alunos
+\item \textbf{Sistema de desafios com cronometragem}: Problemas apresentados 
+com tempo definido para resolução, criando senso de urgência pedagógica
+\item \textbf{Mecanismo de orientação progressiva}: Sugestões e dicas que são 
+liberadas gradualmente durante o processo de resolução, conforme a necessidade
+\item \textbf{Ambiente de execução remota}: Para disciplinas de programação, um
+sistema que permite compilação e execução de códigos submetidos pelos alunos
+\item \textbf{Compartilhamento pedagógico de soluções}: Funcionalidade que permite
+ao professor selecionar e compartilhar soluções dos alunos de forma anônima, 
+promovendo aprendizado colaborativo sem exposição individual
 \end{itemize}
 
 A seleção dessas funcionalidades fundamentou-se na observação de como conversas
 por texto se tornam mais dinâmicas e envolventes. Elementos como desafios com
 tempo limitado simulam a urgência e foco das interações síncronas, enquanto
-pistas progressivas reproduzem o aspecto colaborativo de uma conversa onde
+dicas progressivas reproduzem o aspecto colaborativo de uma conversa onde
 informações são reveladas gradualmente conforme a necessidade. A execução
 imediata de código, por sua vez, proporciona tanto o \textit{feedback}
 instantâneo característico de diálogos interativos quanto um espaço mais
 igualitário, onde alunos com recursos computacionais limitados conseguem
 executar código remotamente mesmo em máquinas menos potentes ou dispositivos
 móveis, eliminando barreiras técnicas que poderiam comprometer sua
-participação\cite{fabiane2024}.
+participação\cite{fabiane2024}. Por fim, o compartilhamento anônimo de soluções
+permite que diferentes abordagens sejam discutidas coletivamente, mantendo o
+aspecto pedagógico da aprendizagem colaborativa sem expor individualmente os
+alunos, reproduzindo o ambiente de discussão natural de uma sala de aula
+presencial.
 
 \section{Exemplo Prático: Aula de Comandos de Repetição}
 \label{sec:exemplo}
@@ -171,11 +183,23 @@ participação\cite{fabiane2024}.
 Para ilustrar a aplicação concreta do \textit{bot} em um contexto educacional
 real, apresentamos a seguir um cenário baseado em uma aula da disciplina CI1055
 - Algoritmos e Estruturas de Dados I, ministrada no Departamento de Informática
-da UFPR. O exemplo demonstra como o \textit{bot} auxilia o professor durante uma
-aula sobre "Comandos de Repetição" em Pascal. Nas próximas seções, detalharemos
-as etapas de preparação da aula pelo professor e as interações que ocorrem
-durante a sessão síncrona, evidenciando como os recursos do \textit{bot}
-facilitam a implementação das metodologias ativas.
+da UFPR \cite{ufpr2021ci1055}. O exemplo demonstra como o \textit{bot} auxilia o
+professor durante uma aula sobre ``Comandos de Repetição'' em Pascal. 
+
+O cenário completo seguiu um fluxo de interação que exemplifica como as 
+funcionalidades descritas nas seções anteriores se articulam na prática:
+
+\begin{enumerate}
+\item \textbf{Professor prepara material via \textit{dashboard}}, organizando conteúdo e atividades;
+\item \textbf{\textit{Bot} então publica conteúdo formatado no Discord}, iniciando a interação;
+\item \textbf{Alunos começam a interagir com reações e comandos}, participando ativamente;
+\item \textbf{Professor recebe \textit{feedback} em tempo real}, adaptando a aula conforme necessário;
+\item \textbf{Sistema gera relatório automático pós-aula}, fechando o ciclo pedagógico.
+\end{enumerate}
+
+Nas próximas seções, detalharemos as etapas de preparação da aula pelo professor 
+e as interações que ocorrem durante a sessão síncrona, evidenciando como os 
+recursos do \textit{bot} facilitam a implementação das metodologias ativas.
 
 \subsection{Preparação da Aula}
 \label{subsec:preparacao}

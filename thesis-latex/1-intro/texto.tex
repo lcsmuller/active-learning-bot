@@ -1,16 +1,32 @@
 \chapter{Introdução}
 \label{cap:intro}
 
+Este capítulo apresenta o contexto e a motivação para o desenvolvimento de um
+\textit{bot} educacional que facilite a implementação de metodologias ativas em
+ambientes de ensino remoto.
+
+O capítulo está organizado da seguinte forma: a Seção \ref{sec:contexto-intro}
+apresenta o contexto do ensino remoto e das metodologias ativas, estabelecendo
+a relevância das tecnologias interativas neste cenário, a Seção
+\ref{sec:motivacao} discute a motivação de pesquisa, detalhando os
+desafios específicos do ensino remoto e a questão central investigada, a Seção
+\ref{sec:objetivos} define os objetivos geral e específicos do trabalho, a Seção
+\ref{sec:metodologia-intro} descreve a metodologia adotada para o desenvolvimento
+e validação da solução, a Seção \ref{sec:contribuicoes-intro} apresenta as
+principais contribuições esperadas do trabalho, e finalmente, a Seção
+\ref{sec:organizacao} descreve a organização dos demais capítulos.
+
+\section{Contexto}
+\label{sec:contexto-intro}
+
 O ensino remoto tem se consolidado como uma alternativa viável para a
 disseminação do conhecimento, especialmente em cenários que exigem
-distanciamento social \cite{fabiane2024}. No entanto, essa modalidade apresenta
-desafios significativos, como a manutenção do engajamento dos alunos e a
-efetividade da comunicação entre docentes e discentes. A ausência de interações
-presenciais pode levar a uma experiência educacional menos dinâmica e
-participativa, distanciando as práticas pedagógicas de uma comunicação natural e
-espontânea \cite{fabiane2024}.
+distanciamento social \cite{fabiane2024}. Esta modalidade de ensino,
+impulsionada por necessidades específicas e pelo avanço das tecnologias
+digitais, tornou-se uma realidade permanente na educação contemporânea, exigindo
+adaptações significativas nas práticas pedagógicas tradicionais.
 
-As metodologias ativas \cite{prince2004} de aprendizagem representam uma
+As metodologias ativas de aprendizagem \cite{prince2004} representam uma
 abordagem educacional que coloca o aluno como protagonista do processo de
 aprendizagem, em contraste com o ensino tradicional onde o estudante assume um
 papel predominantemente passivo. Estas metodologias envolvem participação
@@ -24,49 +40,166 @@ significativo devido às limitações de interação natural entre os participan
 
 A integração de tecnologias interativas no ambiente educacional virtual emerge
 como elemento essencial para superar os obstáculos do ensino remoto e viabilizar
-metodologias ativas neste contexto.
+metodologias ativas neste contexto. Dentre essas ferramentas, destacam-se os
+\textit{bots}, programas de computador capazes de simular interações humanas de
+forma automatizada e personalizada, que se apresentam como soluções capazes de
+recriar elementos de naturalidade na comunicação digital, aproximando o ambiente
+virtual da espontaneidade característica das interações presenciais
+\cite{okonkwo2021}.
 
-Dentre essas ferramentas capazes de recriar os elementos de metodologias ativas,
-estão os \textit{bots}. Os \textit{bots}, programas de computador capazes de
-simular interações humanas de forma automatizada e personalizada, apresentam-se
-como ferramentas capazes de recriar elementos de naturalidade na comunicação
-digital, aproximando o ambiente virtual da espontaneidade característica das
-interações presenciais \cite{okonkwo2021}.
+\section{Motivação}
+\label{sec:motivacao}
 
-Este trabalho tem como objetivo investigar o uso de \textit{bots} como
-facilitadores de interações naturais em ambientes virtuais, o que poderia
-viabilizar a aplicação de metodologias ativas no ensino remoto. A pesquisa parte
-da observação que os \textit{bots} podem atuar como pontes tecnológicas que
-diminuem a distância comunicativa entre participantes em ambientes virtuais,
-promovendo um fluxo mais natural e espontâneo de interações entre professores e
-alunos, sem que isso represente uma sobrecarga adicional para os docentes.
+O ensino remoto, apresenta desafios que limitam sua eficácia educacional. A
+ausência de interações presenciais pode levar a uma experiência educacional
+menos dinâmica e participativa, distanciando as práticas pedagógicas de uma
+comunicação natural e espontânea \cite{fabiane2024}.
 
-Para alcançar este objetivo, foi desenvolvido um \textit{bot} integrado ao
-Discord, uma plataforma de comunicação virtual que, embora não seja
-tradicionalmente educacional, foi escolhida por oferecer recursos que emulam
-eficientemente um ambiente de ensino interativo. A plataforma suporta
-videoconferência, \textit{chat} simultâneo, compartilhamento de conteúdo e
-criação de enquetes, proporcionando um ecossistema digital onde interações
-naturais podem ser facilitadas por um \textit{bot} que intermedia as interações
-entre professor e aluno.
+Em aulas remotas tradicionais, observa-se frequentemente um padrão de comunicação
+unidirecional, onde o professor transmite o conteúdo enquanto os alunos assumem
+postura predominantemente passiva \cite{hodges2020}. As interações tendem a ser
+limitadas a momentos específicos, como sessões de perguntas ao final da aula, ou
+através de canais assíncronos como \textit{e-mails} e fóruns \cite{fabiane2024}.
+Este modelo apresenta barreiras significativas à implementação de metodologias
+ativas, que dependem de ciclos rápidos de \textit{feedback} e participação
+constante dos estudantes \cite{prince2004}.
 
-A pesquisa busca analisar como este \textit{bot} pode criar um ambiente virtual
-onde interações naturais são facilitadas, tornando viável a aplicação de
-princípios de ensino ativo mesmo à distância. O estudo examina especificamente
-como esta ferramenta pode transformar a natureza das comunicações digitais
-educacionais, aproximando-as da fluidez e espontaneidade das interações
-presenciais, elementos fundamentais para o sucesso das metodologias ativas.
+A pesquisa parte da observação que os \textit{bots} podem atuar como pontes
+tecnológicas que diminuem a distância comunicativa entre participantes em
+ambientes virtuais, promovendo um fluxo mais natural e espontâneo de interações
+entre professores e alunos, sem que isso represente uma sobrecarga adicional
+para os docentes. \cite{winkler2018,okonkwo2021,zawacki2019}
 
-A eficácia da ferramenta é avaliada em três dimensões principais: o aumento do
-engajamento espontâneo dos alunos durante as aulas remotas, a fluidez e
-naturalidade da comunicação entre docentes e discentes mediada pelo
-\textit{bot}, e a receptividade dos usuários quanto à integração dessa
-tecnologia como elemento natural do processo educacional.
+A questão de pesquisa central deste trabalho é: \textit{Como um \textit{bot}
+educacional pode facilitar a implementação de metodologias ativas em ambientes
+de ensino remoto, promovendo interações naturais entre professores e alunos?}
 
-O efeito do uso do \textit{bot} proposto foi avaliado através da coleta de dados
-via preenchimento de questionários enviados aos participantes, e de informações
-extraídas pelo \textit{bot} em sua mediação das interações básicas durante a
-experiência prática.
+\section{Objetivos do Trabalho} \label{sec:objetivos}
+
+Com base na motivação apresentada, este trabalho tem como objetivo geral
+\textbf{desenvolver e avaliar um \textit{bot} educacional assistivo e
+conversacional} para plataformas de colaboração, que facilite a implementação de
+metodologias ativas em ambientes de ensino remoto \cite{prince2004,okonkwo2021}.
+
+Os objetivos específicos são:
+
+\begin{enumerate}
+\item \textbf{Desenvolver um \textit{bot} educacional} que incorpore os três
+princípios fundamentais para interação mediada: comunicação multidirecional, 
+engajamento ativo e adaptação contextual \cite{seering2018}.
+\item \textbf{Implementar funcionalidades específicas} que abordem diretamente
+os desafios do ensino remoto \cite{fabiane2024}, com foco especial em manter o 
+engajamento dos alunos, facilitar o \textit{feedback} imediato e promover 
+interações sociais significativas em ambientes virtuais \cite{han2022}.
+\item \textbf{Proporcionar uma integração não-invasiva} da ferramenta ao fluxo
+de trabalho docente, aplicando os princípios de \textit{design} centrado no
+usuário \cite{roy1987,norman2013} e minimizando a carga cognitiva adicional
+\cite{sweller2011}.
+\item \textbf{Criar uma prova de conceito funcional} utilizando tecnologias
+adequadas ao contexto educacional, considerando aspectos de eficiência,
+portabilidade e manutenção \cite{kernighan1988}.
+\item \textbf{Estabelecer uma metodologia de avaliação experimental} com
+participantes reais assumindo os papéis de professor e alunos, onde o professor
+utiliza o \textit{dashboard} de controle \cite{verbert2013} enquanto os alunos 
+interagem com o \textit{bot} em um ambiente de sala de aula simulado, permitindo
+mensurar a eficácia da solução em situações próximas ao uso real, combinando 
+métricas quantitativas e qualitativas.
+\end{enumerate}
+
+\section{Metodologia}
+\label{sec:metodologia-intro}
+
+Para atingir os objetivos propostos, este trabalho adota uma abordagem
+metodológica que combina desenvolvimento tecnológico com validação experimental.
+A metodologia está estruturada em quatro etapas principais: revisão
+bibliográfica, desenvolvimento da solução, validação experimental e análise de
+resultados.
+
+\subsection{Revisão Bibliográfica}
+\label{subsec:revisao-metodologia}
+
+Realização de uma revisão sistemática da literatura sobre \textit{bots}
+educacionais, metodologias ativas em ambientes virtuais, e tecnologias para
+desenvolvimento de sistemas interativos. Esta etapa visa estabelecer o
+referencial teórico necessário para fundamentar as escolhas técnicas e
+pedagógicas do trabalho.
+
+\subsection{Desenvolvimento da Solução}
+\label{subsec:desenvolvimento-metodologia}
+
+O desenvolvimento da solução é baseado na escolha da plataforma Discord,
+adequada ao caráter exploratório deste trabalho por suas características
+técnicas que emulam eficientemente um ambiente de ensino interativo. A
+plataforma oferece recursos essenciais para metodologias ativas: suporte nativo
+a videoconferência e \textit{chat} simultâneo (permitindo comunicação
+multidirecional), sistema de reações com emojis para \textit{feedback} rápido,
+funcionalidades de compartilhamento de conteúdo com formatação rica, capacidade
+de criação de enquetes e atividades interativas, e \textit{API} robusta para
+integração de \textit{bots} personalizados. Esta escolha permite uma avaliação
+inicial dos conceitos propostos em um ambiente controlado e familiar aos
+participantes.
+
+O desenvolvimento técnico utiliza a biblioteca Concord em C \cite{muller},
+aproveitando suas vantagens em termos de controle granular sobre a \textit{API}
+do Discord. A arquitetura do sistema é composta por dois componentes principais:
+o \textit{bot} educacional responsável pela interação direta com os alunos, e o
+\textit{dashboard} exclusivo para o professor, que permite controlar e monitorar
+as atividades do \textit{bot}, visualizar métricas de engajamento e adaptar as
+estratégias pedagógicas em tempo real.
+
+\subsection{Validação Experimental}
+\label{subsec:validacao-metodologia}
+
+A validação da solução é realizada através de um experimento controlado com
+participantes reais assumindo os papéis de professor e alunos. O experimento
+conta com 10 participantes (8 da área da informática e 2 da área de humanas),
+totalizando 20 sessões individuais, onde cada participante atua uma vez como
+aluno e uma vez como professor. O experimento simula um ambiente de sala de
+aula remota onde o professor utiliza o \textit{dashboard} de controle enquanto
+os alunos interagem com o \textit{bot} durante uma sessão educacional.
+
+A eficácia da ferramenta é avaliada em (1) engajamento dos alunos, (2)
+eficácia pedagógica, (3) usabilidade da ferramenta e (4) aceitação da
+tecnologia.
+
+\subsection{Análise de Resultados}
+\label{subsec:analise-metodologia}
+
+Os dados são coletados através do preenchimento de questionários e comentários
+livres pelos participantes, a fim de avaliar aspectos quantitativos e
+qualitativos, respectivamente. Dessa maneira a análise busca identificar padrões
+recorrentes nas respostas, fornecendo insights sobre a eficácia da solução
+proposta e direcionamentos para futuras melhorias.
+
+\section{Contribuições}
+\label{sec:contribuicoes-intro}
+
+Este trabalho se diferencia dos esforços anteriores por seu foco específico em 
+facilitar metodologias ativas em ambientes remotos \cite{prince2004,yew2016,
+vanalten2019,laal2012}, com ênfase na integração não-invasiva à prática docente 
+e sua metodologia de avaliação que simula condições reais de uso. Enquanto 
+outros trabalhos têm explorado \textit{bots} para responder dúvidas ou fornecer 
+\textit{feedback} automatizado \cite{hien2018,demetriadis2018,winkler2018}, esta 
+proposta busca transformar a própria dinâmica de interação durante as aulas 
+síncronas, com uma avaliação sistemática em um ambiente controlado.
+
+As principais contribuições esperadas incluem a proposição de um
+\textbf{modelo conceitual} de interação mediada por \textit{bots} para ambientes
+educacionais remotos, fundamentado nos princípios de comunicação
+multidirecional, engajamento ativo e adaptação contextual. Além disso, o
+trabalho oferece uma \textbf{implementação prática} através do desenvolvimento
+de uma solução funcional que demonstra a viabilidade técnica da abordagem,
+integrando um \textit{bot} educacional com um \textit{dashboard} de controle
+para professores. A \textbf{validação experimental} estabelece uma metodologia
+de avaliação robusta que pode ser replicada em outros contextos educacionais,
+fornecendo diretrizes para futuras pesquisas na área. Por fim, o estudo
+contribui com \textbf{insights pedagógicos} importantes sobre os fatores que
+influenciam a eficácia de \textit{bots} educacionais na promoção de metodologias
+ativas, oferecendo uma compreensão aprofundada dos desafios e oportunidades
+dessa abordagem tecnológica no contexto educacional.
+
+\section{Organização do Trabalho}
+\label{sec:organizacao}
 
 Este trabalho está organizado da seguinte forma: o Capítulo 2 apresenta a
 revisão bibliográfica, abordando conceitos fundamentais sobre \textit{bots},
